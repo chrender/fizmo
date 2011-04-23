@@ -25,11 +25,15 @@ LOCALE_SEARCH_PATH = $(INSTALL_PREFIX)/share/fizmo/locales
 #ENABLE_STRICT_Z = 1
 #THROW_SIGFAULT_ON_ERROR = 1
 #DISABLE_LIBXML2 = 1
-LIBFIZMO_REQS = libxml-2.0
-LIBXML2_PKG_CFLAGS = $(shell pkg-config --cflags libxml-2.0)
-LIBXML2_PKG_LIBS = $(shell pkg-config --libs libxml-2.0)
-LIBXML2_NONPKG_CFLAGS =
-LIBXML2_NONPKG_LIBS =
+# Use apple's libxml2 for simplicity
+#LIBFIZMO_REQS = libxml-2.0
+#LIBXML2_PKG_CFLAGS = $(shell pkg-config --cflags libxml-2.0)
+#LIBXML2_PKG_LIBS = $(shell pkg-config --libs libxml-2.0)
+LIBFIZMO_REQS =
+LIBXML2_PKG_CFLAGS =
+LIBXML2_PKG_LIBS =
+LIBXML2_NONPKG_CFLAGS = -I/usr/include/libxml2
+LIBXML2_NONPKG_LIBS = -L/usr/lib -lxml2
 #DISABLE_BLOCKBUFFER = 1
 #DISABLE_COMMAND_HISTORY = 1
 #DISABLE_OUTPUT_HISTORY = 1
@@ -67,10 +71,13 @@ DRILBO_NONPKG_LIBPNG_LIBS =
 
 
 # fizmo-ncursesw:
-NCURSESW_PKG_CFLAGS = $(shell pkg-config --cflags ncursesw)
-NCURSESW_PKG_LIBS = $(shell pkg-config --libs ncursesw)
-NCURSESW_NONPKG_CFLAGS =
-NCURSESW_NONPKG_LIBS =
+#NCURSESW_PKG_CFLAGS = $(shell pkg-config --cflags ncursesw)
+#NCURSESW_PKG_LIBS = $(shell pkg-config --libs ncursesw)
+# the macports and self-compiled ncurses won't work 100%, use apple's version
+NCURSESW_PKG_CFLAGS =
+NCURSESW_PKG_LIBS =
+NCURSESW_NONPKG_CFLAGS = -I/usr/include
+NCURSESW_NONPKG_LIBS = -L/usr/lib -lncurses
 SOUND_INTERFACE_NAME = libsndifsdl
 SOUND_INTERFACE_CONFIGNAME = SOUNDSDL
 SOUND_INTERFACE_STRUCT_NAME = sound_interface_sdl
