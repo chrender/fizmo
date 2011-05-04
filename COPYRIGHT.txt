@@ -49,8 +49,14 @@
   >  Source license, or were placed in the Public Domain by their authors."
 
 
-  libdrilbo includes code from the pix2gif utility in ztools, provided at
+  libdrilbo includes code from the pix2gif utility by Mark Howell in ztools,
+  which are available from:
   http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html.
+  The copyright status of Mark Howell's work is unknown. Since he released
+  the software for free and since it is also used by multiple other projects
+  it can also be distributed or used freely, to the best of my knowledge.
   
   
+
+
 
