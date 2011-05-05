@@ -1,0 +1,16 @@
+
+
+ Before building fizmo you want might to take look at the configuration
+ settings.  Configuration is done by providing a "config.mk" file, which is
+ easiest obtainable by copying a template like "config.default.mk" to
+ "config.mk" and then modifying values.
+
+ To start the acutal build, simply invoke "make". If successful, this will
+ build the "fizmo-console" and "fizmo-ncursesw" binaries.
+
+ To install the files, invoke "make install" to copy these to the location
+ indicated using "INSTALL_PREFIX" in the config.mk file. This will create
+ a "bin" or "games", "man" and "share" directories at the destination#
+ location.
+
+
