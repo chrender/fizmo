@@ -10,7 +10,7 @@
 
  To install the files, invoke "make install" to copy these to the location
  indicated using "INSTALL_PREFIX" in the config.mk file. This will create
- a "bin" or "games", "man" and "share" directories at the destination#
+ a "bin" or "games", "man" and "share" directories at the destination
  location.
 
 
