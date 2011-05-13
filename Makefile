@@ -64,7 +64,7 @@ endif
 endif
 
 libdrilbo: libdrilbo-config build-dir
-ifdef DRILBO_ENABLE_X11
+ifdef ENABLE_X11_IMAGES
 	cd libdrilbo; make install-dev
 endif
 
