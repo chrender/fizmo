@@ -55,10 +55,18 @@ libcellif: libcellif-config build-dir
 	cd libcellif; make install-dev
 
 libsndifsdl: libsndifsdl-config build-dir
+ifdef SOUND_INTERFACE_NAME
+ifdef SOUND_INTERFACE_STRUCT_NAME
+ifdef SOUND_INTERFACE_STRUCT_NAME
 	cd libsndifsdl; make install-dev
+endif
+endif
+endif
 
 libdrilbo: libdrilbo-config build-dir
+ifdef DRILBO_ENABLE_X11
 	cd libdrilbo; make install-dev
+endif
 
 clean: subdir-configs
 	cd fizmo-ncursesw ; make clean
