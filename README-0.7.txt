@@ -10,7 +10,7 @@
  - By default, the frontispiece is now show in a separate X-Window -- which
    should always work, contrary to old experimental form of writing the image
    into the terminal. To re-enable the old behaviour, you may use the option
-   "enable-x11-inline-graphics", which is however still not recommended as
+  "enable-x11-inline-graphics", which is however still not recommended as
    a default setting and will still crash on some terminals.
 
  - Boolean variables like "dont-use-colors" don't require an explicit " = yes"
