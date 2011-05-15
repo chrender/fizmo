@@ -13,8 +13,8 @@
   "enable-x11-inline-graphics", which is however still not recommended as
    a default setting and will still crash on some terminals.
 
- - Boolean variables like "dont-use-colors" don't require an explicit " = yes"
-   after the variable anymore, simply stating the variable name is sufficient.
+ - Boolean variables like "dont-use-colors" don't require an explicit "yes"
+   value anymore, simply stating the variable name is sufficient.
  
  - Configuration files may now use the $(HOME) variable.
 
@@ -24,11 +24,12 @@
    these are written to the screen, making it easier to get a picture
    of the saved situation.
 
- - The default language setting is now no longer determined from the
+ - The default language setting is now no longer derived from the
    current locale setting but instead always set to en_US.
 
  - In case you're playing in a game for which there's no locale available
    (currently everything non-english and non-german), it might make sense
-   to disable hyphenation: [...]
-
+   to disable hyphenation using either "disable-hyphenation" in the config
+   file or using the "-dh" or "--disable-hyphenation" switch when starting
+   fizmo-ncursesw
 
