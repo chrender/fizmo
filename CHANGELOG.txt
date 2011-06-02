@@ -5,7 +5,7 @@
    version 0.6. For the user, this release adds hyphenation, saving of the
    latest screen output into savefiles and re-display upon restore and a
    much improved X11-frontispiece display. See "README-0.7.txt" for more
-   information
+   information.
  - Restructured fizmo: The interpreter core, ncursesw- and console-interface,
    the sdl-sound interface and the X11-specific code have been moved into
    separate modules named "libfizmo", "fizmo-ncursesw", "fizmo-console",
