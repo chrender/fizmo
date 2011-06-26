@@ -23,7 +23,7 @@
  - In case the "save-text-history-paragraphs" configuration option is set
    to an integer value larger zero, the specified number of paragraphs
    from the most recent output are written into the savefile. On restore,
-   these are written to the screen, making it easier to get a picture
+   these are written to the screen, making it easier to get an overview
    of the saved situation.
 
  - The default language setting is now no longer derived from the
