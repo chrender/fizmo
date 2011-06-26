@@ -51,10 +51,10 @@ install-fizmo-ncursesw:: fizmo-ncursesw
 libfizmo:: build-dir libfizmo-config
 	cd libfizmo ; make install-dev
 
-libcellif: libcellif-config build-dir
+libcellif: libcellif-config build-dir libfizmo
 	cd libcellif; make install-dev
 
-libsndifsdl: libsndifsdl-config build-dir
+libsndifsdl: libsndifsdl-config build-dir libfizmo
 ifdef SOUND_INTERFACE_NAME
 ifdef SOUND_INTERFACE_STRUCT_NAME
 ifdef SOUND_INTERFACE_STRUCT_NAME
@@ -63,9 +63,14 @@ endif
 endif
 endif
 
-libdrilbo: libdrilbo-config build-dir
+libdrilbo: libdrilbo-config build-dir libfizmo
 ifdef ENABLE_X11_IMAGES
 	cd libdrilbo; make install-dev
+endif
+
+drilbo-test: libdrilbo-config build-dir libfizmo
+ifdef ENABLE_X11_IMAGES
+	cd libdrilbo; make test
 endif
 
 clean: subdir-configs
