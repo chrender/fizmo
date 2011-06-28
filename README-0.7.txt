@@ -37,3 +37,7 @@
    file or using the "-dh" or "--disable-hyphenation" switch when starting
    fizmo-ncursesw.
 
+ - The "bold-for-bright-foreground" and "blink-for-bright-background"
+   options are no longer supported. If someone would be still actually
+   using them, please send an e-mail to fizmo@spellbreaker.org.
+
