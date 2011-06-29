@@ -41,3 +41,7 @@
    options are no longer supported. If someone would be still actually
    using them, please send an e-mail to fizmo@spellbreaker.org.
 
+ - Transcripting got a bit more configurable: The new "stream-2-line-width",
+   "stream-2-left-margin" and "disable-stream-2-hyphenation" configuration
+   variables control transcript behaviour.
+
