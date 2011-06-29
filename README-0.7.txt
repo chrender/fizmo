@@ -43,5 +43,7 @@
 
  - Transcripting got a bit more configurable: The new "stream-2-line-width",
    "stream-2-left-margin" and "disable-stream-2-hyphenation" configuration
-   variables control transcript behaviour.
+   variables control transcript behaviour and some command-line options
+   were added to ease usage for command recording and replaying (see manpage
+   for details).
 
