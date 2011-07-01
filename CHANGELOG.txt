@@ -11,8 +11,8 @@
    separate modules named "libfizmo", "fizmo-ncursesw", "fizmo-console",
    "libsndifsdl" and "libdrilbo".
  - Implemented Frank Liangs TeX hy-phen-a-tion algorithm into the
-   wordwrapper. Patterns were taken from the "Object For Formatting
-   Objects" project at http://offo.sourceforge.net. Re-implemented the
+   wordwrapper. Patterns were taken from the "hyph-utf8" project at
+   http://www.ctan.org/tex-archive/language/hyph-utf8/. Re-implemented the
    word wrapper.
  - Rebuilt locales system. So far, all available locales were directly
    compiled into the binary and stored using a rather inflexible method

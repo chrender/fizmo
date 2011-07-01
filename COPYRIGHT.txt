@@ -38,15 +38,13 @@
  "libfizmo/src/interpreter/mt19937ar.c".
 
 
-  libfizmo includes hyphenation patterns provided by the OFFI project at
-  http://offo.sourceforge.net/hyphenation/ in version 0.1 from
-  November 2009. The respective copyright information is stored at the
-  beginning of the corresponding file.
-   - "src/locales/de_DE/patterns.txt" from OFFO's "hyph/de.xml".
-   - "src/locales/en_US/patterns.txt" from OFFO's "hyph/en.xml".
-  As a general rule, as quoted from the OFFO webpages:
-  > "All files hosted by the OFFO project come with an OSI-approved Open
-  >  Source license, or were placed in the Public Domain by their authors."
+  libfizmo includes hyphenation patterns provided by the hyph-utf8 project at
+  http://www.ctan.org/tex-archive/language/hyph-utf8/. For every file's
+  detailed respective copyright information, please refer to the description
+  stored at the top of the corresponding file:
+   - "src/locales/en_US/patterns.txt" from hyph-utf8's "hyph-en-us.tex".
+   - "src/locales/de_DE/patterns.txt" from hyph-utf8's "hyph-de-1996.tex".
+   - "src/locales/fr_FR/patterns.txt" from hyph-utf8's "hyph-fr.tex".
 
 
   libdrilbo includes code from the pix2gif utility by Mark Howell in ztools,
@@ -57,6 +55,4 @@
   it can also be distributed or used freely, to the best of my knowledge.
   
   
-
-
 
