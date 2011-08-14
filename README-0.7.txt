@@ -2,6 +2,13 @@
    User-relevant changes from 0.6 to 0.7:
 
 
+ - In order to be able to support language-specific hyphenation patterns, the
+   file format for the story-list has been changed. Thus, after upgrading
+   from fizmo 0.6 to 0.7 you'll have to remove the old file and make fizmo
+   re-index your current list automatically from the $ZCODE_ROOT_PATH and
+   $ZCODE_PATH or $INFOCOM_PATH:
+   rm $HOME/.config/fizmo/story-list.txt ; fizmo-ncursesw --update-story-list
+
  - Since frontispiece display is now in a separate window instead of directly
    in the terminal and no longer experimental, the "enable-xterm-graphics"
    config option and "-x" are no longer required for X11-frontispiece display,
@@ -31,8 +38,8 @@
    games are provided in english. The default locale may still be set
    using the "locale" variable in the config file.
 
- - In case you're playing in a game for which there's no locale available
-   (currently everything non-english and non-german), it might make sense
+ - In case there's no locale available for a game you're playing (currently
+   everything non-english, non-german and non-french), it might make sense
    to disable hyphenation using either "disable-hyphenation" in the config
    file or using the "-dh" or "--disable-hyphenation" switch when starting
    fizmo-ncursesw.
@@ -42,7 +49,7 @@
    using them, please send an e-mail to fizmo@spellbreaker.org.
 
  - Transcripting got a bit more configurable: The new "stream-2-line-width",
-   "stream-2-left-margin" and "disable-stream-2-hyphenation" configuration
+  "stream-2-left-margin" and "disable-stream-2-hyphenation" configuration
    variables control transcript behaviour and some command-line options
    were added to ease usage for command recording and replaying (see manpage
    for details).
