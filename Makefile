@@ -1,7 +1,7 @@
 
 CONFIG_EXISTS := $(wildcard config.mk)
 
-all: fizmo-console fizmo-ncursesw
+all: fizmo-console fizmo-ncursesw fizmo-glktermw
 
 ifeq ($(strip $(CONFIG_EXISTS)),)
 
@@ -24,17 +24,20 @@ endif
 
 .PHONY : \
  all install install-locales clean distclean \
- libfizmo libcellif libsndifsdl libdrilbo fizmo-console fizmo-ncursesw \
+ libfizmo libcellif libsndifsdl libdrilbo libglkif \
+ fizmo-console fizmo-ncursesw fizmo-glktermw \
  subdir-configs \
  libfizmo-config libcellif-config libsndifsdl-config \
- libdrilbo-config fizmo-ncursesw-config fizmo-console-config \
+ libdrilbo-config libglkif-config \
+ fizmo-ncursesw-config fizmo-console-config fizmo-glktermw-config \
  build-dir
 
 export DEV_INSTALL_PATH = build
 export DEV_INSTALL_PREFIX = $(CURDIR)/$(DEV_INSTALL_PATH)
 export PKG_CONFIG_PATH:=$(PKG_CONFIG_PATH):$(DEV_INSTALL_PREFIX)/lib/pkgconfig
 
-install: install-locales install-fizmo-console install-fizmo-ncursesw
+install: install-locales install-fizmo-console install-fizmo-ncursesw \
+ install-fizmo-glktermw
 
 fizmo-console:: fizmo-console-config libfizmo
 	cd fizmo-console ; make
@@ -45,8 +48,14 @@ install-fizmo-console:: fizmo-console
 fizmo-ncursesw:: fizmo-ncursesw-config libfizmo libcellif libsndifsdl libdrilbo
 	cd fizmo-ncursesw; make
 
+fizmo-glktermw:: fizmo-glktermw-config libfizmo libglkif
+	cd fizmo-glktermw; make
+
 install-fizmo-ncursesw:: fizmo-ncursesw
 	cd fizmo-ncursesw; make install
+
+install-fizmo-glktermw:: fizmo-glktermw
+	cd fizmo-glktermw; make install
 
 libfizmo:: build-dir libfizmo-config
 	cd libfizmo ; make install-dev
@@ -73,17 +82,24 @@ ifdef ENABLE_X11_IMAGES
 	cd libdrilbo; make test
 endif
 
+libglkif: libglkif-config build-dir libfizmo
+	cd libglkif; make install-dev
+
 clean: subdir-configs
+	cd fizmo-glktermw ; make clean
 	cd fizmo-ncursesw ; make clean
 	cd fizmo-console ; make clean
+	cd libglkif ; make clean
 	cd libdrilbo ; make clean
 	cd libsndifsdl ; make clean
 	cd libcellif ; make clean
 	cd libfizmo ; make clean
 
 distclean: subdir-configs
+	cd fizmo-glktermw ; make distclean
 	cd fizmo-ncursesw ; make distclean
 	cd fizmo-console ; make distclean
+	cd libglkif ; make distclean
 	cd libdrilbo ; make distclean
 	cd libsndifsdl ; make distclean
 	cd libcellif ; make distclean
@@ -113,6 +129,12 @@ libsndifsdl-config:: test_config
 
 libdrilbo-config:: test_config
 	cp config.mk libdrilbo/config.mk
+
+libglkif-config:: test_config
+	cp config.mk libglkif/config.mk
+
+fizmo-glktermw-config:: test_config
+	cp config.mk fizmo-glktermw/config.mk
 
 fizmo-ncursesw-config:: test_config
 	cp config.mk fizmo-ncursesw/config.mk
