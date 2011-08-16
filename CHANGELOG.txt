@@ -1,22 +1,22 @@
 
-   From 0.6.9 to 0.7.0
+   From 0.6.10 to 0.7.0
  + 0.7.0 was finished at about (?).
- + This represents the first real new release since the accouncement of
-   version 0.6. For the user, this release adds hyphenation, saving of the
-   latest screen output into savefiles and re-display upon restore and a
-   much improved X11-frontispiece display. See "README-0.7.txt" for more
-   information.
+ + From the user's perspective, version 0.7 adds hyphenation, saving of the
+   latest screen output into savefiles, re-display of said output upon restore,
+   a much improved X11-frontispiece display and improved localization. Thanks
+   to Andrew Plotkin for the GLK-related code and Eric Forgeot for the french
+   localization. Please see "README-0.7.txt" for more information.
  - Restructured fizmo: The interpreter core, ncursesw- and console-interface,
    the sdl-sound interface and the X11-specific code have been moved into
    separate modules named "libfizmo", "fizmo-ncursesw", "fizmo-console",
-   "libsndifsdl" and "libdrilbo".
+  "libsndifsdl" and "libdrilbo".
  - Implemented Frank Liangs TeX hy-phen-a-tion algorithm into the
    wordwrapper. Patterns were taken from the "hyph-utf8" project at
    http://www.ctan.org/tex-archive/language/hyph-utf8/. Re-implemented the
    word wrapper.
  - Rebuilt locales system. So far, all available locales were directly
    compiled into the binary and stored using a rather inflexible method
-   which wasted some memory. Version 0.7.0 now stores the locales on the
+   which wasted some memory. Version 0.7 now stores the locales on the
    disk, reading only those languages and modules which are currently
    required. All i18n-invocations do now directly accept a module
    identifier, make the old switch functionality obsolete. Adapted all
@@ -28,9 +28,6 @@
    allowing implementation of interfaces using fixed-width fonts with a
    minimum of work. This is also used by the new "fizmo-ncursesw" interface,
    which has also been entirely rewritten.
- - Added "cellif" meta-interface. This will translate the Z-Machine specific
-   output into simple "goto-xy" and "print" instructions for fixed-width-font
-   displays.
  - libdrilbo ("drilbo represents an imaging libary not only for blorb
    objects") now handles all graphical related tasks. It also makes fizmo's
    version 0.6 requirement for GTK to load images obsolete, it directly
@@ -40,15 +37,38 @@
    contrary to the older implementation that simply invoked a XCopyArea
    directly into the terminal's X window, should work reliably. For
    terminals which by chance support it, the old behaviour is still
-   available by using the "display-x11-inline-image" config option. This
+   available by using the "display-x11-inline-image" config option. The
    inline display has been changed to no longer write directly into the
    terminal window, but instead to use a subwindow instead.
- - Implemented saving of text history into chunk "TxHs" in quetzal savegames.
+ - Implemented saving of text history using a non-standard chunk type "TxHs"
+   in quetzal savegames.
  - Added configuration variable "save-text-history-paragraphs" which defines
    the maximum number of paragraphs to store in a savegame.
  - Added variable interpretation -- so far, only $(HOME) is implemented --
    for config files.
- - Re-implemented almost the entire build process.
+ - Re-implemented the entire build process. Libraries may now be compiled
+   and installed on their own, pkg-config is used whereever possible to
+   ease compilation and installation.
+
+   From 0.6.9 to 0.6.10
+ + 0.6.10 was finished at about Wed Jun 29 22:25:26 CEST 2011.
+ - Bugfix release: Fizmo did not stop tokenzing after the maximum number
+   of allowed words, which would result in a parse buffer overflow. Thanks
+   to Samuel Verschelde for discovering this problem.
+
+   From 0.6.8 to 0.6.9
+ + 0.6.9 was finished at about Sun Apr 24 22:26:18 CEST 2011.
+ - Bugfix release: Fixed negative count for unsorted dictionaries in the
+   tokenise opcode. This fixed the crash in "Beyond Zork" which occurred
+   while executing "i" after an item was name, thanks to irb.
+ - Fixed "get_utf8_code_length". This fixes output of non-latin1 output
+   codes in the transcript file, thanks to Lewis Gentry, closes debian
+   issue #617714.
+ - Increased maximum allowed option size to 512 to allow for longer
+   filenames.
+ - Added NCURSESW_INCLUDE_FROM_W_DIRNAME to configs to allow usage of
+   Apple's ncurses implementation, added GDKPIXBUF_INC_DIR configuration
+   variable.
 
    From 0.6.7 to 0.6.8
  + 0.6.8 was finished at about Tue Jan 12 09:53:42 CET 2010.
@@ -208,7 +228,7 @@
  - Added "-Wextra" flag to CFLAGS and cleaned up new warnings caused by
    the new flag.
  - Cleaned up config file, fixed a minor bug and made boolean vars work
-   "more" correctly.
+  "more" correctly.
  - Fixed "VERIFY" opcode.
  - Several fixes: Patched "savegame.c" to re-enable use of "CMem" save method,
    removed a superfluous free in streams.c which tried to free a static
@@ -262,7 +282,7 @@
  + 0.5.1 was finished at about Di 4 Nov 2008 21:48:29 CET.
  - Implemented SDL-sound-interface. To make SDL work in Mac OS X I've used
    MacPorts to install SDL ("port install libsdl"), on Debian I've been using
-   "apt-get install libsdl-sound1.2-dev" (maybe "apt-get install alsa-base
+  "apt-get install libsdl-sound1.2-dev" (maybe "apt-get install alsa-base
    alsa-utils" is also required).
  - Fixed scrollback and i18n-exit-translation.
  - Fixed libfizmo to also use setitimer/sigaction (makes fizmo work better
@@ -290,10 +310,10 @@
  + 0.5.0 was finished at about Do 30 Okt 2008 11:42:27 CET.
  + This version is now definitely usable to play all non-v6 games. Did
    extensive testing using Borderzone, "LostPig.z8", "Zokoban.z5", "crashme.z5",
-   "etude.z5", "paint.z5", "random.z5", "reverzi.z5" and "unicode.z5". Only
+  "etude.z5", "paint.z5", "random.z5", "reverzi.z5" and "unicode.z5". Only
    two minor known bugs remain: Scrollback sometimes miscalculates the
    current row after a lot of scrolling back and forth (which is always
-   "fixable" to pressing any-key which correctly rebuilds the current output
+  "fixable" to pressing any-key which correctly rebuilds the current output
    page, and a display anomaly on the frontpage of "vampire.z8" which I
    intended to keep after a lot of code-inspection (since fizmo appears to
    be implementing the screen modell correctly and fixing this display
@@ -364,12 +384,12 @@
  - Compacted code a little bit (tracelog.h, etc.).
  - Re-implemented the history-buffer in "streams.c". It is controlled by the
    Z_HISTORY_INCREMENT_SIZE and Z_HISTORY_MAXIMUM_SIZE constants in file
-   "config.h". The buffer is re-alloced until it reaches the given maximum
+  "config.h". The buffer is re-alloced until it reaches the given maximum
    size. At that time, wrap-around is used to keep the buffer up to date. A
    debug function named "log_history" exists.
  - Converted the error handling to wchar_t.
  - Implemented SIGWINCH-handler for interfaces and associated handling in
-   "ncrws-if.c".
+  "ncrws-if.c".
  - Implemented metadata (color and style) storage for the history.
  - Implemented set_font opcode.
  - Fixed two minor issues in the wordwrapper.
@@ -641,7 +661,7 @@
    object.c together with a warning mechanism in i18n.c in order to make this
    interpreter compliant to strictz.z5.
  - Fixed a bug in the length-code-size determination in properties.c (replaced
-   "& 80" with "& 0x80").
+  "& 80" with "& 0x80").
  - Added a lot of STRICT_Z tests to properties.c.
  - Implemented READ_CHAR opcode (not very well, since in stanard C without
    any Operating-System-specific calls there's no single read of a char, thus
