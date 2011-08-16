@@ -155,3 +155,10 @@ LIBGLKTERMW_NONPKG_CFLAGS = -I$(HOME)/opt/glktermw
 LIBGLKTERMW_NONPKG_LIBS = -L$(HOME)/opt/glktermw
 # -----
 
+
+
+# -----
+# Settings for fizmo-console
+ENABLE_READCHAR_VIA_TERMIOS = 1
+# -----
+
