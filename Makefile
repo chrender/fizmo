@@ -1,6 +1,29 @@
 
 CONFIG_EXISTS := $(wildcard config.mk)
 
+default:
+	@echo
+	@echo
+	@echo '  How to build:'
+	@echo
+	@echo '  First, create a "config.mk" from "config.default.mk" or "config.macports.mk"'
+	@echo '  and adjust variables as requried.'
+	@echo
+	@echo '  Second, install the locale files:'
+	@echo '  "make install-locales"'
+	@echo
+	@echo '  Third, choose one or more of the following:'
+	@echo '  "make install-fizmo-ncursesw" will build and install ncursesw-based fizmo.'
+	@echo '  "make install-fizmo-console" will create a plain, console-based fizmo.'
+	@echo '  "make install-fizmo-glktermw" will build an GLK-based, experimental fizmo.'
+	@echo
+	@echo '  Optionally, libraries and development files may be installed using:'
+	@echo '  "cd <library-name> ; make install-dev"'
+	@echo '  where "library-name" is one out of:'
+	@echo '  "libfizmo", "libcellif", "libdrilbo", "libsndifsdl" or "libglkif".'
+	@echo
+	@echo
+
 all: fizmo-console fizmo-ncursesw fizmo-glktermw
 
 ifeq ($(strip $(CONFIG_EXISTS)),)
