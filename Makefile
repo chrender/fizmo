@@ -113,10 +113,11 @@ install-locales: subdir-configs
 	cd libfizmo ; make install-locales
 
 subdir-libs-configs: libfizmo-config libcellif-config libsndifsdl-config \
- libdrilbo-config
+ libdrilbo-config libglkif-config
 
 subdir-configs: libfizmo-config libcellif-config libsndifsdl-config \
- libdrilbo-config fizmo-ncursesw-config fizmo-console-config
+ libdrilbo-config libglkif-config fizmo-ncursesw-config fizmo-console-config \
+ fizmo-glktermw-config
 
 libfizmo-config:: test_config
 	cp config.mk libfizmo/config.mk
