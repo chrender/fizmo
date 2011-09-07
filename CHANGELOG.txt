@@ -1,6 +1,6 @@
 
    From 0.6.10 to 0.7.0
- + 0.7.0 was finished at about (?).
+ + 0.7.0 was finished at about Wed Sep  7 21:36:03 CEST 2011.
  + From the user's perspective, version 0.7 adds hyphenation, saving of the
    latest screen output into savefiles, re-display of said output upon restore,
    a much improved X11-frontispiece display and improved localization. Thanks
