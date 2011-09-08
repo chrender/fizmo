@@ -1,7 +1,7 @@
 
 CC = gcc
 AR = ar
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra
 
 # Since the "fizmo-all" metapackage will install all modules into a separate
 # "build" directory -- in order not to install dev-files into the installation
@@ -13,8 +13,7 @@ PKG_CONFIG_PATH \
 ifneq ($(DESTDIR),)
 INSTALL_PREFIX = $(DESTDIR)
 else
-#INSTALL_PREFIX = /usr/local
-INSTALL_PREFIX = $(HOME)/opt/fizmo
+INSTALL_PREFIX = /usr/local
 endif
 
 # Uncomment to install binaries to $(INSTALL_PREFIX)/$(FIZMO_BIN_DIR).
