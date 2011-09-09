@@ -134,6 +134,7 @@ install-locales: subdir-configs
 	cd libsndifsdl ; make install-locales
 	cd libcellif ; make install-locales
 	cd libfizmo ; make install-locales
+	cd libglkif ; make install-locales
 
 subdir-libs-configs: libfizmo-config libcellif-config libsndifsdl-config \
  libdrilbo-config libglkif-config
