@@ -11,8 +11,10 @@
   - libsndifsdl, supplying a SDL-based sound interface
   - libdrilbo, providing support for jpeg, png and infocom's mg1 image
     reading as well as X11-based output.
+  - libglkif, which provides basic GLK bindings.
   - fizmo-ncursesw, a screen interface uses ncurses for display.
   - fizmo-console, a barebone screen interface.
+  - fizmo-glktermw, an example GLK implmentation.
 
  Please see INSTALL.txt on how to bulid the packages.
 
