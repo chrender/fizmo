@@ -9,7 +9,9 @@
  - Restructured fizmo: The interpreter core, ncursesw- and console-interface,
    the sdl-sound interface and the X11-specific code have been moved into
    separate modules named "libfizmo", "fizmo-ncursesw", "fizmo-console",
-  "libsndifsdl" and "libdrilbo".
+  "libsndifsdl" and "libdrilbo". Basic GLK functionality may be implemented
+   using "libglkif", an example GLK implementation based on glktermw is
+   available in module "fizmo-glktermw".
  - Implemented Frank Liangs TeX hy-phen-a-tion algorithm into the
    wordwrapper. Patterns were taken from the "hyph-utf8" project at
    http://www.ctan.org/tex-archive/language/hyph-utf8/. Re-implemented the

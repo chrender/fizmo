@@ -3,16 +3,18 @@
  Before building fizmo you want might to take look at the configuration
  settings.  Configuration is done by providing a "config.mk" file, which is
  easiest obtainable by copying a template like "config.default.mk" to
- "config.mk" and then modifying values.
+"config.mk" and then modifying values. "config.default.mk" should work
+ out-of-the-box on most linux -- and possibly also other unix -- installations,
+ the "config.macports.mk" allows building on Mac OS X which have MacPorts
+ installed.
 
- By default -- if you're simply running "make" -- the build relies on the
- following dependendies:
+ By default, the build relies on the following dependendies:
   - pkg-config is used by the configuration itself to get the build flags
     for most other packages.
   - libfizmo requires libxml2 for .ifiction parsing.
   - libsndifsdl needs sdl-sound and sndfile (the latter one for AIFF-support).
   - libdrilbo relies on X11, Xext, libpng and libjpeg for graphics output.
-  - fizmo-ncursesw needs an ncurses-wide build to compile
+  - fizmo-ncursesw needs an ncurses-wide build to compile.
 
  With the exception of libxml2, ncurses and libjpeg these should be
  automatically located using pkg-config if they're available. The three
@@ -20,11 +22,12 @@
  so if they're not in a standard location on your system you might have
  to adjust the appropriate NONPKG-variables.
 
- To start the acutal build, simply invoke "make". If successful, this will
- build the "fizmo-console" and "fizmo-ncursesw" binaries.
+ General information on building can be obtained by invoking "make" without
+ arguments.
 
  To install the files, invoke "make install" to copy these to the location
  indicated using "INSTALL_PREFIX" in the config.mk file. This will create
  a "bin" or "games", "man" and "share" directories at the destination
  location.
+
 
