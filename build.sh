@@ -1,13 +1,13 @@
 #!/bin/sh
 
-cvs co libfizmo
-cvs co libcellif
-cvs co libsndifsdl
-cvs co libdrilbo
-cvs co libglkif
-cvs co fizmo-console
-cvs co fizmo-ncursesw
-cvs co fizmo-glktermw
+cvs co -P libfizmo
+cvs co -P libcellif
+cvs co -P libsndifsdl
+cvs co -P libdrilbo
+cvs co -P libglkif
+cvs co -P fizmo-console
+cvs co -P fizmo-ncursesw
+cvs co -P fizmo-glktermw
 
 #rm -r CVS
 #find libfizmo libcellif libsndifsdl libdrilbo fizmo-console fizmo-ncursesw \
