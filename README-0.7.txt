@@ -1,4 +1,6 @@
 
+
+
    User-relevant changes from 0.6 to 0.7:
 
 
@@ -18,8 +20,8 @@
 
  - By default, the frontispiece is now shown in it's own X-Window. To re-enable
    the old behaviour, you may use the option "enable-x11-inline-graphics",
-   which is however still not recommended as a default setting and will still
-   crash on some terminals.
+   which is however still not recommended as a default setting and may still
+   crash your X-Terminal.
 
  - Boolean variables like "dont-use-colors" don't require an explicit "yes"
    value anymore, simply stating the variable name in the config file is
