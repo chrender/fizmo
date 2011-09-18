@@ -1,0 +1,36 @@
+
+# This file contains an example for a user's fizmo-config file. It must be
+# stored at $(HOME)/.config/fizmo/config.
+
+
+# -- libfizmo options
+#locale = en_US
+#locale = de_DE
+
+background-color = white
+foreground-color = black
+#disable-stream-2-hyphenation
+#stream-2-line-width = 78
+#stream-2-left-margin = 1
+#savegame-path = $(HOME)/.quetzal-savegames
+#transcript-filename = $(HOME)/.quetzal-savegames/transcript.txt
+#start-script-when-story-starts
+#command-filename = commands.txt
+#sync-transcript
+#z-code-path = /first_dir:second_dir
+#z-code-root-path = /first_dir_to_search_recursively:/second_dir
+#disable-sound
+save-text-history-paragraphs = 1000
+
+# -- libcellif options
+left-margin = 1
+right-margin = 1
+#disable-color
+#disable-hyphenation
+
+# -- fizmo-ncursesw options
+#dont-update-story-list
+enable-xterm-title
+#disable-x11-graphics
+#display-x11-inline-image
+
