@@ -1,4 +1,9 @@
 
+   Version 0.7.1
+ + 0.7.1 was finished at about (?).
+ - Fixed missing "override" statments for CFLAGS in Makefiles.
+ - Fixed $(DESTDIR) evaluation in config.[default|macports].mk.
+
    From 0.6.10 to 0.7.0
  + 0.7.0 was finished at about Sun Sep 18 08:41:18 CEST 2011.
  + From the user's perspective, version 0.7 adds hyphenation, saving of the
