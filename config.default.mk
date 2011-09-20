@@ -10,11 +10,7 @@ CFLAGS = -Wall -Wextra
 PKG_CONFIG_PATH \
  := $(PKG_CONFIG_PATH):$(dir $(lastword $(MAKEFILE_LIST)))../build/lib/pkgconfig
 
-ifneq ($(DESTDIR),)
-INSTALL_PREFIX = $(DESTDIR)
-else
-INSTALL_PREFIX = /usr/local
-endif
+INSTALL_PREFIX = $(DESTDIR)/usr/local
 
 # Uncomment to install binaries to $(INSTALL_PREFIX)/$(FIZMO_BIN_DIR).
 #FIZMO_BIN_DIR = bin
