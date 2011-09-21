@@ -1,7 +1,7 @@
 
 CC = gcc
 AR = ar
-CFLAGS = -Wall -Wextra
+override CFLAGS += -Wall -Wextra
 
 # Since the "fizmo-all" metapackage will install all modules into a separate
 # "build" directory -- in order not to install dev-files into the installation
