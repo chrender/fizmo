@@ -28,7 +28,7 @@ ENABLE_OPTIMIZATION = 1
 
 # -----
 # Settings for libfizmo:
-LOCALE_SEARCH_PATH = $(INSTALL_PREFIX)/share/fizmo/locales
+LOCALE_SEARCH_PATH = $(localedir)
 #ENABLE_STRICT_Z = 1
 #THROW_SIGFAULT_ON_ERROR = 1
 #DISABLE_BABEL = 1
