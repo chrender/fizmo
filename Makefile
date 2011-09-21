@@ -56,8 +56,9 @@ endif
  build-dir
 
 export DEV_INSTALL_PATH = build
-export DEV_INSTALL_PREFIX = $(CURDIR)/$(DEV_INSTALL_PATH)
-export PKG_CONFIG_PATH:=$(PKG_CONFIG_PATH):$(DEV_INSTALL_PREFIX)/lib/pkgconfig
+#export DEV_INSTALL_PREFIX = $(CURDIR)/$(DEV_INSTALL_PATH)
+export fizmo_build_prefix=$(CURDIR)/$(DEV_INSTALL_PATH)
+export PKG_CONFIG_PATH:=$(PKG_CONFIG_PATH):$(fizmo_build_prefix)/lib/pkgconfig
 
 install: install-locales install-fizmo-console install-fizmo-ncursesw \
  install-fizmo-glktermw

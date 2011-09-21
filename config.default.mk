@@ -10,10 +10,11 @@ override CFLAGS += -Wall -Wextra
 PKG_CONFIG_PATH \
  := $(PKG_CONFIG_PATH):$(dir $(lastword $(MAKEFILE_LIST)))../build/lib/pkgconfig
 
-INSTALL_PREFIX = $(DESTDIR)/usr/local
-
-# Uncomment to install binaries to $(INSTALL_PREFIX)/$(FIZMO_BIN_DIR).
-#FIZMO_BIN_DIR = bin
+prefix = /usr/local
+bindir = $(prefix)/games
+datarootdir = $(prefix)/share
+mandir = $(datarootdir)/man
+localedir = $(datarootdir)/fizmo/locales
 
 
 # -----
