@@ -37,7 +37,7 @@
    allowing implementation of interfaces using fixed-width fonts with a
    minimum of work. This is also used by the new "fizmo-ncursesw" interface,
    which has also been entirely rewritten.
- - libdrilbo ("drilbo represents an imaging libary not only for blorb
+ - libdrilbo ("drilbo represents an imaging library not only for blorb
    objects") now handles all graphical related tasks. It also makes fizmo's
    version 0.6 requirement for GTK to load images obsolete, it directly
    uses libjpg and libpng to load images and provides its own Xlib
