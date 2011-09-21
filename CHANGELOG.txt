@@ -3,6 +3,8 @@
  + 0.7.1 was finished at about (?).
  - Fixed missing "override" statments for CFLAGS in Makefiles.
  - Fixed $(DESTDIR) evaluation in config.[default|macports].mk.
+ - Adapted Makefiles and configuration to use standard GNU Makefile variables
+   instead of INSTALL_PATH and FIZMO_BIN_DIR.
 
    From 0.6.10 to 0.7.0
  + 0.7.0 was finished at about Sun Sep 18 08:41:18 CEST 2011.
