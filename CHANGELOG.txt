@@ -5,6 +5,10 @@
  - Fixed $(DESTDIR) evaluation in config.[default|macports].mk.
  - Adapted Makefiles and configuration to use standard GNU Makefile variables
    instead of INSTALL_PATH and FIZMO_BIN_DIR.
+ - Fixed an error in the stack restoreation in "opcode_restore_undo". Thanks
+   to Lewis Gentry for reporting this bug.
+ - Implemented first debugger stubs. The debugger is available via network
+   socket and will currently only dump PC, locals and stack contents.
 
    From 0.6.10 to 0.7.0
  + 0.7.0 was finished at about Sun Sep 18 08:41:18 CEST 2011.
