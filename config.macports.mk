@@ -85,7 +85,7 @@ DRILBO_ENABLE_X11 = 1
 DRILBO_ENABLE_JPG = 1
 DRILBO_ENABLE_PNG = 1
 
-# In case X11/Xext, libpng and/or libjpeg may be found using pkg-config,
+# In case X11, libpng and/or libjpeg may be found using pkg-config,
 # using the following lines will make fizmo locate the required files
 # automatically:
 DRILBO_PKG_REQS = x11, libpng #,libjpeg
