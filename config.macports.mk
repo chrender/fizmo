@@ -88,11 +88,9 @@ DRILBO_ENABLE_PNG = 1
 # In case X11/Xext, libpng and/or libjpeg may be found using pkg-config,
 # using the following lines will make fizmo locate the required files
 # automatically:
-DRILBO_PKG_REQS = x11, xext, libpng #,libjpeg
-DRILBO_PKG_X11_CFLAGS = $(shell pkg-config --cflags x11) \
-                         $(shell pkg-config --cflags xext)
-DRILBO_PKG_X11_LIBS = $(shell pkg-config --libs x11) \
-                         $(shell pkg-config --libs xext)
+DRILBO_PKG_REQS = x11, libpng #,libjpeg
+DRILBO_PKG_X11_CFLAGS = $(shell pkg-config --cflags x11)
+DRILBO_PKG_X11_LIBS = $(shell pkg-config --libs x11)
 #DRILBO_PKG_LIBJPEG_CFLAGS = $(shell pkg-config --cflags libjpg)
 #DRILBO_PKG_LIBJPEG_LIBS = $(shell pkg-config --libs libjpeg)
 DRILBO_PKG_LIBPNG_CFLAGS = $(shell pkg-config --cflags libpng)
