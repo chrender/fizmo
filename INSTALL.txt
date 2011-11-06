@@ -13,7 +13,7 @@
     for most other packages.
   - libfizmo requires libxml2 for .ifiction parsing.
   - libsndifsdl needs sdl-sound and sndfile (the latter one for AIFF-support).
-  - libdrilbo relies on X11, Xext, libpng and libjpeg for graphics output.
+  - libdrilbo relies on X11, libpng and libjpeg for graphics output.
   - fizmo-ncursesw needs an ncurses-wide build to compile.
 
  With the exception of libxml2, ncurses and libjpeg these should be
