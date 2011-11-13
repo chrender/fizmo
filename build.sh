@@ -1,13 +1,13 @@
 #!/bin/sh
 
-cvs co -b fizmo_0-7_stable -P libfizmo
-cvs co -b fizmo_0-7_stable -P libcellif
-cvs co -b fizmo_0-7_stable -P libsndifsdl
-cvs co -b fizmo_0-7_stable -P libdrilbo
-cvs co -b fizmo_0-7_stable -P libglkif
-cvs co -b fizmo_0-7_stable -P fizmo-console
-cvs co -b fizmo_0-7_stable -P fizmo-ncursesw
-cvs co -b fizmo_0-7_stable -P fizmo-glktermw
+cvs co -r fizmo_0-7_stable -P libfizmo
+cvs co -r fizmo_0-7_stable -P libcellif
+cvs co -r fizmo_0-7_stable -P libsndifsdl
+cvs co -r fizmo_0-7_stable -P libdrilbo
+cvs co -r fizmo_0-7_stable -P libglkif
+cvs co -r fizmo_0-7_stable -P fizmo-console
+cvs co -r fizmo_0-7_stable -P fizmo-ncursesw
+cvs co -r fizmo_0-7_stable -P fizmo-glktermw
 
 #rm -r CVS
 #find libfizmo libcellif libsndifsdl libdrilbo fizmo-console fizmo-ncursesw \
