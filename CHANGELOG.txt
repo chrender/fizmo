@@ -1,4 +1,12 @@
 
+   Version 0.7.2
+ + 0.7.1 was finished at about (?).
+ - Made fizmo comply to "praxix.z5" test, merged zarf's DISABLE_PREFIX_COMMANDS
+   functionality.
+ - Merged zarf's GLK changes into "glk_screen_if.c". The new version 0.1.2
+   fixes screen size detection, timed input and adds lowering of the input
+   line.
+
    Version 0.7.1
  + 0.7.1 was finished at about Sun Nov 6 22:44:17 CET 2011.
  - Fixed missing "override" statments for CFLAGS in Makefiles.
