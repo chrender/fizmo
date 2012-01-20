@@ -38,6 +38,7 @@ LOCALE_SEARCH_PATH = $(localedir)
 #DISABLE_OUTPUT_HISTORY = 1
 #DISABLE_CONFIGFILES = 1
 #DISABLE_PREFIX_COMMANDS = 1
+#ENABLE_DEBUGGER = 1
 
 # If libxml2 may be found using pkg-config -- may be tested by executing
 # command "pkg-config --modversion libxml-2.0" -- fizmo will automatically
