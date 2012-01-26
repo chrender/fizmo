@@ -10,7 +10,7 @@ override CFLAGS += -Wall -Wextra
 PKG_CONFIG_PATH \
  := $(PKG_CONFIG_PATH):$(dir $(lastword $(MAKEFILE_LIST)))../build/lib/pkgconfig
 
-prefix = /usr/local
+prefix = $(DESTDIR)/usr/local
 bindir = $(prefix)/games
 datarootdir = $(prefix)/share
 mandir = $(datarootdir)/man
