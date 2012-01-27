@@ -11,9 +11,8 @@ PKG_CONFIG_PATH \
  := $(PKG_CONFIG_PATH):$(dir $(lastword $(MAKEFILE_LIST)))../build/lib/pkgconfig
 
 prefix = /opt/local
-destprefix = $(DESTDIR)$(prefix)
-bindir = $(destprefix)/bin
-datarootdir = $(destprefix)/share
+bindir = $(prefix)/bin
+datarootdir = $(prefix)/share
 mandir = $(datarootdir)/man
 localedir = $(datarootdir)/fizmo/locales
 
