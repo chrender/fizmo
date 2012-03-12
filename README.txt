@@ -26,7 +26,7 @@
 
  Please send bug reports (or other requests) to fizmo@spellbreaker.org.
 
- Fizmo was written by Christoph Ender in 2005-2011.
+ Fizmo was written by Christoph Ender in 2005-2012.
 
  Please note:
  Currently fizmo is in beta status, meaning it might do unexpected things
