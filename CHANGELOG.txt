@@ -10,6 +10,8 @@
    since version 0.7.1.
  - Fixed an error which would occur for empty pathnames when starting up a
    game on 32-bit platforms, thanks to Samuel Verschelde.
+ - The transcription and fixed font bits will now correctly survive a
+   restore, as defined in the Z-Maschine standard.
 
    Version 0.7.1
  + 0.7.1 was finished at about Sun Nov 6 22:44:17 CET 2011.
