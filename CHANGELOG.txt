@@ -1,4 +1,11 @@
 
+   Version 0.7.3
+ + 0.7.3 was finished at about (?).
+ - Merged Andrew Plotkin's iOS-fizmo changes: No more raw exit() calls,
+   added screeninterface-specific filename prompt, new screeninterface-specific
+   filename prompt replaces fizmo_register_ask_user_for_file_function, fixed
+   autosave-functionality, added quote boxes for libglkif.
+
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
  - Made fizmo comply to "praxix.z5" test, merged zarf's DISABLE_PREFIX_COMMANDS
@@ -103,7 +110,7 @@
  + 0.6.8 was finished at about Tue Jan 12 09:53:42 CET 2010.
  - Bugfix release: Interpreter and interface information is now correctly
    written into the header after restarting, additionally the input length
-   for transscript and command input/output-stream filenames has been 
+   for transcript and command input/output-stream filenames has been 
    fixed. Thanks to Samuel Verschelde.
  - Added "sync-transcript" option: When enabled, it'll flush the wordwrapper
    and file output buffer as soon as possible.
@@ -655,7 +662,7 @@
 
    From 0.1.3 to 0.1.4 (8848 lines in *.h and *.c files)
  + 0.1.4 was finished at about Fri Dec  9 03:36:20 CET 2005.
- - The 0.1.4 complies to the strictz.z5 test, allows transscripting (even
+ - The 0.1.4 complies to the strictz.z5 test, allows transcripting (even
    on startup via command line switch). A few minor bugs were fixed and
    a history of the last output is kept, allowing for a faithfully
    original prompt after an interpreter command has been finished.
