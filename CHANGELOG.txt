@@ -4,7 +4,8 @@
  - Merged Andrew Plotkin's iOS-fizmo changes: No more raw exit() calls,
    added screeninterface-specific filename prompt, new screeninterface-specific
    filename prompt replaces fizmo_register_ask_user_for_file_function, fixed
-   autosave-functionality, added quote boxes for libglkif.
+   autosave-functionality, added quote boxes for libglkif, added configuration
+   option "disable-stream-2-wrap".
 
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
