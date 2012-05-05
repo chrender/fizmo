@@ -6,6 +6,9 @@
    filename prompt replaces fizmo_register_ask_user_for_file_function, fixed
    autosave-functionality, added quote boxes for libglkif, added configuration
    option "disable-stream-2-wrap".
+ - Implemented memory-cleanup and fixed variable states after story end to 
+   allow fizmo_start() to be called repeatedly.
+ - Fixed some memory leaks in the process of cleaning up.
 
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
