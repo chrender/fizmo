@@ -9,8 +9,11 @@
    for an overlong property issue that made "Heist" crash.
  - Implemented memory-cleanup and fixed variable states after story end to 
    allow fizmo_start() to be called repeatedly.
- - Fixed some memory leaks in the process of cleaning up.
+ - Fixed some minor memory leaks.
  - Fixed segfault which would occur after storing 10240 undo steps.
+ - Added new option to set number of maximum stored undo steps.
+ - Changed blockbuffer initialization to allow for output at any time, made
+   fizmo_new_screen_size adapt blockbuffer size correctly.
 
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
