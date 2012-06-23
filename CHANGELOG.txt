@@ -14,6 +14,7 @@
  - Added new option to set number of maximum stored undo steps.
  - Changed blockbuffer initialization to allow for output at any time, made
    fizmo_new_screen_size adapt blockbuffer size correctly.
+ - Fixed a buffer overflow during tokenization, thanks for Andrew Plotkin.
 
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
