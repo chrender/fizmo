@@ -16,6 +16,9 @@
    fizmo_new_screen_size adapt blockbuffer size correctly.
  - Fixed a buffer overflow during tokenization, thanks for Andrew Plotkin.
  - Implemented binary chop dictionary search.
+ - Fixed screen interface invocation in libcellif to not require timeouts
+   from screen interface if not actually required by the game, saving a bit
+   of CPU time.
 
    Version 0.7.2
  + 0.7.2 was finished at about Fri Mar 9 21:01:12 CET 2012.
