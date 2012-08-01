@@ -1,6 +1,6 @@
 
    Version 0.7.3
- + 0.7.3 was finished at about (?).
+ + 0.7.3 was finished at about Wed Aug 1 21:42:17 CEST 2012.
  - Merged Andrew Plotkin's iOS-fizmo changes: No more raw exit() calls,
    added screeninterface-specific filename prompt, new screeninterface-specific
    filename prompt replaces fizmo_register_ask_user_for_file_function, fixed
