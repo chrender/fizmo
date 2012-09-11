@@ -1,24 +1,24 @@
 [submodule "libfizmo"]
 	path = libfizmo
-	url = git@github.com:chrender/libfizmo
+	url = ce:git/libfizmo
 [submodule "libcellif"]
 	path = libcellif
-	url = git@github.com:chrender/libcellif
+	url = ce:git/libcellif
 [submodule "libsndifsdl"]
 	path = libsndifsdl
-	url = git@github.com:chrender/libsndifsdl
+	url = ce:git/libsndifsdl
 [submodule "libdrilbo"]
 	path = libdrilbo
-	url = git@github.com:chrender/libdrilbo
+	url = ce:git/libdrilbo
 [submodule "libglkif"]
 	path = libglkif
-	url = git@github.com:chrender/libglkif
+	url = ce:git/libglkif
 [submodule "fizmo-console"]
 	path = fizmo-console
-	url = git@github.com:chrender/fizmo-console
+	url = ce:git/fizmo-console
 [submodule "fizmo-ncursesw"]
 	path = fizmo-ncursesw
-	url = git@github.com:chrender/fizmo-ncursesw
+	url = ce:git/fizmo-ncursesw
 [submodule "fizmo-glktermw"]
 	path = fizmo-glktermw
-	url = git@github.com:chrender/fizmo-glktermw
+	url = ce:git/fizmo-glktermw
