@@ -23,7 +23,7 @@ AUTOMAKE_OPTIONS = -Wno-override
 #export PKG_CONFIG_PATH=$(PKG_CONFIG_PATH):$(DEV_BUILD_PREFIX)/lib/pkgconfig ; \
 #./configure $(AC_CONFIGURE_ARGS) ; 
 
-all: fizmo-ncursesw
+all: fizmo-ncursesw fizmo-console $(OPTIONAL_FIZMO_BUILDS)
 
 libfizmo:
 	cd libfizmo ; \
@@ -43,6 +43,18 @@ libdrilbo: libfizmo
 
 fizmo-ncursesw: libfizmo libcellif libsndifsdl libdrilbo
 	cd fizmo-ncursesw ; \
+	$(MAKE)
+
+fizmo-console: libfizmo
+	cd fizmo-console ; \
+	$(MAKE)
+
+libglkif: libfizmo
+	cd libglkif ; \
+	$(MAKE) install-dev
+
+fizmo-glktermw: libfizmo libglkif
+	cd fizmo-glktermw ; \
 	$(MAKE)
 
 # distclean:
