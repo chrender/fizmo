@@ -69,6 +69,7 @@ m4_include(fizmo-ncursesw/config-subst.m4)
 
 AS_IF([test "x$enable_glktermw" == "xyes"], [
   AC_SUBST([OPTIONAL_FIZMO_BUILDS], "fizmo-glktermw")
+  AC_SUBST([OPTIONAL_FIZMO_INSTALLS], "install-fizmo-glktermw")
 ])
 
 AC_CONFIG_FILES([Makefile

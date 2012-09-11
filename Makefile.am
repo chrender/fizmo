@@ -1,27 +1,6 @@
 
 AUTOMAKE_OPTIONS = -Wno-override
 
-# localedir = $(datarootdir)/fizmo/locales
-
-# if FIZMO_BUILD_PREFIX_EMPTY
-#   fizmo_build_prefix=$(DESTDIR)$(prefix)
-# endif
-
-# PKG_DIR = $(fizmo_build_prefix)/lib/pkgconfig
-# PKGFILE = $(PKG_DIR)/libfizmo.pc
-
-# SUBDIRS = libfizmo .
-
-# install-locales::
-# 	mkdir -p $(DESTDIR)$(localedir)
-# 	for l in `cd src/locales ; ls -d ??_??`; \
-# 	  do \
-# 	  mkdir -p $(DESTDIR)$(localedir)/$$l; \
-# 	  cp src/locales/$$l/*.txt $(DESTDIR)$(localedir)/$$l; \
-# 	done
-
-#export PKG_CONFIG_PATH=$(PKG_CONFIG_PATH):$(DEV_BUILD_PREFIX)/lib/pkgconfig ; \
-#./configure $(AC_CONFIGURE_ARGS) ; 
 
 all: fizmo-ncursesw fizmo-console $(OPTIONAL_FIZMO_BUILDS)
 
@@ -57,9 +36,17 @@ fizmo-glktermw: libfizmo libglkif
 	cd fizmo-glktermw ; \
 	$(MAKE)
 
-# distclean:
-#	cd libcellif ; make distclean
-#	cd libfizmo ; make distclean
+install: all $(OPTIONAL_FIZMO_INSTALLS)
+	cd libfizmo ; $(MAKE) install-locales
+	cd libcellif ; $(MAKE) install-locales
+	cd libsndifsdl ; $(MAKE) install-locales
+	cd libdrilbo ; $(MAKE) install-locales
+	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-locales
+	cd fizmo-console ; $(MAKE) install
+
+install-fizmo-glktermw: fizmo-glktermw
+	cd libglkif ; $(MAKE) install-locales
+	cd fizmo-glktermw ; $(MAKE) install
 
 .PHONY: libfizmo libcellif libsndifsdl libdrilbo fizmo-ncursesw
 
