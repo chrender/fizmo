@@ -2,8 +2,6 @@
 AUTOMAKE_OPTIONS = -Wno-override
 
 
-all: fizmo-ncursesw fizmo-console $(OPTIONAL_FIZMO_BUILDS)
-
 libfizmo:
 	cd libfizmo ; \
 	$(MAKE) install-dev
@@ -36,17 +34,27 @@ fizmo-glktermw: libfizmo libglkif
 	cd fizmo-glktermw ; \
 	$(MAKE)
 
-install: all $(OPTIONAL_FIZMO_INSTALLS)
+install-locales: libfizmo libcellif libsndifsdl libdrilbo
 	cd libfizmo ; $(MAKE) install-locales
 	cd libcellif ; $(MAKE) install-locales
 	cd libsndifsdl ; $(MAKE) install-locales
 	cd libdrilbo ; $(MAKE) install-locales
-	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-locales
+
+install-fizmo-console: fizmo-console
 	cd fizmo-console ; $(MAKE) install
+
+install-fizmo-ncursesw: fizmo-ncursesw
+	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-locales
 
 install-fizmo-glktermw: fizmo-glktermw
 	cd libglkif ; $(MAKE) install-locales
 	cd fizmo-glktermw ; $(MAKE) install
 
-.PHONY: libfizmo libcellif libsndifsdl libdrilbo fizmo-ncursesw
+install: install-locales install-fizmo-console install-fizmo-ncursesw \
+ $(OPTIONAL_FIZMO_INSTALLS)
+
+all: fizmo-ncursesw fizmo-console $(OPTIONAL_FIZMO_BUILDS)
+
+.PHONY: libfizmo libcellif libsndifsdl libdrilbo libglkif \
+ fizmo-console fizmo-ncursesw fizmo-glktermw
 
