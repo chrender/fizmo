@@ -1,6 +1,6 @@
 
    Version 0.7.4
- + 0.7.4 was finished at about (?)
+ + 0.7.4 was finished at about Mon Sep 17 22:14:52 CEST 2012.
  - Adapted to new autoconf/automake build process.
 
    Version 0.7.3
