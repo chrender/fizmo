@@ -6,6 +6,8 @@
  - Implemented missing delete in read_line and read_char, corrected backspace
    key behaviour on read_char.
  - Fixed typos in manpages, thanks to Johan Ljunglid.
+ - Fixed swallowing of dots, commas and quotation marks at line starts in
+   case hyphenation is disabled -- thanks to Lewis Gentry.
 
    Version 0.7.4
  + 0.7.4 was finished at about Mon Sep 17 22:14:52 CEST 2012.
