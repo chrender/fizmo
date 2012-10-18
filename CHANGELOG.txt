@@ -10,6 +10,8 @@
    case hyphenation is disabled -- thanks to Lewis Gentry.
  - Fixed crash which occurred when invoking fizmo-ncursesw with the "-fi"
    flag, also thanks to Lewis Gentry.
+ - Colors are now correctly set for all windows on screen in case no window
+   is specified for @set_colour.
 
    Version 0.7.4
  + 0.7.4 was finished at about Mon Sep 17 22:14:52 CEST 2012.
