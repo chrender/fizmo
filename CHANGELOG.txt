@@ -18,6 +18,8 @@
    output which is hidden in case a game clears the screen, writes some
    text into the top line and then turns on the score line which then
    overlays the topmost line.
+ - Re-implemented line-wrapper, fixing several issues.
+ - Fix for memory corruption in command-history, thanks to Lewis Gentry.
 
    Version 0.7.4
  + 0.7.4 was finished at about Mon Sep 17 22:14:52 CEST 2012.
