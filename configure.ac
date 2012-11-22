@@ -11,11 +11,21 @@ AC_ARG_ENABLE([glktermw],
  [],
  [enable_glktermw=no])
 
+AC_ARG_ENABLE([fizmo-sdl],
+ [AS_HELP_STRING([--enable-fizmo-sdl],
+         [enable experimental fizmo-sdl])],
+ [],
+ [enable_fizmo_sdl=no])
+
 m4_include(libsndifsdl/config-flags.m4)
 m4_include(libdrilbo/config-flags.m4)
 AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(libglkif/config-flags.m4)
 ])
+#AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+#  m4_include(libpixelif/config-flags.m4)
+#  m4_include(fizmo-sdl/config-flags.m4)
+#])
 
 AC_INIT([fizmo], [0.7.4])
 
@@ -27,6 +37,10 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(libglkif/config-libs.m4)
   m4_include(fizmo-glktermw/config-libs.m4)
 ])
+#AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+#  m4_include(libpixelif/config-libs.m4)
+#  m4_include(fizmo-sdl/config-libs.m4)
+#])
 
 AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
@@ -68,9 +82,17 @@ AC_SUBST([libglkif_LIBS], "-L$build_prefix_libs -lglkif $libglkif_nonpkg_libs")
 m4_include(fizmo-ncursesw/config-subst.m4)
 
 AS_IF([test "x$enable_glktermw" == "xyes"], [
-  AC_SUBST([OPTIONAL_FIZMO_BUILDS], "fizmo-glktermw")
-  AC_SUBST([OPTIONAL_FIZMO_INSTALLS], "install-fizmo-glktermw")
+  optional_fizmo_builds=fizmo-glktermw
+  optional_fizmo_installs=install-fizmo-glktermw
 ])
+
+AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl"
+  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl"
+])
+
+AC_SUBST([OPTIONAL_FIZMO_BUILDS], $optional_fizmo_builds)
+AC_SUBST([OPTIONAL_FIZMO_INSTALLS], $optional_fizmo_installs)
 
 AC_CONFIG_FILES([Makefile
  libfizmo/Makefile libfizmo/src/tools/Makefile libfizmo/src/interpreter/Makefile
@@ -84,6 +106,11 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   AC_CONFIG_FILES([libglkif/Makefile libglkif/src/glk_interface/Makefile
     fizmo-glktermw/Makefile fizmo-glktermw/src/fizmo-glktermw/Makefile ])
 ])
+
+#AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+#  AC_CONFIG_FILES([libpixelif/Makefile libpixelif/src/pixel_interface/Makefile
+#    fizmo-sdl/Makefile fizmo-sdl/src/fizmo-sdl/Makefile ])
+#])
 
 AC_OUTPUT
 
