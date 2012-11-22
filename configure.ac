@@ -11,11 +11,11 @@ AC_ARG_ENABLE([glktermw],
  [],
  [enable_glktermw=no])
 
-AC_ARG_ENABLE([fizmo-sdl],
- [AS_HELP_STRING([--enable-fizmo-sdl],
-         [enable experimental fizmo-sdl])],
- [],
- [enable_fizmo_sdl=no])
+#AC_ARG_ENABLE([fizmo-sdl],
+# [AS_HELP_STRING([--enable-fizmo-sdl],
+#         [enable experimental fizmo-sdl])],
+# [],
+# [enable_fizmo_sdl=no])
 
 m4_include(libsndifsdl/config-flags.m4)
 m4_include(libdrilbo/config-flags.m4)
@@ -86,10 +86,10 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   optional_fizmo_installs=install-fizmo-glktermw
 ])
 
-AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
-  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl"
-  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl"
-])
+#AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+#  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl"
+#  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl"
+#])
 
 AC_SUBST([OPTIONAL_FIZMO_BUILDS], $optional_fizmo_builds)
 AC_SUBST([OPTIONAL_FIZMO_INSTALLS], $optional_fizmo_installs)
