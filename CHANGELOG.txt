@@ -2,7 +2,7 @@
    Version 0.7.5
  - Preloaded input will no longer apperar in transscripts. Thanks to Lewis
    Gentry.
- - Fixed missing charachters in transcripts.
+ - Fixed missing characters in transcripts.
  - Implemented missing delete in read_line and read_char, corrected backspace
    key behaviour on read_char.
  - Fixed typos in manpages, thanks to Johan Ljunglid.
