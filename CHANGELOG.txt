@@ -1,4 +1,7 @@
 
+   Version 0.7.6
+ - Adapted "math_h" macro name, fixing missing "rint" function declaration.
+
    Version 0.7.5
  + 0.7.5 was finished at about Fri Nov 30 14:02:28 CET 2012.
  - Preloaded input will no longer apperar in transscripts. Thanks to Lewis

@@ -86,7 +86,7 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
 #])
 
 
-AC_INIT([fizmo], [0.7.5])
+AC_INIT([fizmo], [0.7.6])
 
 
 # Check for external, non-fizno libs:
