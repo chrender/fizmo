@@ -4,6 +4,8 @@
    declaration.
  - Fixed universal builds on Mac OS X.
  - Fixed warning in "cmd_hst" compilation.
+ - Searching for z-code files will now automatically create ~/.config/fizmo
+   so that search results are no longer lost, thanks to B. Watson.
 
    Version 0.7.5
  + 0.7.5 was finished at about Fri Nov 30 14:02:28 CET 2012.
