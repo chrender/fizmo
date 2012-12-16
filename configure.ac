@@ -89,7 +89,7 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
 AC_INIT([fizmo], [0.7.6])
 
 
-# Check for external, non-fizno libs:
+# Check for external, non-fizmo libs:
 
 m4_include(libfizmo/config-libs.m4)
 m4_include(libsndifsdl/config-libs.m4)
@@ -152,15 +152,21 @@ m4_include(fizmo-ncursesw/config-subst.m4)
 AS_IF([test "x$enable_glktermw" == "xyes"], [
   optional_fizmo_builds=fizmo-glktermw
   optional_fizmo_installs=install-fizmo-glktermw
+  optional_fizmo_cleans=clean-fizmo-glktermw
+  optional_fizmo_dstcleans=distclean-fizmo-glktermw
 ])
 
 #AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
 #  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl"
 #  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl"
+#  optional_fizmo_cleans="$optional_fizmo_cleans clean-fizmo-sdl"
+#  optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-fizmo-sdl"
 #])
 
 AC_SUBST([OPTIONAL_FIZMO_BUILDS], $optional_fizmo_builds)
 AC_SUBST([OPTIONAL_FIZMO_INSTALLS], $optional_fizmo_installs)
+AC_SUBST([OPTIONAL_FIZMO_CLEANS], $optional_fizmo_cleans)
+AC_SUBST([OPTIONAL_FIZMO_DISTCLEANS], $optional_fizmo_distcleans)
 
 
 # Create Makefiles
