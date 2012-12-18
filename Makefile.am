@@ -132,6 +132,8 @@ clean-fizmo-sdl : fizmo-sdl
 	cd libpixelif ; $(MAKE) clean
 	cd fizmo-sdl ; $(MAKE) clean
 
+clean-libsndifsdl:
+	cd libsndifsdl ; $(MAKE) clean
 
 # distclean targets
 
@@ -147,4 +149,7 @@ distclean-fizmo-glktermw: fizmo-glktermw
 distclean-fizmo-sdl : fizmo-sdl
 	cd libpixelif ; $(MAKE) distclean
 	cd fizmo-sdl ; $(MAKE) distclean
+
+distclean-libsndifsdl:
+	cd libsndifsdl ; $(MAKE) distclean
 
