@@ -7,6 +7,8 @@
  - Searching for z-code files will now automatically create ~/.config/fizmo
    so that search results are no longer lost, thanks to B. Watson.
  - Added "--disable-sound" configure option, fixed "--disable-x11" option.
+ - Improved configure-detection for libncursesw for systems without
+   pkg-config's "ncursesw.pc".
  - Minor fixes for "clean" and "distclean" build targets and library build
    targets.
 
