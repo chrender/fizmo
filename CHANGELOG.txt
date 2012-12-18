@@ -6,6 +6,7 @@
  - Fixed warning in "cmd_hst" compilation.
  - Searching for z-code files will now automatically create ~/.config/fizmo
    so that search results are no longer lost, thanks to B. Watson.
+ - Added "--disable-sound" configure option, fixed "--disable-x11" option.
  - Minor fixes for "clean" and "distclean" build targets and library build
    targets.
 
