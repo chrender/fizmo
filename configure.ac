@@ -50,6 +50,7 @@
 # libs itself in the section "fizmo-internal libs".
 
 
+AC_INIT([fizmo], [0.7.6])
 
 
 # Definition for configuration options
@@ -72,12 +73,6 @@ AC_ARG_ENABLE([glktermw],
 # [],
 # [enable_fizmo_sdl=no])
 
-AC_ARG_ENABLE([sound],
- [AS_HELP_STRING([--disable-sound],
-         [disable sound support])],
- [],
- [enable_sound=yes])
-
 
 # Import submodule-specific options from their respective directories
 
@@ -93,9 +88,6 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
 #  m4_include(libpixelif/config-flags.m4)
 #  m4_include(fizmo-sdl/config-flags.m4)
 #])
-
-
-AC_INIT([fizmo], [0.7.6])
 
 
 # Check for external, non-fizmo libs:
