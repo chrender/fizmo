@@ -1,5 +1,6 @@
 
    Version 0.7.6
+ + 0.7.6 was finished at about Thu Dec 27 21:35:34 CET 2012.
  - Reparied "math.h" name collision, fixing missing "rint" function
    declaration.
  - Fixed universal builds on Mac OS X.
