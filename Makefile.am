@@ -76,7 +76,7 @@ fizmo-console: libfizmo
 	cd fizmo-console ; \
 	$(MAKE)
 
-fizmo-ncursesw: libfizmo libcellif libsndifsdl libdrilbo
+fizmo-ncursesw: libfizmo libcellif libdrilbo $(OPTIONAL_SOUND_BUILD)
 	cd fizmo-ncursesw ; \
 	$(MAKE)
 
@@ -91,10 +91,12 @@ fizmo-sdl: libfizmo libpixelif
 
 # install targets
 
-install-locales: libfizmo libcellif libsndifsdl libdrilbo
+install-locales-libsndifsdl: libsndifsdl
+	cd libsndifsdl ; $(MAKE) install-locales
+
+install-locales: libfizmo libcellif libdrilbo $(OPTIONAL_SOUND_INSTALL_LOCALES)
 	cd libfizmo ; $(MAKE) install-locales
 	cd libcellif ; $(MAKE) install-locales
-	cd libsndifsdl ; $(MAKE) install-locales
 	cd libdrilbo ; $(MAKE) install-locales
 
 install-fizmo-console: fizmo-console
@@ -109,8 +111,45 @@ install-fizmo-glktermw: fizmo-glktermw
 
 install-fizmo-sdl : fizmo-sdl
 	cd libpixelif ; $(MAKE) install-locales
-	cd fizmo-sdl ; $(MAKE) install
+	cd fizmo-sdl ; $(MAKE) install; $(MAKE) install-locales
 
 install: install-locales install-fizmo-console install-fizmo-ncursesw \
  $(OPTIONAL_FIZMO_INSTALLS)
+
+
+# clean targets
+
+clean: $(OPTIONAL_FIZMO_CLEANS)
+	cd libfizmo ; $(MAKE) clean
+	cd libcellif ; $(MAKE) clean
+	cd libdrilbo ; $(MAKE) clean
+
+clean-fizmo-glktermw: fizmo-glktermw
+	cd libglkif ; $(MAKE) clean
+	cd fizmo-glktermw ; $(MAKE) clean
+
+clean-fizmo-sdl : fizmo-sdl
+	cd libpixelif ; $(MAKE) clean
+	cd fizmo-sdl ; $(MAKE) clean
+
+clean-libsndifsdl:
+	cd libsndifsdl ; $(MAKE) clean
+
+# distclean targets
+
+distclean: $(OPTIONAL_FIZMO_DISTCLEANS)
+	cd libfizmo ; $(MAKE) distclean
+	cd libcellif ; $(MAKE) distclean
+	cd libdrilbo ; $(MAKE) distclean
+
+distclean-fizmo-glktermw: fizmo-glktermw
+	cd libglkif ; $(MAKE) distclean
+	cd fizmo-glktermw ; $(MAKE) distclean
+
+distclean-fizmo-sdl : fizmo-sdl
+	cd libpixelif ; $(MAKE) distclean
+	cd fizmo-sdl ; $(MAKE) distclean
+
+distclean-libsndifsdl:
+	cd libsndifsdl ; $(MAKE) distclean
 
