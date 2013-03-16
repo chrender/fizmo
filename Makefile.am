@@ -91,29 +91,30 @@ fizmo-sdl: libfizmo libpixelif
 
 # install targets
 
-install-data-libsndifsdl: libsndifsdl
-	cd libsndifsdl ; $(MAKE) install-data
+install-data-local-libsndifsdl: libsndifsdl
+	cd libsndifsdl ; $(MAKE) install-data-local
 
-install-data: libfizmo libcellif libdrilbo $(OPTIONAL_SOUND_INSTALL_DATA)
-	cd libfizmo ; $(MAKE) install-data
-	cd libcellif ; $(MAKE) install-data
-	cd libdrilbo ; $(MAKE) install-data
+install-data-local: libfizmo libcellif libdrilbo \
+ $(OPTIONAL_SOUND_INSTALL_DATA_LOCAL)
+	cd libfizmo ; $(MAKE) install-data-local
+	cd libcellif ; $(MAKE) install-data-local
+	cd libdrilbo ; $(MAKE) install-data-local
 
 install-fizmo-console: fizmo-console
 	cd fizmo-console ; $(MAKE) install
 
 install-fizmo-ncursesw: fizmo-ncursesw
-	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-data
+	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-data-local
 
 install-fizmo-glktermw: fizmo-glktermw
-	cd libglkif ; $(MAKE) install-data
+	cd libglkif ; $(MAKE) install-data-local
 	cd fizmo-glktermw ; $(MAKE) install
 
 install-fizmo-sdl : fizmo-sdl
-	cd libpixelif ; $(MAKE) install-data
-	cd fizmo-sdl ; $(MAKE) install; $(MAKE) install-data
+	cd libpixelif ; $(MAKE) install-data-local
+	cd fizmo-sdl ; $(MAKE) install; $(MAKE) install-data-local
 
-install: install-data install-fizmo-console install-fizmo-ncursesw \
+install: install-data-local install-fizmo-console install-fizmo-ncursesw \
  $(OPTIONAL_FIZMO_INSTALLS)
 
 
