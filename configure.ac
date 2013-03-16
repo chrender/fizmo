@@ -172,14 +172,14 @@ AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
 AS_IF([test "x$enable_sound" == "xyes"], [
   optional_sound_build=libsndifsdl
   optional_sound_install=install-libsndifsdl
-  optional_sound_install_locales=install-locales-libsndifsdl
+  optional_sound_install_data=install-data-libsndifsdl
   optional_fizmo_cleans="$optional_fizmo_cleans clean-libsndifsdl"
   optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-libsndifsdl"
 ])
 
 AC_SUBST([OPTIONAL_SOUND_BUILD], $optional_sound_build)
 AC_SUBST([OPTIONAL_SOUND_INSTALL], $optional_sound_install)
-AC_SUBST([OPTIONAL_SOUND_INSTALL_LOCALES], $optional_sound_install_locales)
+AC_SUBST([OPTIONAL_SOUND_INSTALL_DATA], $optional_sound_install_data)
 
 AC_SUBST([OPTIONAL_FIZMO_BUILDS], $optional_fizmo_builds)
 AC_SUBST([OPTIONAL_FIZMO_INSTALLS], $optional_fizmo_installs)
