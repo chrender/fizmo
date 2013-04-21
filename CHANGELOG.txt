@@ -1,12 +1,13 @@
 
    Version 0.7.7
- - Adapted to new "install-data-local" build target.
- - Fixed several compiler warnings.
- - Altered close_interface function to allow z_mem access during shutdown.
- - Added z_rgb_colour datatype.
  - Renamed getchar, getchars and ungetchars from the file system interface
    to readchar, readchars and unreadchars. This makes fizmo compile on
    systems where getchar() is implemented as a macro.
+ - Added missing evalation of fixed-pitch font flag in the flags2 header.
+ - Altered close_interface function to allow z_mem access during shutdown.
+ - Fixed several compiler warnings.
+ - Added z_rgb_colour datatype.
+ - Renamed "install-locales" into "install-data-local" build target.
  - Minor bugfixes.
 
    Version 0.7.6
