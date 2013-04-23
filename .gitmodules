@@ -22,3 +22,6 @@
 [submodule "fizmo-glktermw"]
 	path = fizmo-glktermw
 	url = git@github.com:chrender/fizmo-glktermw
+[submodule "libpixelif"]
+	path = libpixelif
+	url = git@github.com:chrender/libpixelif
