@@ -1,5 +1,8 @@
 
    Version 0.7.7
+ - Fixed wordwrapper for cases in which text was written on the same line as
+   read_char was invoked. This makes output of multiline-hints in PRIZM's
+   Invisiclues work. Thanks to David Batchelder.
  - Renamed getchar, getchars and ungetchars from the file system interface
    to readchar, readchars and unreadchars. This makes fizmo compile on
    systems where getchar() is implemented as a macro.
