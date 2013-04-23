@@ -25,3 +25,6 @@
 [submodule "libpixelif"]
 	path = libpixelif
 	url = git@github.com:chrender/libpixelif
+[submodule "fizmo-sdl"]
+	path = fizmo-sdl
+	url = git@github.com:chrender/fizmo-sdl
