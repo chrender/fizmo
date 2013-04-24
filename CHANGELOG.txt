@@ -1,4 +1,14 @@
 
+   Version 0.8.0 (beta release)
+ - Addition of SDL-frontend and libpixelif meta-interface. These allow
+   for pixel-based output instead of text-only output as before. As a
+   result, the frontend provides proportional font display using the
+   freetype library, hopeful on a wide range of systems since SDL is
+   implemented in a cross-platform manner.
+ - This release is still in beta stage: For the SDL frontend, there's no
+   support for command-line switches, no sound interface and no support
+   for "fancy" features like hyphenation  or frontispiece display (yet).
+
    Version 0.7.7
  - Fixed wordwrapper for cases in which text was written on the same line as
    read_char was invoked. This makes output of multiline-hints in PRIZM's
