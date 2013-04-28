@@ -14,6 +14,8 @@
  - Implemented terminal default color detetction for fizmo-ncursesw.
  - Added z_rgb_colour datatype.
  - Renamed "install-locales" into "install-data-local" build target.
+ - Fixed verification of libglktermw location for GLK-interface.
+ - Removed non-POSIX-flag from tcsetattr call in fizmo-console.
  - Minor bugfixes.
 
    Version 0.7.6
