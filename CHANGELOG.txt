@@ -9,6 +9,9 @@
  - Added missing evalation of fixed-pitch font flag in the flags2 header.
  - Altered close_interface function to allow z_mem access during shutdown.
  - Fixed several compiler warnings.
+ - Invoking "/config" without setting color defaults will no longer crash
+   the interpreter.
+ - Implemented terminal default color detetction for fizmo-ncursesw.
  - Added z_rgb_colour datatype.
  - Renamed "install-locales" into "install-data-local" build target.
  - Minor bugfixes.
