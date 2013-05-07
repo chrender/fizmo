@@ -1,7 +1,7 @@
 
 
   
-  Copyright (c) 2009-2012 Christoph Ender
+  Copyright (c) 2009-2013 Christoph Ender
   All rights reserved.
   
   Redistribution and use in source and binary forms, with or without
@@ -55,4 +55,9 @@
   it can also be distributed or used freely, to the best of my knowledge.
   
   
+  libpixelof contains the "Source Code Pro" and "Source Sans Pro" fonts made
+  by Adobe. For information about copyright and licensing see the file
+  LICENSE.txt in the following directories:
+   - libpixelif/fonts/source-code-pro-1_017
+   - libpixelif/fonts/source-sans-pro-1_038
 
