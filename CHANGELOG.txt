@@ -1,5 +1,6 @@
 
    Version 0.7.7
+ + 0.7.7 was finished at about Wed Jun 5 18:49:00 CEST 2013.
  - Fixed wordwrapper for cases in which text was written on the same line as
    read_char was invoked. This makes output of multiline-hints in PRIZM's
    Invisiclues work. Thanks to David Batchelder.
@@ -7,6 +8,8 @@
    to readchar, readchars and unreadchars. This makes fizmo compile on
    systems where getchar() is implemented as a macro.
  - Added missing evalation of fixed-pitch font flag in the flags2 header.
+ - Fix build error for some systems due to missing wchar.h include -- thanks
+   to Nikos Chantziaras.
  - Altered close_interface function to allow z_mem access during shutdown.
  - Fixed several compiler warnings.
  - Invoking "/config" without setting color defaults will no longer crash
