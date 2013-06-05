@@ -6,7 +6,7 @@ fizmo represents a generic a Z-Machine interpreter — “**f**izmo **i**nterpre
 
  - About Infocom and interactive fiction in general, see the
    [“New to IF”](http://www.ifarchive.org) section at the Interactive Fiction Archive.
-  - To download Z-Machine games, see  [the IF-Archive's “Z-Code”](http://www.ifarchive.org/indexes/if-archiveXgamesXzcode.html) section.
+ - To download Z-Machine games, see  [the IF-Archive's “Z-Code”](http://www.ifarchive.org/indexes/if-archiveXgamesXzcode.html) section.
 
 ---
 
@@ -32,7 +32,7 @@ For developers, interfaces translate the Z-machine specific output — window ma
 - _libcellif_  
   This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.
   
- - _libglkif_  
+- _libglkif_  
  The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's [iOS-fizmo](https://github.com/erkyrath/iosfizmo/).
 
 ---
@@ -45,7 +45,7 @@ For developers, interfaces translate the Z-machine specific output — window ma
  - _libdrilbo_  
    Provides support for jpeg, png and infocom's mg1 image reading as well as X11-based output.
    
-  - _libsndifsdl_  
+ - _libsndifsdl_  
    Supplies a SDL-based sound interface.
 
 ---
