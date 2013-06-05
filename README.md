@@ -2,7 +2,7 @@
 
 **About fizmo**
 
-fizmo represents a generic a Z-Machine interpreter — “**f**izmo **i**nterprets **z**-**m**achine **o**pcodes” —supporting all Z-Machine kinds except version 6, allowing you to run Infocom-made and most other Z-Machine based interactive fiction, also called text adventures. It also provides a generalized, plain-C interpreter library, as well as interfaces / implementations for various display and sound output methods, providing an interpreter-engine for you own project, even for closed-source implementations due to it's BSD-style license.
+fizmo represents a generic a Z-Machine interpreter — “fizmo interprets z-machine opcodes” — supporting all Z-Machine kinds except version 6, allowing you to run Infocom-made and most other Z-Machine based interactive fiction, also called text adventures. It also provides a generalized, plain-C interpreter library, as well as interfaces / implementations for various display and sound output methods, providing an interpreter-engine for you own project, even for closed-source implementations due to it's BSD-style license.
 
  - About Infocom and interactive fiction in general, see the
    [“New to IF”](http://www.ifarchive.org) section at the Interactive Fiction Archive.
