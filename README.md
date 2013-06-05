@@ -1,5 +1,3 @@
-Title: Fizmo README
-Date: June 5, 2013
 
 
 **About fizmo**
