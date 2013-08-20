@@ -50,7 +50,7 @@
 # libs itself in the section "fizmo-internal libs".
 
 
-AC_INIT([fizmo], [0.7.7])
+AC_INIT([fizmo], [0.7.8])
 
 
 # Definition for configuration options

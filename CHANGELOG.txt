@@ -1,4 +1,8 @@
 
+   Version 0.7.8
+ - Fixed missing lowering of input case.
+ - Fixed compiler warning, adapted to automake v1.14.
+
    Version 0.7.7
  + 0.7.7 was finished at about Wed Jun 5 18:49:00 CEST 2013.
  - Fixed wordwrapper for cases in which text was written on the same line as
