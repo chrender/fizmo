@@ -463,7 +463,9 @@
     <logentry>Renamed ZinC (name already exists) to fizmo: Fizmo Interprets Z-Machine Opcodes.</logentry>
   </change>
 
-  <change version="0.1.4" datetime="Fri Dec  9 03:36:20 CET 2005">
+  <change version="0.1.4">
+    <datetime day-of-week="Fri" month="12" day="9" hour="3"
+      minute="36" second="20" timezone="CET" year="2005"/>
     <logentry>8848 lines in *.h and *.c files</logentry>
     <logentry>The 0.1.4 complies to the strictz.z5 test, allows transcripting (even on startup via command line switch). A few minor bugs were fixed and a history of the last output is kept, allowing for a faithfully original prompt after an interpreter command has been finished.</logentry>
     <logentry>Compacted locate_dictionary_entry (so that the zscii_string_length function is no longer needed) and adapted it to version 4+ files.</logentry>
