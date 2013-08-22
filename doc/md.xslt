@@ -45,7 +45,9 @@
         <xsl:text> - </xsl:text>
       </xsl:when>
       <xsl:when test="name(ancestor::*[1]) = 'ol'">
-        <xsl:text> 1. </xsl:text>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="count(preceding-sibling::li) + 1"/>
+        <xsl:text>. </xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>   </xsl:text>

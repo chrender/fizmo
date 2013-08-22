@@ -22,28 +22,6 @@
     <xsl:text>   Version </xsl:text>
     <xsl:value-of select="@version"/>
 
-    <!--
-    <xsl:for-each select="datetime">
-      <xsl:text>, </xsl:text>
-      <xsl:value-of select="@day-of-week"/>
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="@month-name"/>
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="@day"/>
-      <xsl:text> </xsl:text>
-      <xsl:value-of select='format-number(@day, "00")' />
-      <xsl:text>:</xsl:text>
-      <xsl:value-of select='format-number(@minute, "00")' />
-      <xsl:text>:</xsl:text>
-      <xsl:value-of select='format-number(@second, "00")' />
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="@timezone"/>
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="@year"/>
-      <xsl:text> </xsl:text>
-    </xsl:for-each>
-    -->
-
     <xsl:for-each select="datetime">
       <xsl:text> -- </xsl:text>
       <xsl:call-template name="print-month-name">
@@ -66,7 +44,9 @@
     </xsl:call-template>
     <xsl:text>- </xsl:text>
     <xsl:call-template name="wrap-line">
-      <xsl:with-param name="line" select="."/>
+      <xsl:with-param name="line">
+        <xsl:apply-templates/>
+      </xsl:with-param>
     </xsl:call-template>
     <xsl:text>&#10;</xsl:text>
   </xsl:template>
@@ -155,6 +135,35 @@
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="string-replace-all">
+    <xsl:param name="text" />
+    <xsl:param name="replace" />
+    <xsl:param name="by" />
+    <xsl:choose>
+      <xsl:when test="contains($text, $replace)">
+        <xsl:value-of select="substring-before($text,$replace)" />
+        <xsl:value-of select="$by" />
+        <xsl:call-template name="string-replace-all">
+          <xsl:with-param name="text"
+            select="substring-after($text,$replace)" />
+          <xsl:with-param name="replace" select="$replace" />
+          <xsl:with-param name="by" select="$by" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="text()">
+    <xsl:call-template name="string-replace-all">
+      <xsl:with-param name="text" select="translate(., '“”', '&quot;&quot;')"/>
+      <xsl:with-param name="replace" select="'–'" />
+      <xsl:with-param name="by" select="'--'" />
+    </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="print-month-name">

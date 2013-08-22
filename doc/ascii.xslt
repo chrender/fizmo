@@ -325,38 +325,40 @@
     -->
   </xsl:template>
 
+  <xsl:template name="string-replace-all">
+    <xsl:param name="text" />
+    <xsl:param name="replace" />
+    <xsl:param name="by" />
+    <xsl:choose>
+      <xsl:when test="contains($text, $replace)">
+        <xsl:value-of select="substring-before($text,$replace)" />
+        <xsl:value-of select="$by" />
+        <xsl:call-template name="string-replace-all">
+          <xsl:with-param name="text"
+            select="substring-after($text,$replace)" />
+          <xsl:with-param name="replace" select="$replace" />
+          <xsl:with-param name="by" select="$by" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="text()">
     <xsl:param name="line-size"/>
     <xsl:param name="left-margin"/>
     <xsl:if test="normalize-space() != ''">
-      <!--
-      <xsl:if test="preceding-sibling::node()[position()=1 and name()='br']">
-        <xsl:call-template name="output-left-margin">
-          <xsl:with-param name="left-margin" select="$left-margin"/>
-        </xsl:call-template>
-      </xsl:if>
-      -->
       <xsl:call-template name="join-lines">
-        <xsl:with-param name="output" select="."/>
-      </xsl:call-template>
-      <!--
-      <xsl:call-template name="output-line">
-        <xsl:with-param name="line-size" select="$line-size"/>
-        <xsl:with-param name="left-margin" select="$left-margin"/>
         <xsl:with-param name="output">
-          <xsl:choose>
-            <xsl:when test="contains(., '&#10;')">
-              <xsl:call-template name="join-lines">
-                <xsl:with-param name="output" select="."/>
-              </xsl:call-template>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="."/>
-            </xsl:otherwise>
-          </xsl:choose>
+          <xsl:call-template name="string-replace-all">
+            <xsl:with-param name="text" select="translate(., '“”', '&quot;&quot;')" />
+            <xsl:with-param name="replace" select="'–'" />
+            <xsl:with-param name="by" select="'--'" />
+          </xsl:call-template>
         </xsl:with-param>
       </xsl:call-template>
-      -->
     </xsl:if>
   </xsl:template>
 
@@ -377,69 +379,6 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
-  <!--
-  <xsl:template name="output-line">
-    <xsl:param name="line-size"/>
-    <xsl:param name="left-margin" select="0"/>
-    <xsl:param name="output"/>
-    <xsl:call-template name="wrap-line">
-      <xsl:with-param name="line-size" select="$line-size"/>
-      <xsl:with-param name="left-margin" select="$left-margin"/>
-      <xsl:with-param name="output" select="$output"/>
-    </xsl:call-template>
-  </xsl:template>
-
-  -->
-  <!--
-  <xsl:template name="output-indented">
-    <xsl:param name="output"/>
-
-    <xsl:if test="normalize-space() != ''">
-
-      <xsl:variable name="is-first-after-li">
-        <xsl:choose>
-          <xsl:when test="name(preceding-sibling::*[1]) = 'li'">
-            <xsl:text>true</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>false</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
-
-      <xsl:for-each select="ancestor::ul">
-        <xsl:choose>
-          <xsl:when test="position() = last()">
-            <xsl:text> - </xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>   </xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-        <xsl:value-of select="$output"/>
-      </xsl:for-each>
-    </xsl:if>
-  </xsl:template>
-  -->
-
-  <!--
-  <xsl:template name="next-newline-index">
-    <xsl:param name="string"/>
-    <xsl:param name="current-index" select="1"/>
-    <xsl:choose>
-      <xsl:when test="substring($string, $current-index, 1) = '&#10;'">
-        <xsl:value-of select="$current-index"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name="next-newline-index">
-          <xsl:with-param name="string" select="$string"/>
-          <xsl:with-param name="current-index" select="$current-index + 1"/>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  -->
 
   <xsl:template name="wrap-line">
     <xsl:param name="line-size"/>
