@@ -18,7 +18,7 @@
   </xsl:variable>
 
   <xsl:variable name="block-elements">
-    <section/> <p/> <ul/> <ol/> <li/>
+    <section/> <p/> <ul/> <ol/> <li/> <code/>
   </xsl:variable>
 
   <xsl:template name="process-elements">
@@ -156,10 +156,35 @@
   </xsl:template>
 
   <xsl:template match="/document">
-    <xsl:text>&#10;</xsl:text>
+    <xsl:variable name="effective-margin">
+      <xsl:choose>
+        <xsl:when test="code">
+          <xsl:value-of select="number(0)"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="number($default-left-margin)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:if test="@title">
+      <xsl:text>&#10;&#10;</xsl:text>
+      <xsl:call-template name="output-left-margin">
+        <xsl:with-param name="left-margin" select="$effective-margin"/>
+      </xsl:call-template>
+      <xsl:value-of select="@title"/>
+      <xsl:text>&#10;</xsl:text>
+      <xsl:if test="@date">
+        <xsl:call-template name="output-left-margin">
+          <xsl:with-param name="left-margin" select="$effective-margin"/>
+        </xsl:call-template>
+        <xsl:value-of select="@date"/>
+        <xsl:text>&#10;</xsl:text>
+      </xsl:if>
+      <xsl:text>&#10;&#10;</xsl:text>
+    </xsl:if>
     <xsl:call-template name="process-elements">
       <xsl:with-param name="line-size" select="$default-line-size"/>
-      <xsl:with-param name="left-margin" select="$default-left-margin"/>
+      <xsl:with-param name="left-margin" select="$effective-margin"/>
     </xsl:call-template>
     <xsl:text>&#10;</xsl:text>
   </xsl:template>
@@ -197,6 +222,26 @@
     <xsl:call-template name="process-elements">
       <xsl:with-param name="line-size" select="$line-size"/>
       <xsl:with-param name="left-margin" select="$left-margin"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="code">
+    <xsl:param name="line-size"/>
+    <xsl:param name="left-margin"/>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:variable name="margin-content">
+      <xsl:call-template name="output-left-margin">
+        <xsl:with-param name="left-margin" select="$left-margin"/>
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:value-of select="$margin-content"/>
+    <xsl:call-template name="string-replace-all">
+      <xsl:with-param name="text" select="."/>
+      <xsl:with-param name="replace" select="'&#10;'" />
+      <xsl:with-param name="by">
+        <xsl:text>&#10;</xsl:text>
+        <xsl:value-of select="$margin-content"/>
+      </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
@@ -305,13 +350,13 @@
   <xsl:template match="tt">
     <xsl:param name="line-size"/>
     <xsl:param name="left-margin"/>
-    <xsl:text>`</xsl:text>
+    <xsl:text>“</xsl:text>
     <xsl:call-template name="process-elements">
       <xsl:with-param name="line-size" select="$line-size"/>
       <xsl:with-param name="left-margin" select="$left-margin"/>
       <xsl:with-param name="no-wrapping" select="'true'"/>
     </xsl:call-template>
-    <xsl:text>`</xsl:text>
+    <xsl:text>”</xsl:text>
   </xsl:template>
 
   <xsl:template match="br">
