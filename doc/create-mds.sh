@@ -3,9 +3,9 @@
 function xslt {
   if [ "$5" == "true" ]
   then
-    OUTPUTFILE="${1}/`echo "$2" | tr '[:lower:]' '[:upper:]'`.txt"
+    OUTPUTFILE="${1}/`echo "$2" | tr '[:lower:]' '[:upper:]'`.md"
   else
-    OUTPUTFILE="${1}/${2}.txt"
+    OUTPUTFILE="${1}/${2}.md"
   fi
   echo Processing \"${4}\".
   xsltproc -o "$OUTPUTFILE" "${3}" "${4}"
@@ -33,14 +33,14 @@ then
   shift
 fi
 
-xslt "${1}" "changelog" "$SRCDIR/changelog-ascii.xslt" "$SRCDIR/changelog.xml" $UPPERCASE
+xslt "${1}" "changelog" "$SRCDIR/changelog-md.xslt" "$SRCDIR/changelog.xml" $UPPERCASE
 
 for srcfile in "$SRCDIR"/*.xml
 do
   BASENAME="`basename $srcfile .xml`"
   if [ "$BASENAME" != "changelog" ]
   then
-    xslt "${1}" "$BASENAME" "$SRCDIR/ascii.xslt" "$srcfile" "$UPPERCASE"
+    xslt "${1}" "$BASENAME" "$SRCDIR/md.xslt" "$srcfile" "$UPPERCASE"
   fi
 done
 
