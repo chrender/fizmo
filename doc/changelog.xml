@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.7.8">
-    <logentry>Fixed missing lowering of input case.</logentry>
-    <logentry>Fixed compiler warning, adapted to automake v1.14.</logentry>
+    <logentry>Fixed missing lowering of input case for versions >= 5, thanks to irb.</logentry>
+    <logentry>Adapted to automake v1.14 and fixed compiler warning.</logentry>
+    <logentry>Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.</logentry>
   </change>
 
   <change version="0.7.7">
