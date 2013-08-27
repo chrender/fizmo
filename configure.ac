@@ -51,6 +51,7 @@
 
 
 AC_INIT([fizmo], [0.7.8])
+AC_CONFIG_AUX_DIR([.])
 
 
 # Definition for configuration options
@@ -93,7 +94,6 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(fizmo-glktermw/config-libs.m4)
 ])
 
-AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 AC_PROG_RANLIB

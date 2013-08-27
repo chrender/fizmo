@@ -3,8 +3,10 @@
 
    **Version 0.7.8**
 
- - Fixed missing lowering of input case.
- - Fixed compiler warning, adapted to automake v1.14.
+ - Fixed missing lowering of input case for versions >= 5, thanks to irb.
+ - Adapted to automake v1.14 and fixed compiler warning.
+ - Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.
+ - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.
 
 ---
 
@@ -291,7 +293,7 @@
 ---
 
 
-   **Version 0.5.1**
+   **Version 0.5.1 — November 4, 2008**
 
  - find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw qzinspect   snd2aiff sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l  resulted in 23265 lines of output)
  - Implemented SDL-sound-interface. To make SDL work in Mac OS X I've used MacPorts to install SDL (“port install libsdl”), on Debian I've been using “apt-get install libsdl-sound1.2-dev” (maybe “apt-get install alsa-base alsa-utils” is also required).
@@ -308,7 +310,7 @@
 ---
 
 
-   **Version 0.5.0**
+   **Version 0.5.0 — October 30, 2008**
 
  - (find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 21963 lines of output)
  - This version is now definitely usable to play all non-v6 games. Did extensive testing using Borderzone, “LostPig.z8”, “Zokoban.z5”, “crashme.z5”, “etude.z5”, “paint.z5”, “random.z5”, “reverzi.z5” and “unicode.z5”. Only two minor known bugs remain: Scrollback sometimes miscalculates the current row after a lot of scrolling back and forth (which is always “fixable” to pressing any-key which correctly rebuilds the current output page, and a display anomaly on the frontpage of “vampire.z8” which I intended to keep after a lot of code-inspection (since fizmo appears to be implementing the screen modell correctly and fixing this display problem breaks a lot of other games). This version has been tested on Linux, Darwin (Mac Os X) and a little bit on XP/Cygwin (using a self-built ncursesw).
@@ -466,11 +468,12 @@
  - Implemented call_vs2 and call_vn2 opcodes.
  - Made PRINT_NUM output signed instead of unsigned numbers (found it thanks to etude.z5).
  - Corrected OPCODE_MOD to correctly handle signed operand 0 values (etude again).
- - Corrected a REAL nasty mistake: Replaced sizeof(<constant>) in a utf8conv.c malloc-call with a simple <constant>. This made the system  crash under OS X PPC (though not on linux and some other unix-variant).
+ - Corrected a REAL nasty mistake: Replaced sizeof(<constant>) in a utf8conv.c malloc-call with a simple <constant>. This made the system crash under OS X PPC (though not on linux and some other unix-variant).
  - Re-organised the makefile a bit. Interface dependencies are now correctly resolved and build dependencies are in order again.
  - Renamed the interpreter from the project name “zint” – meaning Z-Machine-Interpreter – to “ZInC”, meaning Z-INterpreter-Code.
  - Corrected the Makefile again.
- - Implemented the Unix-Interface. This one assumes that it's running on a unix machine terminal without any specials (not even curses). It uses select and tc[g|s]etattr to implement timed and preloaded input and a get_char implementation.
+ - Implemented the Unix-Interface. This one assumes that it's running on a unix machine terminal without any specials (not even curses).
+ - It uses select and tc[g|s]etattr to implement timed and preloaded input and a get_char implementation.
  - Fixed a bug in unix_if.c that would cause a segfault on startup.
  - Some more i18n, cleaner tc[g|s]etattr in unix_if.c
  - Implmented correct input line restoration after timed-input output.
@@ -484,7 +487,8 @@
  - Implemented a curses interface. At the moment raw constructs for the upper and lower window and a status line. Basic color management. Adapted wordwrap.c a little bit in order to achieve corrent linebreaks.
  - Completely re-wrote wordwrapping in order to get rid of trailing spaces and other problems evident when using curses.
  - Completely re-wrote the entire output stream system. It turned out that the usage of flags caused problems buffering text: In order for everything to work correctly the flags would have to be buffered along with the text output. Text-relevant formatting data like color is now passed directly along with the UTF-8 text: Internally I'm now using an encoding that can encode special formatting sequences into the UTF-8 stream – see UTF8X.txt for more information. These conversions added the utf8x.* and decoder.* files. Although quite a major change, the encoding helps to make the whole system a lot cleaner.
- - Numerous fixes to the [n]curses interface, addition of status line, better color management with careful consideration of availiable color pairs. Using the ncurses interface, the interpreter now passes the etude.z5 test with the exception of the text styles and undo capability.
+ - Numerous fixes to the [n]curses interface, addition of status line, better color management with careful consideration of availiable color pairs.
+ - Using the ncurses interface, the interpreter now passes the etude.z5 test with the exception of the text styles and undo capability.
  - Modified the i18n_translate_and_exit and close_streams functions to support a message-on-exit. This way, error messages are supported without regard for what's left in the UTF8x output pipe and error output can be seperated from the other valid stream output. This way, the ncurses interface can correctly endwin() and output the message to read on stderr.
  - So far, multiple invocations of READ or READ_CHAR with timed input casued a “nested timed input not availiable” error. This is a problem for the random.z5 test which appears to use this feature. The nested behaviour has been altered to an overwrite behaviour. In case a second timed input is requested, the old timer and routine are erased from memory and replaced with the new data.
  - Fixed interface commandline choice.
@@ -498,7 +502,7 @@
 ---
 
 
-   **Version 0.1.4**
+   **Version 0.1.4 — December 9, 2005**
 
  - 8848 lines in *.h and *.c files
  - The 0.1.4 complies to the strictz.z5 test, allows transcripting (even on startup via command line switch). A few minor bugs were fixed and a history of the last output is kept, allowing for a faithfully original prompt after an interpreter command has been finished.
@@ -510,13 +514,13 @@
  - Implemented basic transcipting in streams.c and moved the trace functions there. All output is now channeled from text.c through stream.c into the active interface. The input is seperately written to to the streams, in order to be able to distinguish it from regular output (and to write it only to the streams requested).
  - Implemented “-s” / “--start-script” startup option to start scripting right away. This allows to capture really all input emitted by the game.
  - Implemented input of file name (supplying a default filename) for transcripts.
- - Fixed a bug in the parsed word position which would cause the following garbeled Moonmist-output: >get out of the cat [I don't know the word “ cat.”] >oops car [I assume you mean: get  ou  o  th  ca] You're not in it!
+ - Fixed a bug in the parsed word position which would cause the following garbeled Moonmist-output:>get out of the cat[I don't know the word " cat."]>oops car [I assume you mean: get  ou  o  th  ca]You're not in it!
  - Implemented CALL_VN opcode.
  - Added STRICT_Z definition in config.h and implemented a lot of checks in object.c together with a warning mechanism in i18n.c in order to make this interpreter compliant to strictz.z5.
  - Fixed a bug in the length-code-size determination in properties.c (replaced “& 80” with “& 0x80”).
  - Added a lot of STRICT_Z tests to properties.c.
  - Implemented READ_CHAR opcode (not very well, since in stanard C without any Operating-System-specific calls there's no single read of a char, thus you still have to press enter).
- - Zinc now passes the strictz.z5 test and looks close enough to the frotz output stored at http://www.ifarchive.org/if-archive/infocom/interpreters/ old/frotz/frotz_zstrict_result (with other warning messages, of course).
+ - Zinc now passes the strictz.z5 test and looks close enough to the frotz output stored at http://www.ifarchive.org/if-archive/infocom/interpreters/old/frotz/frotz_zstrict_result (with other warning messages, of course).
  - Implemented wordwrapping as a seperate re-usable module in wordwrap.[c|h]. The C-interface and the function for output to stream 2 currently use it both.
  - Implemented line_history_buffer, a circular buffer that will record the last output sent to the streams. It's supposed to be used for reconstruction of the current prompt in case an interpreter command is entered an the original prompt should be restored after executing it and later for easier handling of preloaded input.
  - Interpreter commands will now prompt with the last line that was output by the Z-program after finishing command processing.
@@ -540,14 +544,17 @@
  - Implemented UTF-8 handling. The data traffic between the core interpreter and the interface(s) has been modified to use exclusively UTF-8. It is now also possible to output a whole string via the utf_8_output function.
  - The C interface can now be put in three output modes – ASCII, ISO-8859-1 and UTF-8. Characters that cannot be printed in the ASCII and ISO-8859-1 modes are substituted by a '?'.
  - Implemented UTF-8 output as defined by the Z-Machine specification v1. So far only implemented without testing.
- - Implemented loclization. In order to avoid special cases in which it is not possible to tell the user that the localized files cannot be loaded since the files have not been loaded yet in his own language :-) I'm using the prepi18n binary to convert the locales/xx_XX.txt into the file locales.c which can be directly complied into the interpreter binary. The localization files are supposed to be encoded in UTF-8 so they can be easily output using the usual interface functions.
+ - Implemented loclization. In order to avoid special cases in which it is not possible to tell the user that the localized files cannot be loaded since the files have not been loaded yet in his own language :-) I'm using the prepi18n binary to convert the locales/xx_XX.txt into the file locales.c which can be directly complied into the interpreter binary.
+ - The localization files are supposed to be encoded in UTF-8 so they can be easily output using the usual interface functions.
  - Split the activate_interface function into activate_interface and link_active_interface_to_story. The first call actually initializes the interface which is used to make output possible (in case the story file can't be loaded), the second call performs the necessary initializations with the story file's header.
- - Extended localization to use parameters the like “Could not open \{0}.”. So far, parameters are only allowed to contain ASCII values.
+ - Extended localization to use parameters the like “Could not open \{0}.”.
+ - So far, parameters are only allowed to contain ASCII values.
  - Moved last remaining function in output.c, read_zscii_string, into text.c.
  - Implemented forgotten lowering of case after reading input from the keyboard. Now it's possible to answer “YES” to Moonmist when it asks for “YES or NO”.
  - Cleaned up stack.c a bit and fixed a bug that would have caused the stack not to enlarge in case it was supposed to.
  - Extended localization to use type identifiers. In the beginning I decided to skip them, but to make error messages useful to the user and handier in the code I decided to give it a shot. Parameters are now specified by using \{0s} for a string and \{0d} for a decimal. Together with a few supporting wrapper functions, the main file already looks much cleaner. Due to the buffering of the Z-Machine output, messages are even correctly word-wrapped.
- - Implemented switching between ASCII / ISO-8859-1 / UTF-8 into zinc.c. Logically it would have been better to put it in to c_iface, but since it will be required more often and don't want any copied code I decided to leave it this way.
+ - Implemented switching between ASCII / ISO-8859-1 / UTF-8 into zinc.c.
+ - Logically it would have been better to put it in to c_iface, but since it will be required more often and don't want any copied code I decided to leave it this way.
  - Implemented echo option in the C interface in order to be able to read the input from input piped into the interpreter.
  - Converted all current 51 conditions-to-translate from FATAL_ERROR and [s|f|]printf to i18n_translate[and_exit]. The FATAL_ERROR macro has been removed.
  - Compacted the zchar-storage-functions.
