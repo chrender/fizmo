@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document title="Installation Instructions">
+  <p>The following minimum components need to be installed to build fizmo:<ul>
+      <li>A C compiler like gcc or clang</li>
+      <li>make</li>
+      <li>pkg-config</li>
+    </ul>
+  </p>
+
+  <p>Installing should be as simple as running the following commands:</p>
+
+  <p>./configure<br/>make<br/>make install</p>
+
+  <p>The “configure” script tries to guess the correct values for all the system settings and locations of all include files and libraries. If some files cannot be found, the script will ask for the required values.</p>
+
+  <p>In addition to the standard parameters, “configure” provides the following options:</p>
+
+  <p>--enable-tracing<br/>For debugging purposes, fizmo can write very extensive logging information into a file named “tracelog.txt”. The logging can be enabled using this option. See also the “--with-glktermw-includedir” and “--with-glktermw-libdir” parameters below.</p>
+
+  <p>--enable-glktermw<br/>Fizmo provides experimental GLK support, which can be activated using this option.</p>
+
+  <p>--disable-x11<br/>This option will disable X11 image display in fizmo-ncursesw.</p>
+
+  <p>--disable-jpeg<br/>In case JPEG support is not available or not desired, this option will disable libdrilbo's JPEG capabilities.</p>
+
+  <p>--disable-png<br/>In case PNG support is not available or not desired, this option will disable libdrilbo's PNG capabilities.</p>
+
+  <p>--disable-sound<br/>In case SDL is not available or sound support is not desired, sound can be disabled using this option.</p>
+
+  <p>--disable-aiff<br/>In case libsndfile1 is is not available or no AIFF support is required, this option will disable AIFF support.</p>
+
+  <p>--with-jpeg-includedir<br/>If pkg-config cannot provide information about libjpeg, the location of the jpeglib.h can be given using this parameter.</p>
+
+  <p>--with-jpeg-libdir<br/>If pkg-config cannot provide information about libjpeg, the location of the libjpeg can be given using this parameter.</p>
+
+  <p>--with-glktermw-includedir<br/>In case glktermw should be build, the location of the include files must be given using this parameter.</p>
+
+  <p>--with-glktermw-libdir<br/>In case glktermw should be build, the location of the library file must be given using this parameter.</p>
+
+  <p>Strictly speaking it would be possible build fizmo without pkg-config by compiling all the necessary modules yourself instead of letting the distribution package do this for you. Since pkg-config should however be universally available, there shouldn't be any need to do this.</p>
+
+  <p>Debian and derivates:<br/><tt>apt-get install gcc make pkg-config</tt></p>
+
+  <p>The following components are required to build the ncursesw-frontend:<ul>
+      <li>libxml2</li>
+      <li>ncursesw5</li>
+    </ul>
+  </p>
+
+  <p>If possible, the following optional components should also be installed:<ul>
+      <li>sdl-audio</li>
+      <li>libsndfile1</li>
+      <li>libjpeg</li>
+      <li>libpng</li>
+      <li>X11</li>
+    </ul>
+  </p>
+
+  <p>Debian and derivates:<br/><tt>apt-get install libxml2-dev libncursesw5-dev libsdl-sound1.2-dev</tt><br/><tt>apt-get install libsndfile1-dev libjpeg-dev libpng-dev</tt></p>
+
+  <p>If you want to build the SDL-based fizmo frontend, you'll need:<ul>
+      <li>The freetype2 libraries</li>
+      <li>SDL version 1.2</li>
+    </ul>
+  </p>
+
+  <p>Debian and derivates:<br/><tt>apt-get install libfreetype6-dev libsdl1.2-dev</tt></p>
+</document>
+

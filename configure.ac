@@ -51,6 +51,7 @@
 
 
 AC_INIT([fizmo], [0.8.0])
+AC_CONFIG_AUX_DIR([.])
 
 
 # Definition for configuration options
@@ -107,7 +108,6 @@ AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
   m4_include(fizmo-sdl/config-libs.m4)
 ])
 
-AC_CONFIG_AUX_DIR([.])
 #AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 AC_PROG_CC

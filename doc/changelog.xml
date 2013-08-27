@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changelog>
+  <change version="0.8.0">
+    <logentry>Addition of SDL-frontend and libpixelif meta-interface. These allow for pixel-based output instead of text-only output as before. As a result, the frontend provides proportional font display using the freetype library, hopeful on a wide range of systems since SDL is implemented in a cross-platform manner.</logentry>
+    <logentry>This release is still in beta stage: For the SDL frontend, there's no support for command-line switches, no sound interface and no support for “fancy” features like hyphenation or frontispiece display (yet).</logentry>
+  </change>
+
+  <change version="0.7.8">
+    <logentry>Fixed missing lowering of input case for versions >= 5, thanks to irb.</logentry>
+    <logentry>Adapted to automake v1.14 and fixed compiler warning.</logentry>
+    <logentry>Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.</logentry>
+    <logentry>Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.</logentry>
+  </change>
+
+  <change version="0.7.7">
+    <datetime day-of-week="Wed" month="6" day="5" hour="18"
+      minute="49" second="0" timezone="CEST" year="2013"/>
+    <logentry>Fixed wordwrapper for cases in which text was written on the same line as read_char was invoked. This makes output of multiline-hints in PRIZM's Invisiclues work. Thanks to David Batchelder.</logentry>
+    <logentry>Renamed getchar, getchars and ungetchars from the file system interface to readchar, readchars and unreadchars. This makes fizmo compile on systems where getchar() is implemented as a macro.</logentry>
+    <logentry>Added missing evalation of fixed-pitch font flag in the flags2 header.</logentry>
+    <logentry>Fix build error for some systems due to missing wchar.h include – thanks to Nikos Chantziaras.</logentry>
+    <logentry>Altered close_interface function to allow z_mem access during shutdown.</logentry>
+    <logentry>Fixed several compiler warnings.</logentry>
+    <logentry>Invoking “/config” without setting color defaults will no longer crash the interpreter.</logentry>
+    <logentry>Implemented terminal default color detetction for fizmo-ncursesw.</logentry>
+    <logentry>Added z_rgb_colour datatype.</logentry>
+    <logentry>Renamed “install-locales” into “install-data-local” build target.</logentry>
+    <logentry>Fixed verification of libglktermw location for GLK-interface.</logentry>
+    <logentry>Removed non-POSIX-flag from tcsetattr call in fizmo-console.</logentry>
+    <logentry>Minor bugfixes.</logentry>
+  </change>
+
+  <change version="0.7.6">
+    <datetime day-of-week="Thu" month="12" day="27" hour="21"
+      minute="35" second="34" timezone="CET" year="2012"/>
+    <logentry>Reparied “math.h” name collision, fixing missing “rint” function declaration.</logentry>
+    <logentry>Fixed universal builds on Mac OS X.</logentry>
+    <logentry>Fixed warning in “cmd_hst” compilation.</logentry>
+    <logentry>Searching for z-code files will now automatically create ~/.config/fizmo so that search results are no longer lost, thanks to B. Watson.</logentry>
+    <logentry>Added “--disable-sound” configure option, fixed “--disable-x11” option.</logentry>
+    <logentry>Improved configure-detection for libncursesw for systems without pkg-config's “ncursesw.pc”.</logentry>
+    <logentry>Minor fixes for “clean” and “distclean” build targets and library build targets.</logentry>
+  </change>
+
+  <change version="0.7.5">
+    <datetime day-of-week="Fri" month="11" day="30" hour="14"
+      minute="2" second="28" timezone="CET" year="2012"/>
+    <logentry>Preloaded input will no longer apperar in transscripts. Thanks to Lewis Gentry.</logentry>
+    <logentry>Fixed missing characters in transcripts.</logentry>
+    <logentry>Implemented missing delete in read_line and read_char, corrected backspace key behaviour on read_char.</logentry>
+    <logentry>Fixed typos in manpages, thanks to Johan Ljunglid.</logentry>
+    <logentry>Fixed swallowing of dots, commas and quotation marks at line starts in case hyphenation is disabled – thanks to Lewis Gentry.</logentry>
+    <logentry>Fixed crash which occurred when invoking fizmo-ncursesw with the “-fi” flag, also thanks to Lewis Gentry.</logentry>
+    <logentry>Colors are now correctly set for all windows on screen in case no window is specified for @set_colour.</logentry>
+    <logentry>CTRL-R will now redraw the screen. Contrary to CTRL-L, which refreshes the screen based on the current layout, CTRL-R will reconstruct the latest output based on the output history. This will help to display output which is hidden in case a game clears the screen, writes some text into the top line and then turns on the score line which then overlays the topmost line.</logentry>
+    <logentry>Re-implemented line-wrapper, fixing several issues.</logentry>
+    <logentry>Fix for memory corruption in command-history, thanks to Lewis Gentry.</logentry>
+  </change>
+
+  <change version="0.7.4">
+    <datetime day-of-week="Mon" month="9" day="17" hour="22"
+      minute="14" second="52" timezone="CEST" year="2012"/>
+    <logentry>Adapted to new autoconf/automake build process.</logentry>
+  </change>
+
+  <change version="0.7.3">
+    <datetime day-of-week="Wed" month="8" day="1" hour="21"
+      minute="42" second="17" timezone="CEST" year="2012"/>
+    <logentry>Merged Andrew Plotkin's iOS-fizmo changes: No more raw exit() calls, added screeninterface-specific filename prompt, new screeninterface-specific filename prompt replaces fizmo_register_ask_user_for_file_function, fixed autosave-functionality, added quote boxes for libglkif, added configuration option “disable-stream-2-wrap” and “max-undo-steps” config option and fix for an overlong property issue that made “Heist” crash.</logentry>
+    <logentry>Implemented memory-cleanup and fixed variable states after story end to  allow fizmo_start() to be called repeatedly.</logentry>
+    <logentry>Fixed some minor memory leaks.</logentry>
+    <logentry>Fixed segfault which would occur after storing 10240 undo steps.</logentry>
+    <logentry>Added new option to set number of maximum stored undo steps.</logentry>
+    <logentry>Changed blockbuffer initialization to allow for output at any time, made fizmo_new_screen_size adapt blockbuffer size correctly.</logentry>
+    <logentry>Fixed a buffer overflow during tokenization, thanks for Andrew Plotkin.</logentry>
+    <logentry>Implemented binary chop dictionary search.</logentry>
+    <logentry>Fixed screen interface invocation in libcellif to not require timeouts from screen interface if not actually required by the game, saving a bit of CPU time.</logentry>
+  </change>
+
+  <change version="0.7.2">
+    <datetime day-of-week="Fri" month="3" day="9" hour="21"
+      minute="1" second="12" timezone="CET" year="2012"/>
+    <logentry>Made fizmo comply to “praxix.z5” test, merged zarf's DISABLE_PREFIX_COMMANDS functionality.</logentry>
+    <logentry>Merged zarf's GLK changes into “glk_screen_if.c”. The new version 0.1.2 fixes screen size detection, timed input and adds lowering of the input line.</logentry>
+    <logentry>Fixed missing $(DESTDIR) variable – should already have been present since version 0.7.1.</logentry>
+    <logentry>Fixed an error which would occur for empty pathnames when starting up a game on 32-bit platforms, thanks to Samuel Verschelde.</logentry>
+    <logentry>The transcription and fixed font bits will now correctly survive a restore, as defined in the Z-Maschine standard.</logentry>
+  </change>
+
+  <change version="0.7.1">
+    <datetime day-of-week="Sun" month="11" day="6" hour="22"
+      minute="44" second="17" timezone="CET" year="2011"/>
+    <logentry>Fixed missing “override” statments for CFLAGS in Makefiles.</logentry>
+    <logentry>Fixed $(DESTDIR) evaluation in config.[default|macports].mk.</logentry>
+    <logentry>Adapted Makefiles and configuration to use standard GNU Makefile variables instead of INSTALL_PATH and FIZMO_BIN_DIR.</logentry>
+    <logentry>Fixed an error in the stack restoration in “opcode_restore_undo”. Thanks to Lewis Gentry for reporting this bug.</logentry>
+    <logentry>Implemented first debugger stubs. The debugger is available via network socket and will currently only dump PC, locals and stack contents.</logentry>
+    <logentry>Removed “drilbo-x11.c” requirement for “Xatom.h”.</logentry>
+    <logentry>Respect LD_FLAGS for linking.</logentry>
+  </change>
+
+  <change version="0.7.0">
+    <datetime day-of-week="Sun" month="9" day="18" hour="8"
+      minute="41" second="18" timezone="CEST" year="2011"/>
+    <logentry>From the user's perspective, version 0.7 adds hyphenation, saving of the latest screen output into savefiles, re-display of said output upon restore, a much improved X11-frontispiece display and improved localization. Thanks to Andrew Plotkin for the GLK-related code and Eric Forgeot for the french localization. Please see “README-0.7.txt” for more information.</logentry>
+    <logentry>Restructured fizmo: The interpreter core, ncursesw- and console-interface, the sdl-sound interface and the X11-specific code have been moved into separate modules named “libfizmo”, “fizmo-ncursesw”, “fizmo-console”, “libsndifsdl” and “libdrilbo”. Basic GLK functionality may be implemented using “libglkif”, an example GLK implementation based on glktermw is available in module “fizmo-glktermw”.</logentry>
+    <logentry>Implemented Frank Liangs TeX hy-phen-a-tion algorithm into the wordwrapper. Patterns were taken from the “hyph-utf8” project at http://www.ctan.org/tex-archive/language/hyph-utf8/. Re-implemented the word wrapper.</logentry>
+    <logentry>Rebuilt locales system. So far, all available locales were directly compiled into the binary and stored using a rather inflexible method which wasted some memory. Version 0.7 now stores the locales on the disk, reading only those languages and modules which are currently required. All i18n-invocations do now directly accept a module identifier, make the old switch functionality obsolete. Adapted all i18n calls to new method.</logentry>
+    <logentry>Rebuilt output history storage. This has been reimplemented using a single memory stream instead of storing text and metadata separately.</logentry>
+    <logentry>Implemented a cell-screen meta-interface. This translates the output from fizmo's screen interface into simple goto-xy and print commands, allowing implementation of interfaces using fixed-width fonts with a minimum of work. This is also used by the new “fizmo-ncursesw” interface, which has also been entirely rewritten.</logentry>
+    <logentry>libdrilbo (“drilbo represents an imaging library not only for blorb objects”) now handles all graphical related tasks. It also makes fizmo's version 0.6 requirement for GTK to load images obsolete, it directly uses libjpg and libpng to load images and provides its own Xlib implementation for X11 output.</logentry>
+    <logentry>X11 frontispiece display is now by default in a separate window, which, contrary to the older implementation that simply invoked a XCopyArea directly into the terminal's X window, should work reliably. For terminals which by chance support it, the old behaviour is still available by using the “display-x11-inline-image” config option. The inline display has been changed to no longer write directly into the terminal window, but instead to use a subwindow instead.</logentry>
+    <logentry>Implemented saving of text history using a non-standard chunk type “TxHs” in quetzal savegames.</logentry>
+    <logentry>Added configuration variable “save-text-history-paragraphs” which defines the maximum number of paragraphs to store in a savegame.</logentry>
+    <logentry>Added variable interpretation – so far, only $(HOME) is implemented – for config files.</logentry>
+    <logentry>Re-implemented the entire build process. Libraries may now be compiled and installed on their own, pkg-config is used whereever possible to ease compilation and installation.</logentry>
+  </change>
+
+  <change version="0.6.10">
+    <datetime day-of-week="Wed" month="6" day="29" hour="22"
+      minute="25" second="26" timezone="CEST" year="2011"/>
+    <logentry>Bugfix release: Fizmo did not stop tokenzing after the maximum number of allowed words, which would result in a parse buffer overflow. Thanks to Samuel Verschelde for discovering this problem.</logentry>
+  </change>
+
+  <change version="0.6.9">
+    <datetime day-of-week="Sun" month="4" day="24" hour="22"
+      minute="26" second="18" timezone="CEST" year="2011"/>
+    <logentry>Bugfix release: Fixed negative count for unsorted dictionaries in the tokenise opcode. This fixed the crash in “Beyond Zork” which occurred while executing “i” after an item was name, thanks to irb.</logentry>
+    <logentry>Fixed “get_utf8_code_length”. This fixes output of non-latin1 output codes in the transcript file, thanks to Lewis Gentry, closes debian issue #617714.</logentry>
+    <logentry>Increased maximum allowed option size to 512 to allow for longer filenames.</logentry>
+    <logentry>Added NCURSESW_INCLUDE_FROM_W_DIRNAME to configs to allow usage of Apple's ncurses implementation, added GDKPIXBUF_INC_DIR configuration variable.</logentry>
+  </change>
+
+  <change version="0.6.8">
+    <datetime day-of-week="Tue" month="1" day="12" hour="9"
+      minute="53" second="42" timezone="CET" year="2010"/>
+    <logentry>Bugfix release: Interpreter and interface information is now correctly written into the header after restarting, additionally the input length for transcript and command input/output-stream filenames has been  fixed. Thanks to Samuel Verschelde.</logentry>
+    <logentry>Added “sync-transcript” option: When enabled, it'll flush the wordwrapper and file output buffer as soon as possible.</logentry>
+  </change>
+
+  <change version="0.6.7">
+    <datetime day-of-week="Mon" month="12" day="14" hour="22"
+      minute="28" second="51" timezone="CET" year="2009"/>
+    <logentry>Fixed trunction of babel data input. So far, the last byte was cut off from the input, resulting in an error if the file was encoded using unix newlines, but no errors as long as DOS newlines were used. This fixes missing metadata issues in the story browser. Thanks again to Zachary Kline.</logentry>
+  </change>
+
+  <change version="0.6.6">
+    <datetime day-of-week="Mon" month="12" day="14" hour="19"
+      minute="10" second="57" timezone="CET" year="2009"/>
+    <logentry>Fixed story browser to remove “.zblorb” suffixes from story titles which are not backed by babel information and evaluated from the filename. This will only work for new stories which are added to the list, to re-index your current story-list the old file has to be removed and re-built. “rm $HOME/.config/fizmo/story-list.txt” should be run first, followed by the command “fizmo -u”. Thanks to Zachary Kline.</logentry>
+    <logentry>Minimal changes to the seeding of math.c's “srand” and “init_by_array” in hopes of increasing input entropy.</logentry>
+  </change>
+
+  <change version="0.6.5">
+    <datetime day-of-week="Tue" month="10" day="13" hour="7"
+      minute="27" second="56" timezone="CEST" year="2009"/>
+    <logentry>Bugfix release: Recommend for MacPorts, will make compiling work for parallel builds in MacPorts version 1.8.0+.</logentry>
+    <logentry>Transcription will be kept active after restarts, thanks to Samuel Verschelde.</logentry>
+    <logentry>Fixed Makefiles for parallel builds (make -j).</logentry>
+  </change>
+
+  <change version="0.6.4">
+    <datetime day-of-week="Sun" month="5" day="24" hour="13"
+      minute="45" second="31" timezone="CEST" year="2009"/>
+    <logentry>Bugfix release: Definitely recommend for read_char fix.</logentry>
+    <logentry>Fixed interface to supply default colors in case ncurses' “pair_content” returned invalid colors (thanks to Samuel Verschelde).</logentry>
+    <logentry>Input from read_char is no longer re-echoed to the screen (thanks to Samnuel Verschelde).</logentry>
+  </change>
+
+  <change version="0.6.3">
+    <datetime day-of-week="Sun" month="4" day="26" hour="8"
+      minute="26" second="31" timezone="CEST" year="2009"/>
+    <logentry>The top-level Makefile may now be invoked with “CONFIG_FILE=&lt;filename&gt;”.</logentry>
+    <logentry>Adapted “config.macos.mk” to MacPorts portfiles and ports-filesystem so that fizmo is now easily MacPorts-buildable.</logentry>
+    <logentry>Added license information to every file.</logentry>
+    <logentry>Improved GNU coding compliance: install now goes to “($DESTDIR)/usr”.</logentry>
+  </change>
+
+  <change version="0.6.2">
+    <datetime day-of-week="Sat" month="4" day="25" hour="0"
+      minute="59" second="41" timezone="CEST" year="2009"/>
+    <logentry>Bugfix release: Corrected save opcode and prepared for debianization.</logentry>
+    <logentry>Adapted manpage to make lintian work.</logentry>
+    <logentry>Corrected “src/c/interface.h”.</logentry>
+    <logentry>Fixed typo in manpage.</logentry>
+    <logentry>Fixed save opcode to not wrap data into IFF and to disable compression when only a table from memory is saved (operands 2 and 3 for address and length are set). This fixes “Comp96.z5”.</logentry>
+  </change>
+
+  <change version="0.6.1">
+    <datetime day-of-week="Mon" month="3" day="30" hour="22"
+      minute="15" second="4" timezone="CEST" year="2009"/>
+    <logentry>Bugfix release: minor addition of several features (may now compile without libsndfile and libSDL alone, implemented XDG base directory specification).</logentry>
+    <logentry>Removed unused references to SDL-mixer (which isn't used for anything anymore).</logentry>
+    <logentry>Improved and documented default “config.*.mk” files and added config default for cygwin with sound support (to my own great surprise, sound really works under Cygwin).</logentry>
+    <logentry>Added more information to “INSTALL.txt”.</logentry>
+    <logentry>Implemented new ENABLE_AIFF_FOR_SOUND_SDL variable in config files. This allows the sound-sdl-interface to at least play Infocom .snd files when no libsndfile is available.</logentry>
+    <logentry>Added config-file options to manpage.</logentry>
+    <logentry>Changed location of fizmo config directory from fixed “$HOME/.fizmo” to XDG_CONFIG_HOME standard and implemented use of XDG_CONFIG_DIRS. Thanks for suggestions and debugging help from Eric Forgeot. Specifications and more information found at http://freedesktop.org/wiki/Software/xdg-user-dirs.</logentry>
+    <logentry>Fixed broken space allocation, forgotten NULL-checks and fixed some issues to make frontispiece work better on GenToo. Thanks for these patches from David Leverton (see also line #50 in “src/ncursesw/Makefile”). This fixes possible startup crashes.</logentry>
+    <logentry>Added FIZMO_BIN_DIR variable to Makefile.</logentry>
+  </change>
+
+  <change version="0.6.0">
+    <datetime day-of-week="Wed" month="3" day="25" hour="21"
+      minute="47" second="6" timezone="CET" year="2009"/>
+    <logentry>(find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l  resulted in 29953 lines of output)</logentry>
+    <logentry>This marks the point for the first public beta release. Killed all known bugs as far as I could find them and made fizmo work on Linux – tested with a 64-bit distribution of Debian/Lenny – and Mac OS X 10.5 with a 32-bit Intel machine and MacPorts for SDL. New features since version 0.5 include an SDL-based sound interface, support for charachter font via unicode translation, partial (z)blorb-support – runs code from blorbs, can display frontispiece images in XTerms and play AIFF-sounds, a story file navigator, interface margins, restore from command line, a much improved streams implementation, a manpage and many other small features as well as a large amount of bugfixes.</logentry>
+    <logentry>Implemented conversion of font 3 (charachter font) to unicode. This appears to make Beyond Zork's map appear at least readable.</logentry>
+    <logentry>All directories in the “ZCODE_ROOT_PATH” are now recursively searched for Z-machine games.</logentry>
+    <logentry>Implemented recording and replaying of timed input.</logentry>
+    <logentry>Implemented new “*.snd” search method: Generalized for all files, not only Lurking Horror and Sherlock, tries upper- and lowercase.</logentry>
+    <logentry>Fixed scan_table opcode. This fixes Beyond Zork window output.</logentry>
+    <logentry>The filename input for save and restore may now be cancelled using the escape key.</logentry>
+    <logentry>Pressing arrow up/down during filename input no longer displays the command history.</logentry>
+    <logentry>Implemented wordwrapper / ncursesw margins.</logentry>
+    <logentry>Flags are now correctly restored during undo and restore opcodes.</logentry>
+    <logentry>Added progress indicator for story-list update.</logentry>
+    <logentry>Fixed a bug that would damage the story list in case a game had a release code with a length equal 5.</logentry>
+    <logentry>Fixed an issue that would cause bits &gt; 0xffff from routine address to be lost on timed-routine-calls.</logentry>
+    <logentry>Implemented “no-update” command line flag and config option to avoid long startup scan times (for example on slow notebook drivers with many story files).</logentry>
+    <logentry>Implemented “--search” and “--recursively-search” command line invocations.</logentry>
+    <logentry>Fixed bug in scrollback parapgraph position cache.</logentry>
+    <logentry>Fixed a memory leak from getcwd(NULL, 0) in “filelist.c”.</logentry>
+    <logentry>Fixed scroll-down display for scrolling to bottom.</logentry>
+    <logentry>Fixed crash that occured when a read-instruction was recursively called from a timed input verification-routine.</logentry>
+    <logentry>Modified LOADB / LOADW opcodes to store 0 in target instead of doing nothing when trying to read from an illegal address. This appears to make the russian version of “All Roads” (“AllRoadsR.z5”) work.</logentry>
+    <logentry>Fixed a bug in the story-title evaluation from filename when the story name did not contain any slashes.</logentry>
+    <logentry>Fixed display error on refresh of preloaded input from history.</logentry>
+    <logentry>Implemented IGNORE_TOO_LONG_PROPERTIES_ERROR config define which makes “property.c” ignore too long properties (fixes “HugeCave.z8”).</logentry>
+    <logentry>Implemented forced predictable mode (ignores seeding random generator).</logentry>
+    <logentry>Fixed story-list for directly invoked files with relative pathname.</logentry>
+    <logentry>Many, many other minor fixes and extensions.</logentry>
+  </change>
+
+  <change version="0.5.3">
+    <datetime day-of-week="Wed" month="3" day="11" hour="21"
+      minute="34" second="59" timezone="CET" year="2009"/>
+    <logentry>(find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 28499 lines of output)</logentry>
+    <logentry>Re-built SDL-Sound system (implemented sound effect stack, better sound- has-finished-detection and many, many fixes).</logentry>
+    <logentry>Re-wrote Makefile system. Releveant module defaults are now kept in separate .mk-files.</logentry>
+    <logentry>Added support for AIFF-sounds in blorb files.</logentry>
+    <logentry>Added support for extra-blorb files (these are specified on the command line directly after the story file name).</logentry>
+    <logentry>Added “-Wextra” flag to CFLAGS and cleaned up new warnings caused by the new flag.</logentry>
+    <logentry>Cleaned up config file, fixed a minor bug and made boolean vars work “more” correctly.</logentry>
+    <logentry>Fixed “VERIFY” opcode.</logentry>
+    <logentry>Several fixes: Patched “savegame.c” to re-enable use of “CMem” save method, removed a superfluous free in streams.c which tried to free a static string.</logentry>
+    <logentry>Many minor fixes (option system, running X11-enabled fizmo in text-only console, etc).</logentry>
+  </change>
+
+  <change version="0.5.2">
+    <datetime day-of-week="Sat" month="1" day="17" hour="17"
+      minute="7" second="7" timezone="CET" year="2009"/>
+    <logentry>(find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 27123 lines of output)</logentry>
+    <logentry>Implemented filelist (which remembers all files invoked and files in searched directories).</logentry>
+    <logentry>Added use of libxml2 to parse metadata from the babel XML file.</logentry>
+    <logentry>Implemented story selection menu in ncursesw interface.</logentry>
+    <logentry>Implemented parsing of rc file.</logentry>
+    <logentry>Added bold-for-bright-foreground and blink-for-bright-background terminal options.</logentry>
+    <logentry>Implemented dont-use-color and force-color option.</logentry>
+    <logentry>Fixed interface for &gt; 121 colors.</logentry>
+    <logentry>Added “help” command.</logentry>
+    <logentry>Implemented “savegame-path” configuration option which specifies the directory for savegames.</logentry>
+    <logentry>Implemented text paragraph position cache to speed up scrollback for large amounts of text (not elegant, but works).</logentry>
+    <logentry>Savegames are no longer restored in case serial, release or checksum don't match.</logentry>
+    <logentry>Removed non-standard “FILE” chunk again, the storyfiles for directly invoked savegames (from the command line) are now located via the filelist.</logentry>
+    <logentry>Implemened “force-quetzal-umem” config option from the command line.</logentry>
+    <logentry>Added manpage.</logentry>
+    <logentry>Fixed “verify” opcode.</logentry>
+    <logentry>Basic implementation of input stream 1.</logentry>
+    <logentry>Implemented basic blorb support (meaning that blorb files are detected, information about pictures and sound is parsed and the first found “ZCOD” chunk is executed).</logentry>
+    <logentry>Fizmo now always keeps a FILE* to the story file open, eliminating the need for a lot of open / close calls (and simplyfing blorb handling).</logentry>
+    <logentry>Stories may now be started from the command line using their “real name” in case they are stored in the story-list. Example: “fizmo sorcerer”.</logentry>
+    <logentry>Many, many small fixes (scrollback, winch-redisplay, negative score, undo, crash on large scrollbacks, etc).</logentry>
+  </change>
+
+  <change version="0.5.1">
+    <datetime day-of-week="Tue" month="11" day="4" hour="21"
+      minute="48" second="29" timezone="CET" year="2008"/>
+    <logentry>find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw qzinspect   snd2aiff sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l  resulted in 23265 lines of output)</logentry>
+    <logentry>Implemented SDL-sound-interface. To make SDL work in Mac OS X I've used MacPorts to install SDL (“port install libsdl”), on Debian I've been using “apt-get install libsdl-sound1.2-dev” (maybe “apt-get install alsa-base alsa-utils” is also required).</logentry>
+    <logentry>Fixed scrollback and i18n-exit-translation.</logentry>
+    <logentry>Fixed libfizmo to also use setitimer/sigaction (makes fizmo work better on linux).</logentry>
+    <logentry>Implemented foreground/background color command line parameters for ncursesw interface.</logentry>
+    <logentry>Fixed get-cursor-[column|row] for ncursesw (makes PRINT_TABLE and Sherlock work).</logentry>
+    <logentry>Added “UMem” support for quetzal.</logentry>
+    <logentry>Added “snd2aiff” commandline utility (this was the basis for the first sound interface experiments).</logentry>
+    <logentry>Added “qzinspect”, a simple commandlinetool which uses libfizmo to list the contents of a quetzal savegame.</logentry>
+    <logentry>Added non-standard “FILE” chunk to savegames which contains the absolute file name of the story file which saved the game.</logentry>
+    <logentry>Implemented restore from the command line: In case a quetzal-savegame containing the non-standard-chunk “FILE” is given on the command line, fizmo will try to restore the savegame using the story filename stored in this chunk.</logentry>
+  </change>
+
+  <change version="0.5.0">
+    <datetime day-of-week="Thu" month="10" day="30" hour="11"
+      minute="42" second="27" timezone="CET" year="2008"/>
+    <logentry>(find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 21963 lines of output)</logentry>
+    <logentry>This version is now definitely usable to play all non-v6 games. Did extensive testing using Borderzone, “LostPig.z8”, “Zokoban.z5”, “crashme.z5”, “etude.z5”, “paint.z5”, “random.z5”, “reverzi.z5” and “unicode.z5”. Only two minor known bugs remain: Scrollback sometimes miscalculates the current row after a lot of scrolling back and forth (which is always “fixable” to pressing any-key which correctly rebuilds the current output page, and a display anomaly on the frontpage of “vampire.z8” which I intended to keep after a lot of code-inspection (since fizmo appears to be implementing the screen modell correctly and fixing this display problem breaks a lot of other games). This version has been tested on Linux, Darwin (Mac Os X) and a little bit on XP/Cygwin (using a self-built ncursesw).</logentry>
+    <logentry>Added “z_ucs_rchar” to “z_ucs.c”.</logentry>
+    <logentry>Re-implemented word-wrapper to not compress multiple spaces, keep spaces after newlines and buffer more than on line. The fixes the map display problem in “Enchanter”.</logentry>
+    <logentry>Changed opcode_restore to read dynamic memory and stack of the restored game into a freshly allocated memory block instead of directly into the game data. This makes it possible to now continue the current game instead of dropping back to the command line.</logentry>
+    <logentry>Fixed opcode_save to not exit in case an errors occurs during saving, but to merely give a warning (and correctly evaluate the branch). Now the currently active game isn't lost anymore in case a save goes wrong.</logentry>
+    <logentry>Added a LOT of error checking in “iff.c” and “savegame.c”. There's possibly a better way, but checking every single return value also works.</logentry>
+    <logentry>Added table-saving extensions to save- and restore-opcodes.</logentry>
+    <logentry>Fixed tokenizing for version 5+.</logentry>
+    <logentry>Fixed timed-input detection for “read” opcode. This fixes the crash in ZTUU when the lantern goes out.</logentry>
+    <logentry>Ran fizmo through (sp)lint, fixed memory leaks, minor bugs, many typecasts, some double and inconsistent definitions, cleanup up code.</logentry>
+    <logentry>Fixed Makefile dependencies.</logentry>
+    <logentry>Fixed a possible SIGSEV when using fprintf with “%ls” output format. This tended to crash when used on wchar_t on darwin.</logentry>
+    <logentry>Implemened scrollback for ncursesw interface, added support method for scrollback in “history.c”.</logentry>
+    <logentry>Added last missing v5 opcodes.</logentry>
+    <logentry>Fixed end-of-stack detection so that stack is now correctly enlarged when required.</logentry>
+    <logentry>Added module-based localization, removed unused localization entries.</logentry>
+    <logentry>Fixed space detection in wordwrapper.</logentry>
+    <logentry>Fixed metadata-handling (memcpy) in history.c</logentry>
+    <logentry>Added “single-turn” interface.</logentry>
+    <logentry>Fixed operand handling in zpu.</logentry>
+    <logentry>Added configuration system.</logentry>
+    <logentry>Re-built save/restore, should be finally 100% quetzal compatible.</logentry>
+    <logentry>Implemented output stream 4.</logentry>
+    <logentry>Fixed output stream 2.</logentry>
+    <logentry>Some split-window / set_window / set_cursor fixed for ncursesw-interface.</logentry>
+    <logentry>Substitued ualarm/signal with setitimer/sigaction since the first one won't catch SIGALRM on linux and manpage says that ualarm is obsolete.</logentry>
+    <logentry>Fixed color management so that ncurses color pair is avaiable for reading.</logentry>
+    <logentry>Many, many minor bugfixes.</logentry>
+  </change>
+
+  <change version="0.4.1">
+    <datetime day-of-week="Wed" month="11" day="14" hour="8"
+      minute="23" second="19" timezone="CET" year="2007"/>
+    <logentry>16373 lines in *.h and *.c files</logentry>
+    <logentry>Fixed a bug in “parse_utf_8_char”, this fixes i18n-messages.</logentry>
+    <logentry>Added C++ wrapper.</logentry>
+    <logentry>Implemented demo C++ screen interface.</logentry>
+    <logentry>Separated code in core, interface, c and cpp interfaces.</logentry>
+    <logentry>Improved upper window handling (trinity sundial) and blockbuffer (zork1.z5).</logentry>
+  </change>
+
+  <change version="0.4.0">
+    <datetime day-of-week="Tue" month="3" day="20" hour="7"
+      minute="57" second="1" timezone="CET" year="2007"/>
+    <logentry>13718 lines in *.h and *.c files</logentry>
+    <logentry>Moved to this new version on March 3, 2007. The old version has been lying around untouched since November 15, 2006.</logentry>
+    <logentry>Abandoned the internal use of UTF-8. It is just much too complicated to handle in the interface. I'm not even sure that with all the code necessary to handle UTF-8 handling that there is much space wasted. The important point for me is that using UCS-4 – fixed, 32-bit sized characters – is much more easier, and thus safer to use.</logentry>
+    <logentry>Re-implemented everything using wchar_t. The barebones C-Interface is the first converted. Everything took only a few hours.</logentry>
+    <logentry>Compacted code a little bit (tracelog.h, etc.).</logentry>
+    <logentry>Re-implemented the history-buffer in “streams.c”. It is controlled by the Z_HISTORY_INCREMENT_SIZE and Z_HISTORY_MAXIMUM_SIZE constants in file “config.h”. The buffer is re-alloced until it reaches the given maximum size. At that time, wrap-around is used to keep the buffer up to date. A debug function named “log_history” exists.</logentry>
+    <logentry>Converted the error handling to wchar_t.</logentry>
+    <logentry>Implemented SIGWINCH-handler for interfaces and associated handling in “ncrws-if.c”.</logentry>
+    <logentry>Implemented metadata (color and style) storage for the history.</logentry>
+    <logentry>Implemented set_font opcode.</logentry>
+    <logentry>Fixed two minor issues in the wordwrapper.</logentry>
+    <logentry>Fixed a missing string-terminator in the zchar_to_ucs_4-function. Over two years that thing was working without it ... unbelievable.</logentry>
+    <logentry>Fixed a token-length problem in parsing.</logentry>
+    <logentry>Implemented correct UTF8-filename-handling for savefiles.</logentry>
+    <logentry>Implemented CATCH and THROW opcodes, both untested.</logentry>
+    <logentry>Re-built interpreter commands with new wchar-base, prompt-repetition from history and user-configurable prefix.</logentry>
+    <logentry>Re-implemented scripting with UCS-4.</logentry>
+    <logentry>Implemented buffering of metadata – colour, styles and font – in the history buffer. Windows may now be resized and keep their styles intact.</logentry>
+    <logentry>Fixes in property-management for version 4 games.</logentry>
+    <logentry>The sound-effect opcode is accepted now for effects 1 and 2, although it doesn't do anything yet.</logentry>
+    <logentry>Improved split-screen in ncurses-interface: In case the upper window becomes smaller, its content is copied over into the lower window (making reading the sundial in trinity.z4 working).</logentry>
+    <logentry>Fixed set_window to set cursor to (0,0) when selection upper window (this makes the sonarscope in Seastalker work).</logentry>
+    <logentry>Fixed wordwrapper to accomodate for styles which are sent after normal text which is followed by a space – so far the style was activated before the space was output.</logentry>
+    <logentry>Implemented command history.</logentry>
+    <logentry>Fixed a bug that would cause screen resizes in versions before 5 try to set colours.</logentry>
+    <logentry>Implemented specialized blockbuffer for upper window.</logentry>
+    <logentry>Threw away wchar_t- and locale.h-usage. The problem is that they are not suported on older compilers, embedded systems or in emulations like cygwin. According to specifications, wchar_t may even only have 8 bits width and is compiler-implementation dependant, so it's practically not useable to store unicode-data. So i've implemented a z_ucs type which is always used for internal processing of characters. Thus every interface gets its output in z_ucs chars (which are simple int32_t types) and can happily typecast it into wchar_t if desired. Interfaces may still use wchar_t (in fact, ncursesw does), but the core is now completely autonomous.</logentry>
+    <logentry>Fizmo now compiles fine without warning on Cygwin. Both the c- and the ncursesw-interfaces seem to work nicely.</logentry>
+    <logentry>Fixed a bug in the wordwrapper which caused the zchar-converter-state and the linebuffer to overlay in a single byte.</logentry>
+    <logentry>Added “z” parameter to i18n string, representing z_ucs-strings.</logentry>
+    <logentry>Fixed stream-3-output: Current length is now always updated, not only when closing the stream.</logentry>
+    <logentry>Fixed input to make it work all across the screen and not only on the last line.</logentry>
+    <logentry>Fixed cursor movements and screen splits for version 4 and 5.</logentry>
+    <logentry>Splitted files into fizmo-core and interfaces. The interpreter itself is now put into a static library and linked in from the interfaces.</logentry>
+    <logentry>Moved “extern” statements into header files.</logentry>
+  </change>
+
+  <change version="0.3.1">
+    <logentry>12276 lines in *.h and *.c files</logentry>
+    <logentry>Added a few ZSCII/ASCII/ISO-8859-1/UTF-8 conversion functions in “text.c”.</logentry>
+    <logentry>Improved the ncursesw-interface to handle US-ASCII and UTF-8 directly.</logentry>
+    <logentry>Implemented detection if a character has a suitable ZSCII representation before adding it to the input line.</logentry>
+    <logentry>Fixed a bug which prevented correct assembly of multi-Z-characters.</logentry>
+    <logentry>Fixed a bug that caused multi-Z-character constructions to have a wrong word length.</logentry>
+    <logentry>Extended ncurses interface to handle scrolling on the input line.</logentry>
+    <logentry>Once input of a new line is finished, it is erase and then output again using the interface's output_utf8 function. This allows output which is longer than a single line to be word-wrapped.</logentry>
+    <logentry>Implemented correct delete and insert in the ncurses interface.</logentry>
+  </change>
+
+  <change version="0.3.0">
+    <datetime day-of-week="Fri" month="11" day="10" hour="20"
+      minute="48" second="54" timezone="CET" year="2006"/>
+    <logentry>13302 lines in *.h and *.c files</logentry>
+    <logentry>Abandoned the concept to pack absolutely everything in UTF8f. Having to think though the fork-8f is simply more complicated than necessary. In the name of “Keep it simple, stupid” I'll revert to my old idea of having a function in the interface for every output function like color setting, changing font style and so on.</logentry>
+    <logentry>Removed wordwrapper, pager, decoder, utf8conv, fork8f and fpipe. Reverted the system to the plain-style-C interface. I'll use the break in the development chain to clean up the code and take a second look at most things which has proven quite benefical in similar occasions.</logentry>
+    <logentry>Cleaned up most of the code. I've now got a clean, simple version without any real interface around running again. Better yet, since my last tries with ncursesw I've finally found out how to reliably produce UTF-8 output: By simply calling the setlocale function from #include &lt;locale.h&gt; and setting LC_ALL to “”. Once the system locale is now set to something using UTF-8, ncurses delivers correct output.</logentry>
+    <logentry>Implemented a new, much simpler wordwrapper that should now also wrap UTF-8 correctly.</logentry>
+    <logentry>Fixed quetzal saving. The main FORM chunk has now the correct length so that both frotz and Zoom now correctly load savegame files.</logentry>
+    <logentry>Implemented a whole new wordwrapper. This one correctly wraps UTF-8 and is capable of storing “metadata” – colors and styles – into the text. This allows color and style changes in the middle of a word without having to flush buffers.</logentry>
+    <logentry>Implemented colors.</logentry>
+    <logentry>Implemented text style.</logentry>
+    <logentry>The etude.z5-test is running again. So far I've got everything working except the character output.</logentry>
+    <logentry>Implemented v3 window handling.</logentry>
+    <logentry>The random.z5 test is now running okay.</logentry>
+    <logentry>Implemented [More] prompt.</logentry>
+  </change>
+
+  <change version="0.2.1">
+    <logentry>Improved command line parameter handling.</logentry>
+    <logentry>Fixed a REAL nasty bug in the line-history resulting in buffer overflows in very rare cases.</logentry>
+    <logentry>Fixed another minor bug that would let the word wrapper start a new line after input with a space (Wishbringer's “read message and move leaves”) by added the wordwrap_reset_wrapper method (which correctly reset the number of consecutive spaces).</logentry>
+    <logentry>Fixed a bug that would cause a crash when games were saved in a restarted game (forgotten store_empty_stack_frame).</logentry>
+    <logentry>(Successfully completed Wishbringer – 96/100 points, one wish used. I just have to find a way to unlock the chains down in the tower...)</logentry>
+    <logentry>Fixed paging module, long lines causing wrap-arounds are now correctly accounted for. Modified the module to keep one more line than required on the screen to ease continued reading.</logentry>
+    <logentry>Tested compatibility to Zork I, Z-Machine version 1, release 2, serial number AS000C. This version appears to have a bug at $585b. It occurs when the command “open mailbox and read leaflet” is executed right at the beginning. To circumvent this, a skip-underflow-check can be enabled in variable.c.</logentry>
+    <logentry>I've posted a related newsgroup-message at http://groups.google.de/group/ rec.arts.int-fiction/browse_frm/thread/c77652b28be69f2d/ a52b9f652fc75928#a52b9f652fc75928</logentry>
+    <logentry>Added the “@info” command.</logentry>
+    <logentry>Added automatic detection of “problem” games. This way, the “AS000C” hack is automatically activated at start-up.</logentry>
+    <logentry>Activated hacks are displayed using the “@info” command.</logentry>
+    <logentry>(0.20.1 finished)</logentry>
+    <logentry>Enchanhed the pipe/filter system. Each filter will now receive the destination function (and “object-struct”) directly. Thus, no more extra forwarding functions are required.</logentry>
+    <logentry>Rebulid the windowing system in the curses interface.</logentry>
+    <logentry>No more flushes are sent from the fizmo “core” any longer. The interface will flush it's filters by itself if required (sending a flush into the first filter in case input is required or the interface is closed).</logentry>
+    <logentry>ABSOLUTELY FASCINATING to discover how many can bugs can still reside in a program just to creep up occassionally ... or is that just a sign of a bad programming style? Now I begin to grasp even more the significance of Java's Array-out-of-bounds-exception. I found a bug in the utf8x-buffer (forgot a multiplation by factor 3, resulting in a much too small buffer. I must have had a lot of overflows without ever noticing them in the past). Found another bug in the UTF8x-Converter where I simply referenced the wrong variable.</logentry>
+    <logentry>Fixed a forgotton “converter-&gt;utf8f_parameter_bytes_to_copy = 0” in utf8conv.c which SOMETIMES (grrr!) caused an error which caused the screen output to vanish.</logentry>
+    <logentry>Reorganized piping in the curses interface. Every window now has its own combination of wordwrapper, converter, pager and decoder. General window commands like split_window or erase_window are caught by a enhanced type of decoder named fork8f and passed along to the correct window structure. The random.z5 seems to work fine and I hope it's sufficiently correct to finally try my luck with Seastalker.</logentry>
+    <logentry>(0.20.2 finished)</logentry>
+    <logentry>Fixed status line display.</logentry>
+    <logentry>Fixed ncurses color recycling.</logentry>
+  </change>
+
+  <change version="0.2.0">
+    <datetime day-of-week="Sat" month="4" day="15" hour="2"
+      minute="6" second="22" timezone="CEST" year="2006"/>
+    <logentry>12794 lines in *.h and *.c files</logentry>
+    <logentry>Version 0.2.0 adds an unix interface, allowing for timed intput, and an [n]curses interface including color, better wordwrapping and accented characters. Zinc now runs random.z5 and passes all of the etude tests. I completed Moonmist without encountering any strange behaviour.</logentry>
+    <logentry>Put the conversion of UTF-8 to [ASCII|ISO-8859-1|UTF-8] in utf8conv.[c|h]. That way, c_if.c is now down to a minimum size, and all it's “outsourced” functions – wordwrapping and UTF-8-conversion – can now be used without any problems by other functions or interfaces.</logentry>
+    <logentry>Cleaned up Makefile.</logentry>
+    <logentry>Implemented call_vs2 and call_vn2 opcodes.</logentry>
+    <logentry>Made PRINT_NUM output signed instead of unsigned numbers (found it thanks to etude.z5).</logentry>
+    <logentry>Corrected OPCODE_MOD to correctly handle signed operand 0 values (etude again).</logentry>
+    <logentry>Corrected a REAL nasty mistake: Replaced sizeof(&lt;constant&gt;) in a utf8conv.c malloc-call with a simple &lt;constant&gt;. This made the system crash under OS X PPC (though not on linux and some other unix-variant).</logentry>
+    <logentry>Re-organised the makefile a bit. Interface dependencies are now correctly resolved and build dependencies are in order again.</logentry>
+    <logentry>Renamed the interpreter from the project name “zint” – meaning Z-Machine-Interpreter – to “ZInC”, meaning Z-INterpreter-Code.</logentry>
+    <logentry>Corrected the Makefile again.</logentry>
+    <logentry>Implemented the Unix-Interface. This one assumes that it's running on a unix machine terminal without any specials (not even curses).</logentry>
+    <logentry>It uses select and tc[g|s]etattr to implement timed and preloaded input and a get_char implementation.</logentry>
+    <logentry>Fixed a bug in unix_if.c that would cause a segfault on startup.</logentry>
+    <logentry>Some more i18n, cleaner tc[g|s]etattr in unix_if.c</logentry>
+    <logentry>Implmented correct input line restoration after timed-input output.</logentry>
+    <logentry>Modified text.c so that the streams_echo_input command is executed no matter whether the first word could be found in the vocabluary or not.</logentry>
+    <logentry>Implemented preloaded input in the Unix-Interface.</logentry>
+    <logentry>Implemented correct READ_CHAR in Unix-Interface.</logentry>
+    <logentry>Fixed a LOT of tiny bugs and itches.</logentry>
+    <logentry>Implemented [MORE] paging via additional pager module.</logentry>
+    <logentry>Fixed german translation of i18n messages.</logentry>
+    <logentry>Fixed ZSCII-to-UTF8 encoding, ZInC now passes etude's accented character test.</logentry>
+    <logentry>Implemented a curses interface. At the moment raw constructs for the upper and lower window and a status line. Basic color management. Adapted wordwrap.c a little bit in order to achieve corrent linebreaks.</logentry>
+    <logentry>Completely re-wrote wordwrapping in order to get rid of trailing spaces and other problems evident when using curses.</logentry>
+    <logentry>Completely re-wrote the entire output stream system. It turned out that the usage of flags caused problems buffering text: In order for everything to work correctly the flags would have to be buffered along with the text output. Text-relevant formatting data like color is now passed directly along with the UTF-8 text: Internally I'm now using an encoding that can encode special formatting sequences into the UTF-8 stream – see UTF8X.txt for more information. These conversions added the utf8x.* and decoder.* files. Although quite a major change, the encoding helps to make the whole system a lot cleaner.</logentry>
+    <logentry>Numerous fixes to the [n]curses interface, addition of status line, better color management with careful consideration of availiable color pairs.</logentry>
+    <logentry>Using the ncurses interface, the interpreter now passes the etude.z5 test with the exception of the text styles and undo capability.</logentry>
+    <logentry>Modified the i18n_translate_and_exit and close_streams functions to support a message-on-exit. This way, error messages are supported without regard for what's left in the UTF8x output pipe and error output can be seperated from the other valid stream output. This way, the ncurses interface can correctly endwin() and output the message to read on stderr.</logentry>
+    <logentry>So far, multiple invocations of READ or READ_CHAR with timed input casued a “nested timed input not availiable” error. This is a problem for the random.z5 test which appears to use this feature. The nested behaviour has been altered to an overwrite behaviour. In case a second timed input is requested, the old timer and routine are erased from memory and replaced with the new data.</logentry>
+    <logentry>Fixed interface commandline choice.</logentry>
+    <logentry>The random.z5 tests now apperas to run correctly.</logentry>
+    <logentry>Fixed a tiny bug in wordwrapping directly after read_line, fixed command line parsing, i18n-string-length and a few tiny localization issues.</logentry>
+    <logentry>Added text styles to the curses interface.</logentry>
+    <logentry>Finally added modifiable names for game saving and restoring.</logentry>
+    <logentry>(Successfully completed the red storyline of Moonmist).</logentry>
+    <logentry>Renamed ZinC (name already exists) to fizmo: Fizmo Interprets Z-Machine Opcodes.</logentry>
+  </change>
+
+  <change version="0.1.4">
+    <datetime day-of-week="Fri" month="12" day="9" hour="3"
+      minute="36" second="20" timezone="CET" year="2005"/>
+    <logentry>8848 lines in *.h and *.c files</logentry>
+    <logentry>The 0.1.4 complies to the strictz.z5 test, allows transcripting (even on startup via command line switch). A few minor bugs were fixed and a history of the last output is kept, allowing for a faithfully original prompt after an interpreter command has been finished.</logentry>
+    <logentry>Compacted locate_dictionary_entry (so that the zscii_string_length function is no longer needed) and adapted it to version 4+ files.</logentry>
+    <logentry>Implemented the object-number-unequal-zero-checks (in order to run strict.z5).</logentry>
+    <logentry>Adapted read opcode to version 4+.</logentry>
+    <logentry>Renamed c_iface.c to c_if.c in order to gain more space for other interface names.</logentry>
+    <logentry>Fixed zchar_to_utf_8 so that multibyte-characters are handeled correctly between two zchar_to_utf_8 function calls (when continuing on the first call's source string due to output buffer shortage).</logentry>
+    <logentry>Implemented basic transcipting in streams.c and moved the trace functions there. All output is now channeled from text.c through stream.c into the active interface. The input is seperately written to to the streams, in order to be able to distinguish it from regular output (and to write it only to the streams requested).</logentry>
+    <logentry>Implemented “-s” / “--start-script” startup option to start scripting right away. This allows to capture really all input emitted by the game.</logentry>
+    <logentry>Implemented input of file name (supplying a default filename) for transcripts.</logentry>
+    <logentry>Fixed a bug in the parsed word position which would cause the following garbeled Moonmist-output:<br/>&gt;get out of the cat<br/>[I don't know the word " cat."]<br/>&gt;oops car [I assume you mean: get  ou  o  th  ca]<br/>You're not in it!</logentry>
+    <logentry>Implemented CALL_VN opcode.</logentry>
+    <logentry>Added STRICT_Z definition in config.h and implemented a lot of checks in object.c together with a warning mechanism in i18n.c in order to make this interpreter compliant to strictz.z5.</logentry>
+    <logentry>Fixed a bug in the length-code-size determination in properties.c (replaced “&amp; 80” with “&amp; 0x80”).</logentry>
+    <logentry>Added a lot of STRICT_Z tests to properties.c.</logentry>
+    <logentry>Implemented READ_CHAR opcode (not very well, since in stanard C without any Operating-System-specific calls there's no single read of a char, thus you still have to press enter).</logentry>
+    <logentry>Zinc now passes the strictz.z5 test and looks close enough to the frotz output stored at http://www.ifarchive.org/if-archive/infocom/interpreters/old/frotz/frotz_zstrict_result (with other warning messages, of course).</logentry>
+    <logentry>Implemented wordwrapping as a seperate re-usable module in wordwrap.[c|h]. The C-interface and the function for output to stream 2 currently use it both.</logentry>
+    <logentry>Implemented line_history_buffer, a circular buffer that will record the last output sent to the streams. It's supposed to be used for reconstruction of the current prompt in case an interpreter command is entered an the original prompt should be restored after executing it and later for easier handling of preloaded input.</logentry>
+    <logentry>Interpreter commands will now prompt with the last line that was output by the Z-program after finishing command processing.</logentry>
+  </change>
+
+  <change version="0.1.3">
+    <datetime day-of-week="Sun" month="11" day="27" hour="15"
+      minute="6" second="18" timezone="CET" year="2005"/>
+    <logentry>6013 lines in *.h and *.c files</logentry>
+    <logentry>This 0.1.3 version adds localization for error- and startup messages, corrects a few minor bugs abd adds UTF-8 support.</logentry>
+    <logentry>Made mod (remainder-after-divison) signed (due to 2.2.1).</logentry>
+    <logentry>Corrected opcode_div so that the divisor, not the dividend, is verified not to be 0. Added divisor-not-0-check to mod.</logentry>
+    <logentry>A few paranoid sanity checks in opcode_read.</logentry>
+    <logentry>Modified opcode_read so that the whole line of input is always read, no matter how much can actually be stored so that the next line of input does not begin with left-over-text. The non-used input is discarded.</logentry>
+    <logentry>Removed use of input_to_zscii-function in text.c, since the input does not have to be converted.</logentry>
+    <logentry>Extended store_ZSCII_as_zchar in text.c to accept not only characters in the current alphabet, but also to encode other chars as multi-z-chars, thus also allowing the '@' as input which I want to use to identify interpreter commands.</logentry>
+    <logentry>Implemented the “@predictable” command to switch interpreter in or out of predicatable random mode as suggested in the spec.</logentry>
+    <logentry>Made random generator more spec conforming by using negative values to seed the generator to this value.</logentry>
+    <logentry>Implemented parsing of command line options. Currently only used to start up interpreter in predictable random mode.</logentry>
+    <logentry>Implemented UTF-8 handling. The data traffic between the core interpreter and the interface(s) has been modified to use exclusively UTF-8. It is now also possible to output a whole string via the utf_8_output function.</logentry>
+    <logentry>The C interface can now be put in three output modes – ASCII, ISO-8859-1 and UTF-8. Characters that cannot be printed in the ASCII and ISO-8859-1 modes are substituted by a '?'.</logentry>
+    <logentry>Implemented UTF-8 output as defined by the Z-Machine specification v1. So far only implemented without testing.</logentry>
+    <logentry>Implemented loclization. In order to avoid special cases in which it is not possible to tell the user that the localized files cannot be loaded since the files have not been loaded yet in his own language :-) I'm using the prepi18n binary to convert the locales/xx_XX.txt into the file locales.c which can be directly complied into the interpreter binary.</logentry>
+    <logentry>The localization files are supposed to be encoded in UTF-8 so they can be easily output using the usual interface functions.</logentry>
+    <logentry>Split the activate_interface function into activate_interface and link_active_interface_to_story. The first call actually initializes the interface which is used to make output possible (in case the story file can't be loaded), the second call performs the necessary initializations with the story file's header.</logentry>
+    <logentry>Extended localization to use parameters the like “Could not open \{0}.”.</logentry>
+    <logentry>So far, parameters are only allowed to contain ASCII values.</logentry>
+    <logentry>Moved last remaining function in output.c, read_zscii_string, into text.c.</logentry>
+    <logentry>Implemented forgotten lowering of case after reading input from the keyboard. Now it's possible to answer “YES” to Moonmist when it asks for “YES or NO”.</logentry>
+    <logentry>Cleaned up stack.c a bit and fixed a bug that would have caused the stack not to enlarge in case it was supposed to.</logentry>
+    <logentry>Extended localization to use type identifiers. In the beginning I decided to skip them, but to make error messages useful to the user and handier in the code I decided to give it a shot. Parameters are now specified by using \{0s} for a string and \{0d} for a decimal. Together with a few supporting wrapper functions, the main file already looks much cleaner. Due to the buffering of the Z-Machine output, messages are even correctly word-wrapped.</logentry>
+    <logentry>Implemented switching between ASCII / ISO-8859-1 / UTF-8 into zinc.c.</logentry>
+    <logentry>Logically it would have been better to put it in to c_iface, but since it will be required more often and don't want any copied code I decided to leave it this way.</logentry>
+    <logentry>Implemented echo option in the C interface in order to be able to read the input from input piped into the interpreter.</logentry>
+    <logentry>Converted all current 51 conditions-to-translate from FATAL_ERROR and [s|f|]printf to i18n_translate[and_exit]. The FATAL_ERROR macro has been removed.</logentry>
+    <logentry>Compacted the zchar-storage-functions.</logentry>
+    <logentry>Completely replaced read_zscii_string with zscii_to_utf_8. The new functions will output z-char-strings of an arbitrary length into an limited-size output buffer. Multiple calls to this function for the same source string will continue with the output where the last call of the functions had to stop.</logentry>
+  </change>
+
+  <change version="0.1.2">
+    <datetime day-of-week="Thu" month="10" day="20" hour="23"
+      minute="45" second="34" timezone="CEST" year="2005"/>
+    <logentry>5094 lines</logentry>
+    <logentry>0.1.2 fixes my currently last known problems with playing the 840726 Zork I revision. Word wrapping makes it look a little bit nicer and the barebones-C-interface is now probably as good as it can get. Did quite a lot of code-cleanup.</logentry>
+    <logentry>Implemented NOT opcode.</logentry>
+    <logentry>Implemented NOP opcode.</logentry>
+    <logentry>Implemented RESTART opcode.</logentry>
+    <logentry>Implemented POP opcode.</logentry>
+    <logentry>Implemented SHOW_STATUS opcode.</logentry>
+    <logentry>Allowed output of tab – ZSCII 9 – for version 3 (due to the guidebook in the Dam Lobby).</logentry>
+    <logentry>Implemented VERIFY opcode.</logentry>
+    <logentry>Implemented PIRACY opcode (we're all honest, so an evaluate_branch(1) sounds okay, right?).</logentry>
+    <logentry>Fixed a bug in INC_CHK (wrong cast to unsigned value instead of signed).</logentry>
+    <logentry>Totally forgot about the 8.3-filename-limits on DOS machines, files were renamed and merged together – /(.*)_opcodes.c/ joined /$1.c/.</logentry>
+    <logentry>Fixed a bug in the random opcode which allowed 0 as a minimum result value to the random call (should have been 1). Fighting with the thief now results in much less garbled text output.</logentry>
+    <logentry>Cleanly wrapped TRACE_LOG calls in curly braces, meaning disabling tracing now works correctly. The zinc binary now has a size of 82308 bytes with logging enabled, and 54700 bytes without logging.</logentry>
+    <logentry>Created Makfile-dependency for zinc.h from iface.h (by using the touch command, is the okay?). Made all and clean .PHONY targets.</logentry>
+    <logentry>Removed globals.c, moved globals into zinc.c and created “extern” references in other source files.</logentry>
+    <logentry>Moved globals to corresponding source files (which eliminates a lot of non-needed “extern” references).</logentry>
+    <logentry>The linux manpages tell me bzero is outdated. Faithfully replaced bzero with memset calls.</logentry>
+    <logentry>Replaced memcpy call with a loop that assembles uint16_t values byte by byte. This will avoid problems on little-endian machines (i386 and the like), since the Z-machine uses a big-endian model.</logentry>
+    <logentry>Used the Mersenne Twister as random generator. Only the genrand_int32 function is used, the rest of the functions, with exception of the two init calls, were deleted from the mt19937ar.c file. The generator is seeded by an init vector consisting of the number of seconds since 1970, a standard C random generator number, the number of milliseconds since 1970, followed by another standard C random generator number.</logentry>
+    <logentry>Splitted zinc.h in a header file for each .c file. Adjusted Makefile and #includes accordingly.</logentry>
+    <logentry>Changed **z_opcode_procedures into *z_opcode_functions and moved it from zinc.c to zpu.c (thus avoiding external reference and setup). Now z_opcode_functions is a one-dimenstional array indexed by the value instruction_form + instr_code. This allows saving the space for 32 pointers in the smaller opcode classes (with only 16 instead of 32 opcodes).</logentry>
+    <logentry>Implemented buffering / word-wrapping in the C Interface. With this change, the C interface should be complete. Comparing to everything else it's still very raw, but hey, it works.</logentry>
+    <logentry>Implemented BUFFER_MODE opcode.</logentry>
+    <logentry>Moved all the configuration options from zinc.h to config.h.</logentry>
+  </change>
+
+  <change version="0.1.1">
+    <datetime day-of-week="Fri" month="9" day="23" hour="3"
+      minute="16" second="56" timezone="CEST" year="2005"/>
+    <logentry>0.1.1 was the first version that was able to save and restore games.</logentry>
+    <logentry>Implemented OR opcode.</logentry>
+    <logentry>Implemented MOD opcode.</logentry>
+    <logentry>Changed get_prop_len so that get_prop_len(0) returns 0 (for 1.1 standard).</logentry>
+    <logentry>Updated property.c, splitted up property search in three functions in order to allow easier implementation of the GET_NEXT_PROP opcode.</logentry>
+    <logentry>Implemented GET_NEXT_PROP (you can now pick up the elven sword).</logentry>
+    <logentry>Implemented CALL_2S.</logentry>
+    <logentry>Implemented CALL_2N.</logentry>
+    <logentry>Implemented SET_COLOUR (but does not have no effect in c_interface).</logentry>
+    <logentry>Implemented all remaining 2OP-opcodes with the exception of THROW.</logentry>
+    <logentry>Implemented DEC opcode.</logentry>
+    <logentry>Implemented PRINT_ADDR opcode.</logentry>
+    <logentry>Implemented CALL_1S opcode.</logentry>
+    <logentry>Implemented REMOVE_OBJ opcode.</logentry>
+    <logentry>Implemented LOAD opcode.</logentry>
+    <logentry>Modified the tokenising routine to correctly return position and length of a word even if it was not found in the dictionary.</logentry>
+    <logentry>Implemented dummy stack frame storage for quetzal compatibility.</logentry>
+    <logentry>Implemented SAVE opcode.</logentry>
+    <logentry>Implemented RESTORE opcode.</logentry>
+  </change>
+
+  <change version="0.1.0">
+    <datetime day-of-week="Wed" month="9" day="14" hour="0"
+      minute="45" second="0" timezone="CEST" year="2005"/>
+    <logentry>0.1.0 is the first version that allows basic playing of version 3 games. The only game used for testing so far is Zork 1 which was drawn from the well-known site of Peter Scheyen.</logentry>
+    <logentry>Moving around the house, object movement (taking and dropping of the leaflet) all seems to work quite okay now.</logentry>
+    <logentry>Implementing more missing opcodes.</logentry>
+    <logentry>Fixing a few not-so-easy to find bugs (like the property addresses etc).</logentry>
+    <logentry>Fixed a bug in the branch-address calculation.</logentry>
+    <logentry>Fixed a bug in the object-unlinking mechanism that would not correctly remove the object-to-be-unlinked from an object further up the sibling line.</logentry>
+  </change>
+
+  <change version="0.0.4">
+    <logentry>Implemented the c_interface, which allows very bare-bone input / output provided by standard C facilities (meaning fprintf / fgets).</logentry>
+    <logentry>Implementing of user input, tokenising and dictionary parsing.</logentry>
+  </change>
+
+  <change version="0.0.3">
+    <logentry>Major cleanup of the code.</logentry>
+    <logentry>distribution of the old interpreter.c file into multiple .c files.</logentry>
+    <logentry>First appearance of the interpreter.h interface.</logentry>
+  </change>
+
+  <change version="0.0.2">
+    <logentry>Further implementation of the basic capabilities, including property management etc.</logentry>
+  </change>
+
+  <change version="0.0.1">
+    <logentry>First basic implementation of memory, variables, stack and primary opcodes.</logentry>
+  </change>
+</changelog>
+
