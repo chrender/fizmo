@@ -7,6 +7,9 @@
  - Adapted to automake v1.14 and fixed compiler warning.
  - Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.
  - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.
+ - Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.
+ - After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.
+  - Implemented new screen refresh method for the ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
 
 ---
 
