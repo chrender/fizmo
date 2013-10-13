@@ -11,7 +11,7 @@
  - After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.
  - Implemented new screen refresh method for the ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
  - Fixed incorrect backspace or delete behaviour which could cause in crash in case of small screen sizes combined with the use of preloaded input.
- - Several small files for ncurswsw input.
+ - Several small files for ncursesw input.
 
 ---
 
