@@ -211,7 +211,7 @@
 
  - Bugfix release: minor addition of several features (may now compile without libsndfile and libSDL alone, implemented XDG base directory specification).
  - Removed unused references to SDL-mixer (which isn't used for anything anymore).
- - Improved and documented default “config.*.mk” files and added config default for cygwin with sound support (to my own great surprise, sound really works under Cygwin).
+ - Improved and documented default “config.\*.mk” files and added config default for cygwin with sound support (to my own great surprise, sound really works under Cygwin).
  - Added more information to “INSTALL.txt”.
  - Implemented new ENABLE_AIFF_FOR_SOUND_SDL variable in config files. This allows the sound-sdl-interface to at least play Infocom .snd files when no libsndfile is available.
  - Added config-file options to manpage.
@@ -224,12 +224,12 @@
 
    **Version 0.6.0 — March 25, 2009**
 
- - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l  resulted in 29953 lines of output)
+ - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '\*.c' -or -name '\*.cpp' -or -name '\*.h' | xargs cat | wc -l  resulted in 29953 lines of output)
  - This marks the point for the first public beta release. Killed all known bugs as far as I could find them and made fizmo work on Linux – tested with a 64-bit distribution of Debian/Lenny – and Mac OS X 10.5 with a 32-bit Intel machine and MacPorts for SDL. New features since version 0.5 include an SDL-based sound interface, support for charachter font via unicode translation, partial (z)blorb-support – runs code from blorbs, can display frontispiece images in XTerms and play AIFF-sounds, a story file navigator, interface margins, restore from command line, a much improved streams implementation, a manpage and many other small features as well as a large amount of bugfixes.
  - Implemented conversion of font 3 (charachter font) to unicode. This appears to make Beyond Zork's map appear at least readable.
  - All directories in the “ZCODE_ROOT_PATH” are now recursively searched for Z-machine games.
  - Implemented recording and replaying of timed input.
- - Implemented new “*.snd” search method: Generalized for all files, not only Lurking Horror and Sherlock, tries upper- and lowercase.
+ - Implemented new “\*.snd” search method: Generalized for all files, not only Lurking Horror and Sherlock, tries upper- and lowercase.
  - Fixed scan_table opcode. This fixes Beyond Zork window output.
  - The filename input for save and restore may now be cancelled using the escape key.
  - Pressing arrow up/down during filename input no longer displays the command history.
@@ -257,7 +257,7 @@
 
    **Version 0.5.3 — March 11, 2009**
 
- - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 28499 lines of output)
+ - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl -type f -name '\*.c' -or -name '\*.cpp' -or -name '\*.h' | xargs cat | wc -l resulted in 28499 lines of output)
  - Re-built SDL-Sound system (implemented sound effect stack, better sound- has-finished-detection and many, many fixes).
  - Re-wrote Makefile system. Releveant module defaults are now kept in separate .mk-files.
  - Added support for AIFF-sounds in blorb files.
@@ -273,7 +273,7 @@
 
    **Version 0.5.2 — January 17, 2009**
 
- - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 27123 lines of output)
+ - (find c cgi cpp fizmo ncursesw simple-c simple-cpp single-turn sound-sdl   -type f -name '\*.c' -or -name '\*.cpp' -or -name '\*.h' | xargs cat | wc -l resulted in 27123 lines of output)
  - Implemented filelist (which remembers all files invoked and files in searched directories).
  - Added use of libxml2 to parse metadata from the babel XML file.
  - Implemented story selection menu in ncursesw interface.
@@ -291,7 +291,7 @@
  - Fixed “verify” opcode.
  - Basic implementation of input stream 1.
  - Implemented basic blorb support (meaning that blorb files are detected, information about pictures and sound is parsed and the first found “ZCOD” chunk is executed).
- - Fizmo now always keeps a FILE* to the story file open, eliminating the need for a lot of open / close calls (and simplyfing blorb handling).
+ - Fizmo now always keeps a FILE\* to the story file open, eliminating the need for a lot of open / close calls (and simplyfing blorb handling).
  - Stories may now be started from the command line using their “real name” in case they are stored in the story-list. Example: “fizmo sorcerer”.
  - Many, many small fixes (scrollback, winch-redisplay, negative score, undo, crash on large scrollbacks, etc).
 
@@ -300,7 +300,7 @@
 
    **Version 0.5.1 — November 4, 2008**
 
- - find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw qzinspect   snd2aiff sound-sdl   -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l  resulted in 23265 lines of output)
+ - find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw qzinspect   snd2aiff sound-sdl   -type f -name '\*.c' -or -name '\*.cpp' -or -name '\*.h' | xargs cat | wc -l  resulted in 23265 lines of output)
  - Implemented SDL-sound-interface. To make SDL work in Mac OS X I've used MacPorts to install SDL (“port install libsdl”), on Debian I've been using “apt-get install libsdl-sound1.2-dev” (maybe “apt-get install alsa-base alsa-utils” is also required).
  - Fixed scrollback and i18n-exit-translation.
  - Fixed libfizmo to also use setitimer/sigaction (makes fizmo work better on linux).
@@ -317,7 +317,7 @@
 
    **Version 0.5.0 — October 30, 2008**
 
- - (find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw -type f -name '*.c' -or -name '*.cpp' -or -name '*.h' | xargs cat | wc -l resulted in 21963 lines of output)
+ - (find fizmo simple-c simple-cpp c cgi single-turn cpp ncursesw -type f -name '\*.c' -or -name '\*.cpp' -or -name '\*.h' | xargs cat | wc -l resulted in 21963 lines of output)
  - This version is now definitely usable to play all non-v6 games. Did extensive testing using Borderzone, “LostPig.z8”, “Zokoban.z5”, “crashme.z5”, “etude.z5”, “paint.z5”, “random.z5”, “reverzi.z5” and “unicode.z5”. Only two minor known bugs remain: Scrollback sometimes miscalculates the current row after a lot of scrolling back and forth (which is always “fixable” to pressing any-key which correctly rebuilds the current output page, and a display anomaly on the frontpage of “vampire.z8” which I intended to keep after a lot of code-inspection (since fizmo appears to be implementing the screen modell correctly and fixing this display problem breaks a lot of other games). This version has been tested on Linux, Darwin (Mac Os X) and a little bit on XP/Cygwin (using a self-built ncursesw).
  - Added “z_ucs_rchar” to “z_ucs.c”.
  - Re-implemented word-wrapper to not compress multiple spaces, keep spaces after newlines and buffer more than on line. The fixes the map display problem in “Enchanter”.
@@ -352,7 +352,7 @@
 
    **Version 0.4.1 — November 14, 2007**
 
- - 16373 lines in *.h and *.c files
+ - 16373 lines in \*.h and \*.c files
  - Fixed a bug in “parse_utf_8_char”, this fixes i18n-messages.
  - Added C++ wrapper.
  - Implemented demo C++ screen interface.
@@ -364,7 +364,7 @@
 
    **Version 0.4.0 — March 20, 2007**
 
- - 13718 lines in *.h and *.c files
+ - 13718 lines in \*.h and \*.c files
  - Moved to this new version on March 3, 2007. The old version has been lying around untouched since November 15, 2006.
  - Abandoned the internal use of UTF-8. It is just much too complicated to handle in the interface. I'm not even sure that with all the code necessary to handle UTF-8 handling that there is much space wasted. The important point for me is that using UCS-4 – fixed, 32-bit sized characters – is much more easier, and thus safer to use.
  - Re-implemented everything using wchar_t. The barebones C-Interface is the first converted. Everything took only a few hours.
@@ -405,7 +405,7 @@
 
    **Version 0.3.1**
 
- - 12276 lines in *.h and *.c files
+ - 12276 lines in \*.h and \*.c files
  - Added a few ZSCII/ASCII/ISO-8859-1/UTF-8 conversion functions in “text.c”.
  - Improved the ncursesw-interface to handle US-ASCII and UTF-8 directly.
  - Implemented detection if a character has a suitable ZSCII representation before adding it to the input line.
@@ -420,7 +420,7 @@
 
    **Version 0.3.0 — November 10, 2006**
 
- - 13302 lines in *.h and *.c files
+ - 13302 lines in \*.h and \*.c files
  - Abandoned the concept to pack absolutely everything in UTF8f. Having to think though the fork-8f is simply more complicated than necessary. In the name of “Keep it simple, stupid” I'll revert to my old idea of having a function in the interface for every output function like color setting, changing font style and so on.
  - Removed wordwrapper, pager, decoder, utf8conv, fork8f and fpipe. Reverted the system to the plain-style-C interface. I'll use the break in the development chain to clean up the code and take a second look at most things which has proven quite benefical in similar occasions.
  - Cleaned up most of the code. I've now got a clean, simple version without any real interface around running again. Better yet, since my last tries with ncursesw I've finally found out how to reliably produce UTF-8 output: By simply calling the setlocale function from #include <locale.h> and setting LC_ALL to “”. Once the system locale is now set to something using UTF-8, ncurses delivers correct output.
@@ -466,7 +466,7 @@
 
    **Version 0.2.0 — April 15, 2006**
 
- - 12794 lines in *.h and *.c files
+ - 12794 lines in \*.h and \*.c files
  - Version 0.2.0 adds an unix interface, allowing for timed intput, and an [n]curses interface including color, better wordwrapping and accented characters. Zinc now runs random.z5 and passes all of the etude tests. I completed Moonmist without encountering any strange behaviour.
  - Put the conversion of UTF-8 to [ASCII|ISO-8859-1|UTF-8] in utf8conv.[c|h]. That way, c_if.c is now down to a minimum size, and all it's “outsourced” functions – wordwrapping and UTF-8-conversion – can now be used without any problems by other functions or interfaces.
  - Cleaned up Makefile.
@@ -491,7 +491,7 @@
  - Fixed ZSCII-to-UTF8 encoding, ZInC now passes etude's accented character test.
  - Implemented a curses interface. At the moment raw constructs for the upper and lower window and a status line. Basic color management. Adapted wordwrap.c a little bit in order to achieve corrent linebreaks.
  - Completely re-wrote wordwrapping in order to get rid of trailing spaces and other problems evident when using curses.
- - Completely re-wrote the entire output stream system. It turned out that the usage of flags caused problems buffering text: In order for everything to work correctly the flags would have to be buffered along with the text output. Text-relevant formatting data like color is now passed directly along with the UTF-8 text: Internally I'm now using an encoding that can encode special formatting sequences into the UTF-8 stream – see UTF8X.txt for more information. These conversions added the utf8x.* and decoder.* files. Although quite a major change, the encoding helps to make the whole system a lot cleaner.
+ - Completely re-wrote the entire output stream system. It turned out that the usage of flags caused problems buffering text: In order for everything to work correctly the flags would have to be buffered along with the text output. Text-relevant formatting data like color is now passed directly along with the UTF-8 text: Internally I'm now using an encoding that can encode special formatting sequences into the UTF-8 stream – see UTF8X.txt for more information. These conversions added the utf8x.\* and decoder.\* files. Although quite a major change, the encoding helps to make the whole system a lot cleaner.
  - Numerous fixes to the [n]curses interface, addition of status line, better color management with careful consideration of availiable color pairs.
  - Using the ncurses interface, the interpreter now passes the etude.z5 test with the exception of the text styles and undo capability.
  - Modified the i18n_translate_and_exit and close_streams functions to support a message-on-exit. This way, error messages are supported without regard for what's left in the UTF8x output pipe and error output can be seperated from the other valid stream output. This way, the ncurses interface can correctly endwin() and output the message to read on stderr.
@@ -509,7 +509,7 @@
 
    **Version 0.1.4 — December 9, 2005**
 
- - 8848 lines in *.h and *.c files
+ - 8848 lines in \*.h and \*.c files
  - The 0.1.4 complies to the strictz.z5 test, allows transcripting (even on startup via command line switch). A few minor bugs were fixed and a history of the last output is kept, allowing for a faithfully original prompt after an interpreter command has been finished.
  - Compacted locate_dictionary_entry (so that the zscii_string_length function is no longer needed) and adapted it to version 4+ files.
  - Implemented the object-number-unequal-zero-checks (in order to run strict.z5).
@@ -535,7 +535,7 @@
 
    **Version 0.1.3 — November 27, 2005**
 
- - 6013 lines in *.h and *.c files
+ - 6013 lines in \*.h and \*.c files
  - This 0.1.3 version adds localization for error- and startup messages, corrects a few minor bugs abd adds UTF-8 support.
  - Made mod (remainder-after-divison) signed (due to 2.2.1).
  - Corrected opcode_div so that the divisor, not the dividend, is verified not to be 0. Added divisor-not-0-check to mod.
@@ -581,7 +581,7 @@
  - Implemented VERIFY opcode.
  - Implemented PIRACY opcode (we're all honest, so an evaluate_branch(1) sounds okay, right?).
  - Fixed a bug in INC_CHK (wrong cast to unsigned value instead of signed).
- - Totally forgot about the 8.3-filename-limits on DOS machines, files were renamed and merged together – /(.*)_opcodes.c/ joined /$1.c/.
+ - Totally forgot about the 8.3-filename-limits on DOS machines, files were renamed and merged together – /(.\*)_opcodes.c/ joined /$1.c/.
  - Fixed a bug in the random opcode which allowed 0 as a minimum result value to the random call (should have been 1). Fighting with the thief now results in much less garbled text output.
  - Cleanly wrapped TRACE_LOG calls in curly braces, meaning disabling tracing now works correctly. The zinc binary now has a size of 82308 bytes with logging enabled, and 54700 bytes without logging.
  - Created Makfile-dependency for zinc.h from iface.h (by using the touch command, is the okay?). Made all and clean .PHONY targets.
@@ -591,7 +591,7 @@
  - Replaced memcpy call with a loop that assembles uint16_t values byte by byte. This will avoid problems on little-endian machines (i386 and the like), since the Z-machine uses a big-endian model.
  - Used the Mersenne Twister as random generator. Only the genrand_int32 function is used, the rest of the functions, with exception of the two init calls, were deleted from the mt19937ar.c file. The generator is seeded by an init vector consisting of the number of seconds since 1970, a standard C random generator number, the number of milliseconds since 1970, followed by another standard C random generator number.
  - Splitted zinc.h in a header file for each .c file. Adjusted Makefile and #includes accordingly.
- - Changed **z_opcode_procedures into *z_opcode_functions and moved it from zinc.c to zpu.c (thus avoiding external reference and setup). Now z_opcode_functions is a one-dimenstional array indexed by the value instruction_form + instr_code. This allows saving the space for 32 pointers in the smaller opcode classes (with only 16 instead of 32 opcodes).
+ - Changed \*\*z_opcode_procedures into \*z_opcode_functions and moved it from zinc.c to zpu.c (thus avoiding external reference and setup). Now z_opcode_functions is a one-dimenstional array indexed by the value instruction_form + instr_code. This allows saving the space for 32 pointers in the smaller opcode classes (with only 16 instead of 32 opcodes).
  - Implemented buffering / word-wrapping in the C Interface. With this change, the C interface should be complete. Comparing to everything else it's still very raw, but hey, it works.
  - Implemented BUFFER_MODE opcode.
  - Moved all the configuration options from zinc.h to config.h.
