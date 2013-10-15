@@ -128,18 +128,28 @@
   </xsl:template>
 
   <xsl:template match="text()">
-    <xsl:if test="normalize-space() != ''">
-      <xsl:choose>
-        <xsl:when test="contains(., '&#10;')">
-          <xsl:call-template name="join-lines">
-            <xsl:with-param name="output" select="."/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="."/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:if>
+    <xsl:call-template name="string-replace-all">
+      <xsl:with-param name="text">
+
+        <xsl:if test="normalize-space() != ''">
+          <xsl:choose>
+            <xsl:when test="contains(., '&#10;')">
+              <xsl:call-template name="join-lines">
+                <xsl:with-param name="output" select="."/>
+              </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="."/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:if>
+
+      </xsl:with-param>
+      <xsl:with-param name="replace" select="'*'" />
+      <xsl:with-param name="by">
+        <xsl:text>\*</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="join-lines">
