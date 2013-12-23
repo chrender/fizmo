@@ -120,25 +120,24 @@ install: install-data-local install-fizmo-console install-fizmo-ncursesw \
 
 # clean targets
 
-clean: $(OPTIONAL_FIZMO_CLEANS)
-	cd libfizmo ; $(MAKE) clean
-	cd libcellif ; $(MAKE) clean
-	cd libdrilbo ; $(MAKE) clean
+clean-local: $(OPTIONAL_FIZMO_CLEANS)
+	cd libfizmo ; $(MAKE) clean ; $(MAKE) clean-dev
+	cd libcellif ; $(MAKE) clean ; $(MAKE) clean-dev
+	cd libdrilbo ; $(MAKE) clean ; $(MAKE) clean-dev
+	rmdir $(DEV_BUILD_PREFIX)
+	cd fizmo-console ; $(MAKE) clean
+	cd fizmo-ncursesw ; $(MAKE) clean
 
 clean-fizmo-glktermw: fizmo-glktermw
-	cd libglkif ; $(MAKE) clean
+	cd libglkif ; $(MAKE) clean ; $(MAKE) clean-dev
 	cd fizmo-glktermw ; $(MAKE) clean
 
-clean-fizmo-sdl : fizmo-sdl
-	cd libpixelif ; $(MAKE) clean
-	cd fizmo-sdl ; $(MAKE) clean
-
 clean-libsndifsdl:
-	cd libsndifsdl ; $(MAKE) clean
+	cd libsndifsdl ; $(MAKE) clean ; $(MAKE) clean-dev
 
 # distclean targets
 
-distclean: $(OPTIONAL_FIZMO_DISTCLEANS)
+distclean-local: $(OPTIONAL_FIZMO_DISTCLEANS)
 	cd libfizmo ; $(MAKE) distclean
 	cd libcellif ; $(MAKE) distclean
 	cd libdrilbo ; $(MAKE) distclean
