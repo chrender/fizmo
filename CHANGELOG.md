@@ -13,6 +13,7 @@
  - Implemented new screen refresh method for the ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
  - Fixed incorrect backspace or delete behaviour which could cause in crash in case of small screen sizes combined with the use of preloaded input.
  - Several small fixes for ncursesw input.
+ - Fixed wrong status line display style after restore in v<=3 games.
 
 ---
 
