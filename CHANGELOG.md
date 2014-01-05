@@ -15,6 +15,7 @@
  - Several small fixes for ncursesw input.
  - Fixed wrong status line display style after restore in v<=3 games.
  - When breaking long lines, multiple spaces are now skipped at the linebreak point to avoid superfluous spaces at the start of the next line. Thanks to Lewis Gentry.
+ - Fixed UTF-8 for input from file. Thanks to Mikko Torvinen for reporting the bug.
 
 ---
 
