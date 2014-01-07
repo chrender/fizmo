@@ -9,8 +9,7 @@
  - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.
  - Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.
  - After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.
- - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
- - Implemented new screen refresh method for the ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
+ - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.
  - Fixed incorrect backspace or delete behaviour which could cause in crash in case of small screen sizes combined with the use of preloaded input.
  - Several small fixes for ncursesw input.
  - Fixed wrong status line display style after restore in v<=3 games.
