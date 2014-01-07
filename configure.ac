@@ -50,8 +50,11 @@
 # libs itself in the section "fizmo-internal libs".
 
 
-AC_INIT([fizmo], [0.7.8])
+m4_define([FIZMO_DIST_VERSION_NUMBER], [0.7.8])
+
+AC_INIT([fizmo], FIZMO_DIST_VERSION_NUMBER)
 AC_CONFIG_AUX_DIR([.])
+fizmo_dist_version=FIZMO_DIST_VERSION_NUMBER
 
 
 # Definition for configuration options
@@ -114,9 +117,10 @@ m4_include(fizmo-console/config-conds.m4)
 build_prefix=`pwd`/build
 build_prefix_cflags=$build_prefix/include/fizmo
 build_prefix_libs=$build_prefix/lib/fizmo
-AC_SUBST([DEV_BUILD_PREFIX], $build_prefix)
 libfizmo_CFLAGS="-I$build_prefix_cflags $xml2_CFLAGS $m_CFLAGS"
 libfizmo_LIBS="-L$build_prefix_libs -lfizmo $xml2_LIBS $m_LIBS"
+AC_SUBST([DEV_BUILD_PREFIX], $build_prefix)
+AC_SUBST([FIZMO_DIST_VERSION], FIZMO_DIST_VERSION_NUMBER)
 AC_SUBST([libfizmo_CFLAGS], $libfizmo_CFLAGS)
 AC_SUBST([libfizmo_LIBS], $libfizmo_LIBS)
 AC_SUBST([libcellif_CFLAGS], "-I$build_prefix_cflags")
