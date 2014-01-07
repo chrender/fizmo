@@ -124,7 +124,7 @@ clean-local: $(OPTIONAL_FIZMO_CLEANS)
 	cd libfizmo ; $(MAKE) clean ; $(MAKE) clean-dev
 	cd libcellif ; $(MAKE) clean ; $(MAKE) clean-dev
 	cd libdrilbo ; $(MAKE) clean ; $(MAKE) clean-dev
-	rmdir $(DEV_BUILD_PREFIX)
+	-rmdir $(DEV_BUILD_PREFIX)
 	cd fizmo-console ; $(MAKE) clean
 	cd fizmo-ncursesw ; $(MAKE) clean
 
