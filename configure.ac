@@ -3,7 +3,7 @@
 #
 # This file is part of fizmo.
 #
-# Copyright (c) 2009-2012 Christoph Ender.
+# Copyright (c) 2009-2014 Christoph Ender.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -50,7 +50,7 @@
 # libs itself in the section "fizmo-internal libs".
 
 
-m4_define([FIZMO_DIST_VERSION_NUMBER], [0.7.8])
+m4_define([FIZMO_DIST_VERSION_NUMBER], [0.7.8-b9])
 
 AC_INIT([fizmo], FIZMO_DIST_VERSION_NUMBER)
 AC_CONFIG_AUX_DIR([.])

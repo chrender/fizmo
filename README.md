@@ -68,7 +68,7 @@ Please see `INSTALL.txt` on how to bulid the packages.
 
 Please send bug reports (or other requests) to [fizmo@spellbreaker.org](mailto:fizmo@spellbreaker.org).
 
-Fizmo was written by Christoph Ender in 2005 – 2013.
+Fizmo was written by Christoph Ender in 2005 – 2014.
 
 _Please note:_  
 Currently fizmo is in beta status, meaning it might do unexpected things such as stop with an error message, crash or cleesh your machine into a frog. There is no warranty of any kind whatsoever and you're entirely on your own when running it.
