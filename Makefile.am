@@ -126,9 +126,7 @@ clean-local: $(OPTIONAL_FIZMO_CLEANS)
 	cd libdrilbo ; $(MAKE) clean
 	cd fizmo-console ; $(MAKE) clean
 	cd fizmo-ncursesw ; $(MAKE) clean
-	rm -rf $(DEV_BUILD_PREFIX)/lib
-	rm -rf $(DEV_BUILD_PREFIX)/include
-	rmdir $(DEV_BUILD_PREFIX)
+	rm -rf $(DEV_BUILD_PREFIX)
 
 clean-fizmo-glktermw: fizmo-glktermw
 	cd libglkif ; $(MAKE) clean ; $(MAKE) clean-dev
