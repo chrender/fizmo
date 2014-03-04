@@ -50,7 +50,7 @@
 # libs itself in the section "fizmo-internal libs".
 
 
-m4_define([FIZMO_DIST_VERSION_NUMBER], [0.7.8-b9])
+m4_define([FIZMO_DIST_VERSION_NUMBER], [0.7.8])
 
 AC_INIT([fizmo], FIZMO_DIST_VERSION_NUMBER)
 AC_CONFIG_AUX_DIR([.])
