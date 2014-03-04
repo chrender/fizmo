@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.7.8">
-    <logentry>Fixed missing lowering of input case for versions >= 5, thanks to irb.</logentry>
-    <logentry>Adapted to automake v1.14 and fixed compiler warning.</logentry>
-    <logentry>Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.</logentry>
-    <logentry>Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.</logentry>
-    <logentry>Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.</logentry>
-    <logentry>After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.</logentry>
+    <datetime day-of-week="Mon" month="3" day="3" hour="21"
+      minute="50" second="0" timezone="CET" year="2014"/>
     <logentry>Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.</logentry>
+    <logentry>Fixed missing lowering of input case for versions ≥ 5, thanks to irb.</logentry>
+    <logentry>Fixed “encode_text” and tokenizing for cases in which the “unrecognized”-flag is set. This fixes a bug with the “name” spell in Beyond Zork, thanks to irb.</logentry>
+    <logentry>Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.</logentry>
+    <logentry>Adapted to automake v1.14 and fixed compiler warning.</logentry>
+    <logentry>Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.</logentry>
     <logentry>Fixed incorrect backspace or delete behaviour which could cause in crash in case of small screen sizes combined with the use of preloaded input.</logentry>
     <logentry>Several small fixes for ncursesw input.</logentry>
-    <logentry>Fixed wrong status line display style after restore in v&lt;=3 games.</logentry>
+    <logentry>Fixed wrong status line display style after restore in version ≤ 3 games.</logentry>
     <logentry>When breaking long lines, multiple spaces are now skipped at the linebreak point to avoid superfluous spaces at the start of the next line. Thanks to Lewis Gentry.</logentry>
     <logentry>Fixed UTF-8 for input from file. Thanks to Mikko Torvinen for reporting the bug.</logentry>
+    <logentry>After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.</logentry>
   </change>
 
   <change version="0.7.7">
