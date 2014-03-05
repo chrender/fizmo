@@ -3,7 +3,7 @@
 #
 # This file is part of fizmo.
 #
-# Copyright (c) 2009-2012 Christoph Ender.
+# Copyright (c) 2009-2014 Christoph Ender.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -50,8 +50,11 @@
 # libs itself in the section "fizmo-internal libs".
 
 
-AC_INIT([fizmo], [0.8.0])
+m4_define([FIZMO_DIST_VERSION_NUMBER], [0.8.0])
+
+AC_INIT([fizmo], FIZMO_DIST_VERSION_NUMBER)
 AC_CONFIG_AUX_DIR([.])
+fizmo_dist_version=FIZMO_DIST_VERSION_NUMBER
 
 
 # Definition for configuration options
@@ -108,8 +111,7 @@ AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
   m4_include(fizmo-sdl/config-libs.m4)
 ])
 
-#AM_INIT_AUTOMAKE([-Wall -Werror foreign])
-AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 AC_PROG_RANLIB
 AM_PROG_AR
