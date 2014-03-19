@@ -1,11 +1,11 @@
 
 
 
-   **Version 0.7.8 — March 3, 2014**
+   **Version 0.7.8 — March 19, 2014**
 
  - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.
  - Fixed missing lowering of input case for versions ≥ 5, thanks to irb.
- - Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.
+ - Fixed “encode_text” and tokenizing for cases in which the “unrecognized”-flag is set. This fixes a bug with the “name” spell in Beyond Zork, thanks to irb.
  - Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.
  - Adapted to automake v1.14 and fixed compiler warning.
  - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.

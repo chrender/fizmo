@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.7.8">
-    <datetime day-of-week="Mon" month="3" day="3" hour="21"
-      minute="50" second="0" timezone="CET" year="2014"/>
+    <datetime day-of-week="Wed" month="3" day="19" hour="20"
+      minute="25" second="58" timezone="CET" year="2014"/>
     <logentry>Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.</logentry>
     <logentry>Fixed missing lowering of input case for versions ≥ 5, thanks to irb.</logentry>
     <logentry>Fixed “encode_text” and tokenizing for cases in which the “unrecognized”-flag is set. This fixes a bug with the “name” spell in Beyond Zork, thanks to irb.</logentry>
