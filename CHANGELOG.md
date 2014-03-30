@@ -9,17 +9,20 @@
 ---
 
 
-   **Version 0.7.8**
+   **Version 0.7.8 — March 19, 2014**
 
- - Fixed missing lowering of input case for versions >= 5, thanks to irb.
- - Adapted to automake v1.14 and fixed compiler warning.
- - Fixed "encode_text" and tokenizing for cases in which the "unrecognized"-flag is set. This fixes a bug with the "name" spell in Beyond Zork, thanks to irb.
- - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.
+ - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.
+ - Fixed missing lowering of input case for versions ≥ 5, thanks to irb.
+ - Fixed “encode_text” and tokenizing for cases in which the “unrecognized”-flag is set. This fixes a bug with the “name” spell in Beyond Zork, thanks to irb.
  - Fixed wrapping of long lines without spaces as in ASCII art. Thanks to David Batchelder for pointing out the problem.
- - After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.
- - Implemented new screen refresh method for the ncursesw/libcellif interface which should fix some redraw bugs during screen resizing.
+ - Adapted to automake v1.14 and fixed compiler warning.
+ - Relocated “AC_CONFIG_AUX_DIR” invocation, fixing the missing-file warning during configure.
  - Fixed incorrect backspace or delete behaviour which could cause in crash in case of small screen sizes combined with the use of preloaded input.
- - Several small files for ncursesw input.
+ - Several small fixes for ncursesw input.
+ - Fixed wrong status line display style after restore in version ≤ 3 games.
+ - When breaking long lines, multiple spaces are now skipped at the linebreak point to avoid superfluous spaces at the start of the next line. Thanks to Lewis Gentry.
+ - Fixed UTF-8 for input from file. Thanks to Mikko Torvinen for reporting the bug.
+ - After a restore, the current screensize is now written into the header. This should correct upper windows display problems after loading of savegames.
 
 ---
 
