@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.7.9 — May 21, 2014**
+
+ - Fixed conflicting array-size in libfizmo which could result in invalid memory assumptions by the compiler. Thanks to Michael Tautschnig.
+
+
+   ---
+
    **Version 0.7.8 — March 19, 2014**
 
  - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.
