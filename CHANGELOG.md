@@ -1,12 +1,19 @@
 
 
 
-   **Version 0.7.9 — May 21, 2014**
+   **Version 0.7.10**
 
- - Fixed conflicting array-size in libfizmo which could result in invalid memory assumptions by the compiler. Thanks to Michael Tautschnig.
+ - Fixed score/turns position in statusline for v≤3 games.
+
+---
 
 
-   ---
+   **Version 0.7.9 — May 25, 2014**
+
+ - Fixed conflicting array sizes in libfizmo which could result in compile-time errors or invalid memory assumptions by the compiler. Thanks to Michael Tautschnig.
+
+---
+
 
    **Version 0.7.8 — March 19, 2014**
 

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.7.10">
+    <logentry>Fixed score/turns position in statusline for v≤3 games.</logentry>
+  </change>
+
   <change version="0.7.9">
     <datetime day-of-week="Sun" month="5" day="25" hour="10"
       minute="10" second="10" timezone="CEST" year="2014"/>
