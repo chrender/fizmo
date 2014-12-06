@@ -71,11 +71,11 @@ AC_ARG_ENABLE([glktermw],
  [],
  [enable_glktermw=no])
 
-AC_ARG_ENABLE([fizmo-sdl],
- [AS_HELP_STRING([--enable-fizmo-sdl],
-         [enable experimental fizmo-sdl])],
+AC_ARG_ENABLE([fizmo-sdl2],
+ [AS_HELP_STRING([--enable-fizmo-sdl2],
+         [enable experimental fizmo-sdl2])],
  [],
- [enable_fizmo_sdl=no])
+ [enable_fizmo_sdl2=no])
 
 
 # Import submodule-specific options from their respective directories
@@ -88,9 +88,9 @@ AS_IF([test "x$enable_sound" == "xyes"], [
 AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(libglkif/config-flags.m4)
 ])
-AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+AS_IF([test "x$enable_fizmo_sdl2" == "xyes"], [
   m4_include(libpixelif/config-flags.m4)
-  m4_include(fizmo-sdl/config-flags.m4)
+  m4_include(fizmo-sdl2/config-flags.m4)
 ])
 
 
@@ -106,9 +106,9 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(libglkif/config-libs.m4)
   m4_include(fizmo-glktermw/config-libs.m4)
 ])
-AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+AS_IF([test "x$enable_fizmo_sdl2" == "xyes"], [
   m4_include(libpixelif/config-libs.m4)
-  m4_include(fizmo-sdl/config-libs.m4)
+  m4_include(fizmo-sdl2/config-libs.m4)
 ])
 
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
@@ -165,11 +165,11 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
   optional_fizmo_dstcleans=distclean-fizmo-glktermw
 ])
 
-AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
-  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl"
-  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl"
-  optional_fizmo_cleans="$optional_fizmo_cleans clean-fizmo-sdl"
-  optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-fizmo-sdl"
+AS_IF([test "x$enable_fizmo_sdl2" == "xyes"], [
+  optional_fizmo_builds="$optional_fizmo_builds fizmo-sdl2"
+  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-sdl2"
+  optional_fizmo_cleans="$optional_fizmo_cleans clean-fizmo-sdl2"
+  optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-fizmo-sdl2"
 ])
 
 AS_IF([test "x$enable_sound" == "xyes"], [
@@ -208,9 +208,9 @@ AS_IF([test "x$enable_glktermw" == "xyes"], [
     fizmo-glktermw/Makefile fizmo-glktermw/src/fizmo-glktermw/Makefile ])
 ])
 
-AS_IF([test "x$enable_fizmo_sdl" == "xyes"], [
+AS_IF([test "x$enable_fizmo_sdl2" == "xyes"], [
   AC_CONFIG_FILES([libpixelif/Makefile libpixelif/src/pixel_interface/Makefile
-    fizmo-sdl/Makefile fizmo-sdl/src/fizmo-sdl/Makefile ])
+    fizmo-sdl2/Makefile fizmo-sdl2/src/fizmo-sdl2/Makefile ])
 ])
 
 AC_OUTPUT
