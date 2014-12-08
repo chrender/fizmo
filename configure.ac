@@ -152,9 +152,7 @@ AC_SUBST([libpixelif_LIBS], "-L$build_prefix_libs -lpixelif $libfizmo_LIBS $free
 AC_SUBST([LIBNCURSESW_NONPKG_CFLAGS], "$libncursesw_nonpkg_cflags")
 AC_SUBST([LIBNCURSESW_NONPKG_LIBS], "$libncursesw_nonpkg_libs")
 
-AS_IF([test "x$enable_sound" == "xyes"], [
-  m4_include(libsndifsdl2/config-subst.m4)
-])
+m4_include(fizmo-ncursesw/config-subst.m4)
 
 
 # Define optional build and installation targets if required by the
