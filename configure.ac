@@ -119,6 +119,7 @@ AM_PROG_AR
 
 # Setup conditionals:
 AM_CONDITIONAL([ENABLE_TRACING], [test "$enable_tracing" = "yes"])
+AM_CONDITIONAL([ENABLE_SOUND], [test "$enable_sound" != "no"])
 m4_include(libfizmo/config-conds.m4)
 m4_include(libcellif/config-conds.m4)
 m4_include(libsndifsdl2/config-conds.m4)
@@ -139,8 +140,8 @@ AC_SUBST([libfizmo_CFLAGS], $libfizmo_CFLAGS)
 AC_SUBST([libfizmo_LIBS], $libfizmo_LIBS)
 AC_SUBST([libcellif_CFLAGS], "-I$build_prefix_cflags")
 AC_SUBST([libcellif_LIBS], "-L$build_prefix_libs -lcellif")
-AC_SUBST([libsndifsdl2_CFLAGS], "-I$build_prefix_cflags $sdl2_CFLAGS $sndfile_CFLAGS")
-AC_SUBST([libsndifsdl2_LIBS], "-L$build_prefix_libs -lsndifsdl2 $sdl2_LIBS $sndfile_LIBS")
+#AC_SUBST([libsndifsdl2_CFLAGS], "-I$build_prefix_cflags $sdl2_CFLAGS $sndfile_CFLAGS")
+#AC_SUBST([libsndifsdl2_LIBS], "-L$build_prefix_libs -lsndifsdl2 $sdl2_LIBS $sndfile_LIBS")
 AC_SUBST([libdrilbo_CFLAGS], "-I$build_prefix_cflags $x11_CFLAGS $jpeg_CFLAGS $libdrilbo_nonpkg_cflags $png_CFLAGS")
 AC_SUBST([libdrilbo_LIBS], "-L$build_prefix_libs -ldrilbo -lpthread $x11_LIBS $jpeg_LIBS $libdrilbo_nonpkg_libs $png_LIBS")
 AC_SUBST([LIBGLKIF_NONPKG_CFLAGS], "$libglkif_nonpkg_cflags")
@@ -152,7 +153,9 @@ AC_SUBST([libpixelif_LIBS], "-L$build_prefix_libs -lpixelif $libfizmo_LIBS $free
 AC_SUBST([LIBNCURSESW_NONPKG_CFLAGS], "$libncursesw_nonpkg_cflags")
 AC_SUBST([LIBNCURSESW_NONPKG_LIBS], "$libncursesw_nonpkg_libs")
 
-m4_include(fizmo-ncursesw/config-subst.m4)
+AS_IF([test "x$enable_sound" == "xyes"], [
+  m4_include(libsndifsdl2/config-subst.m4)
+])
 
 
 # Define optional build and installation targets if required by the
