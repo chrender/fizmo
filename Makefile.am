@@ -34,7 +34,7 @@
 
 AUTOMAKE_OPTIONS = -Wno-override
 
-.PHONY: libfizmo libcellif libsndifsdl libdrilbo libglkif \
+.PHONY: libfizmo libcellif libsndifsdl2 libdrilbo libglkif \
  fizmo-console fizmo-ncursesw fizmo-glktermw fizmo-sdl2
 
 
@@ -53,8 +53,8 @@ libcellif: libfizmo
 	cd libcellif ; \
 	$(MAKE) install-dev
 
-libsndifsdl: libfizmo
-	cd libsndifsdl ; \
+libsndifsdl2: libfizmo
+	cd libsndifsdl2 ; \
 	$(MAKE) install-dev
 
 libdrilbo: libfizmo
@@ -91,8 +91,8 @@ fizmo-sdl2: libfizmo libpixelif
 
 # install targets
 
-install-data-local-libsndifsdl: libsndifsdl
-	cd libsndifsdl ; $(MAKE) install-data-local
+install-data-local-libsndifsdl2: libsndifsdl2
+	cd libsndifsdl2 ; $(MAKE) install-data-local
 
 install-data-local: libfizmo libcellif libdrilbo \
  $(OPTIONAL_SOUND_INSTALL_DATA_LOCAL)
@@ -133,8 +133,8 @@ clean-fizmo-sdl2 : fizmo-sdl2
 	cd libpixelif ; $(MAKE) clean
 	cd fizmo-sdl2 ; $(MAKE) clean
 
-clean-libsndifsdl:
-	cd libsndifsdl ; $(MAKE) clean
+clean-libsndifsdl2:
+	cd libsndifsdl2 ; $(MAKE) clean
 
 # distclean targets
 
@@ -151,6 +151,6 @@ distclean-fizmo-sdl2 : fizmo-sdl2
 	cd libpixelif ; $(MAKE) distclean
 	cd fizmo-sdl2 ; $(MAKE) distclean
 
-distclean-libsndifsdl:
-	cd libsndifsdl ; $(MAKE) distclean
+distclean-libsndifsdl2:
+	cd libsndifsdl2 ; $(MAKE) distclean
 
