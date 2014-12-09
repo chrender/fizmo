@@ -11,36 +11,36 @@ The “configure” script tries to guess the correct values for all the system 
 
 In addition to the standard parameters, “configure” provides the following options:
 
---enable-tracing  
-For debugging purposes, fizmo can write very extensive logging information into a file named “tracelog.txt”. The logging can be enabled using this option. See also the “--with-glktermw-includedir” and “--with-glktermw-libdir” parameters below.
+`--`enable-tracing  
+For debugging purposes, fizmo can write very extensive logging information into a file named “tracelog.txt”. The logging can be enabled using this option. See also the “`--`with-glktermw-includedir” and “`--`with-glktermw-libdir” parameters below.
 
---enable-glktermw  
+`--`enable-glktermw  
 Fizmo provides experimental GLK support, which can be activated using this option.
 
---disable-x11  
+`--`disable-x11  
 This option will disable X11 image display in fizmo-ncursesw.
 
---disable-jpeg  
+`--`disable-jpeg  
 In case JPEG support is not available or not desired, this option will disable libdrilbo's JPEG capabilities.
 
---disable-png  
+`--`disable-png  
 In case PNG support is not available or not desired, this option will disable libdrilbo's PNG capabilities.
 
---disable-sound  
+`--`disable-sound  
 In case SDL is not available or sound support is not desired, sound can be disabled using this option.
 
---disable-aiff  
+`--`disable-aiff  
 In case libsndfile1 is is not available or no AIFF support is required, this option will disable AIFF support.
 
---with-jpeg-includedir  
+`--`with-jpeg-includedir  
 If pkg-config cannot provide information about libjpeg, the location of the jpeglib.h can be given using this parameter.
 
---with-jpeg-libdir  
+`--`with-jpeg-libdir  
 If pkg-config cannot provide information about libjpeg, the location of the libjpeg can be given using this parameter.
 
---with-glktermw-includedir  
+`--`with-glktermw-includedir  
 In case glktermw should be build, the location of the include files must be given using this parameter.
 
---with-glktermw-libdir  
+`--`with-glktermw-libdir  
 In case glktermw should be build, the location of the library file must be given using this parameter.
 
