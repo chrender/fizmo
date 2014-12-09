@@ -28,5 +28,5 @@ If you are on Debian or any derivate like Ubuntu you can execute the following c
 
 
 After that, execute the following commands to compile and install all available frontends – fizmo-console, fizmo-ncursesw and fizmo-sdl:  
-`./configure --enable-fizmo-sdl ; make install`
+`./configure `--`enable-fizmo-sdl ; make install`
 
