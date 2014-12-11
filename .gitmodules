@@ -19,3 +19,6 @@
 [submodule "fizmo-glktermw"]
 	path = fizmo-glktermw
 	url = git@github.com:chrender/fizmo-glktermw
+[submodule "libsndifsdl2"]
+	path = libsndifsdl2
+	url = git@github.com:chrender/libsndifsdl2
