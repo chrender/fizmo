@@ -4,9 +4,6 @@
 [submodule "libcellif"]
 	path = libcellif
 	url = git@github.com:chrender/libcellif
-[submodule "libsndifsdl"]
-	path = libsndifsdl
-	url = git@github.com:chrender/libsndifsdl
 [submodule "libdrilbo"]
 	path = libdrilbo
 	url = git@github.com:chrender/libdrilbo
