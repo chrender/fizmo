@@ -6,7 +6,7 @@
       <li>pkg-config</li>
       <li>libxml2</li>
       <li>ncursesw5</li>
-      <li>sdl</li>
+      <li>sdl2</li>
       <li>libsndfile1</li>
       <li>X11</li>
       <li>libjpeg</li>
@@ -17,7 +17,7 @@
 
   <p>If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:<ul>
       <li><tt>apt-get install gcc make pkg-config</tt></li>
-      <li><tt>apt-get install libxml2-dev libncursesw5-dev libsdl1.2-dev</tt></li>
+      <li><tt>apt-get install libxml2-dev libncursesw5-dev libsdl2-dev</tt></li>
       <li><tt>apt-get install libsndfile1-dev libjpeg-dev libpng-dev libfreetype6-dev</tt></li>
     </ul>
   </p>

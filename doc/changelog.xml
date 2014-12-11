@@ -5,6 +5,17 @@
     <logentry>This release is still in beta stage: For the SDL frontend, there's no support for command-line switches, no sound interface and no support for “fancy” features like hyphenation or frontispiece display (yet).</logentry>
   </change>
 
+  <change version="0.7.10">
+    <logentry>Fixed score/turns position in statusline for v≤3 games.</logentry>
+    <logentry>Adaptations for print_table opcode, which fixes output in “Sherlock”.</logentry>
+  </change>
+
+  <change version="0.7.9">
+    <datetime day-of-week="Sun" month="5" day="25" hour="10"
+      minute="10" second="10" timezone="CEST" year="2014"/>
+    <logentry>Fixed conflicting array sizes in libfizmo which could result in compile-time errors or invalid memory assumptions by the compiler. Thanks to Michael Tautschnig.</logentry>
+  </change>
+
   <change version="0.7.8">
     <datetime day-of-week="Wed" month="3" day="19" hour="20"
       minute="25" second="58" timezone="CET" year="2014"/>

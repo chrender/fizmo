@@ -9,6 +9,21 @@
 ---
 
 
+   **Version 0.7.10**
+
+ - Fixed score/turns position in statusline for v≤3 games.
+ - Adaptations for print_table opcode, which fixes output in “Sherlock”.
+
+---
+
+
+   **Version 0.7.9 — May 25, 2014**
+
+ - Fixed conflicting array sizes in libfizmo which could result in compile-time errors or invalid memory assumptions by the compiler. Thanks to Michael Tautschnig.
+
+---
+
+
    **Version 0.7.8 — March 19, 2014**
 
  - Entire re-implementation of screen refresh and scrolling ncursesw/libcellif interface. Many thanks to Lewis gentry for bug-reporting and extensive beta-testing.
