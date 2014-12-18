@@ -196,8 +196,10 @@ AS_IF([test "$enable_sdl" != "no"], [
   optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-libsndifsdl2"
 ])
 
-#AC_SUBST([libsndifsdl2_CFLAGS], "-I$build_prefix_cflags $sdl2_CFLAGS $sndfile_CFLAGS")
-#AC_SUBST([libsndifsdl2_LIBS], "-L$build_prefix_libs -lsndifsdl2 $sdl2_LIBS $sndfile_LIBS")
+# Explicitely set cflags and libs for libsndifsdl2 for use by frontends since
+# we cannot use pkg-config for this.
+AC_SUBST([libsndifsdl2_CFLAGS], "-I$build_prefix_cflags $sdl2_CFLAGS $sndfile_CFLAGS")
+AC_SUBST([libsndifsdl2_LIBS], "-L$build_prefix_libs -lsndifsdl2 $sdl2_LIBS $sndfile_LIBS")
 
 AC_SUBST([OPTIONAL_SOUND_BUILD], $optional_sound_build)
 AC_SUBST([OPTIONAL_SOUND_INSTALL], $optional_sound_install)
