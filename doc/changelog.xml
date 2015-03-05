@@ -8,6 +8,9 @@
   <change version="0.7.10">
     <logentry>Fixed score/turns position in statusline for v≤3 games.</logentry>
     <logentry>Adaptations for print_table opcode, which fixes output in “Sherlock”.</logentry>
+    <logentry>Adapted sound interface to SDL2.</logentry>
+    <logentry>Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.</logentry>
+    <logentry>Fix in history/remove_chars_from_history.</logentry>
   </change>
 
   <change version="0.7.9">

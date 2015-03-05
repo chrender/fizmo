@@ -15,11 +15,9 @@ fizmo represents a generic a Z-Machine interpreter — “fizmo interprets z-mac
 **Frontends**
 
 
-Currently four frontends are available:
+Currently three frontends are available:
 
 
- - _fizmo-sdl_  
-   A SDL-based interface for GUIs or framebuffer devices.
  - _fizmo-ncursesw_  
    The default frontend uses ncurses “wide” variant for story output. [Ncurses](http://www.gnu.org/software/ncurses/) is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.
  - _fizmo-console_  
@@ -40,8 +38,6 @@ For developers, interfaces translate the Z-machine specific output — window ma
    This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.
  - _libglkif_  
    The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's [iOS-fizmo](https://github.com/erkyrath/iosfizmo/).
- - _libpixelif_  
-   This translates the entire Z-Machine output into draw-RGB-pixel instructions.
 
 
 ---
@@ -54,8 +50,8 @@ For developers, interfaces translate the Z-machine specific output — window ma
    This provides the interpreter core. It is a plain-C implementation which requires no external libraries (libxml2 is used by default, but in case babel support is not needed even libxml2 is not required).
  - _libdrilbo_  
    Provides support for jpeg, png and infocom's mg1 image reading as well as X11-based output.
- - _libsndifsdl_  
-   Supplies a SDL-based sound interface.
+ - _libsndifsdl2_  
+   Supplies a SDL2-based sound interface.
 
 
 ---
@@ -63,7 +59,7 @@ For developers, interfaces translate the Z-machine specific output — window ma
 **Installation**
 
 
-Please see `QUICKSTART.txt` or `INSTALL.txt` on how to bulid the packages.
+Please see `INSTALL.txt` on how to bulid the packages.
 
 ---
 

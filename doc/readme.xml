@@ -9,9 +9,8 @@
   </section>
 
   <section title="Frontends">
-    <p>Currently four frontends are available:</p>
+    <p>Currently three frontends are available:</p>
     <ul>
-      <li><i>fizmo-sdl</i><br/>A SDL-based interface for GUIs or framebuffer devices.</li>
       <li><i>fizmo-ncursesw</i><br/>The default frontend uses ncurses “wide” variant for story output. <a href="http://www.gnu.org/software/ncurses/">Ncurses</a> is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.</li>
       <li><i>fizmo-console</i><br/>This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.</li>
       <li><i>fizmo-glktermw</i><br/>An example <a href="http://en.wikipedia.org/wiki/Glk_(software)">Glk</a> frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the <a href="http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html">GLK-Implementations</a> at the Interactive Fiction archive.</li>
@@ -23,7 +22,6 @@
     <ul>
       <li><i>libcellif</i><br/>This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.</li>
       <li><i>libglkif</i><br/>The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's <a href="https://github.com/erkyrath/iosfizmo/">iOS-fizmo</a>.</li>
-      <li><i>libpixelif</i><br/>This translates the entire Z-Machine output into draw-RGB-pixel instructions.</li>
     </ul>
   </section>
 
@@ -31,12 +29,12 @@
     <ul>
       <li><i>libfizmo</i><br/>This provides the interpreter core. It is a plain-C implementation which requires no external libraries (libxml2 is used by default, but in case babel support is not needed even libxml2 is not required).</li>
       <li><i>libdrilbo</i><br/>Provides support for jpeg, png and infocom's mg1 image reading as well as X11-based output.</li>
-      <li><i>libsndifsdl</i><br/>Supplies a SDL-based sound interface.</li>
+      <li><i>libsndifsdl2</i><br/>Supplies a SDL2-based sound interface.</li>
     </ul>
   </section>
 
   <section title="Installation">
-    <p>Please see <tt>QUICKSTART.txt</tt> or <tt>INSTALL.txt</tt> on how to bulid the packages.</p>
+    <p>Please see <tt>INSTALL.txt</tt> on how to bulid the packages.</p>
   </section>
 
   <section title="Miscellaneous">

@@ -13,6 +13,9 @@
 
  - Fixed score/turns position in statusline for v≤3 games.
  - Adaptations for print_table opcode, which fixes output in “Sherlock”.
+ - Adapted sound interface to SDL2.
+ - Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.
+ - Fix in history/remove_chars_from_history.
 
 ---
 

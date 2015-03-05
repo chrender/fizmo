@@ -40,7 +40,7 @@ In case JPEG support is not available or not desired, this option will disable l
 In case PNG support is not available or not desired, this option will disable libdrilbo's PNG capabilities.
 
 `--`disable-sdl  
-In case SDL is not available, you can still build fizmo using this option. However, there will be no sound or SDL frontend available.
+In case SDL2 is not available, you can still build fizmo using this option. However, there will be no sound or SDL frontend available.
 
 `--`disable-aiff  
 In case libsndfile1 is is not available or no AIFF support is required, this option will disable AIFF support.
