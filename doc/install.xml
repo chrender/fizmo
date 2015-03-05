@@ -18,7 +18,7 @@
 
   <p>--disable-png<br/>In case PNG support is not available or not desired, this option will disable libdrilbo's PNG capabilities.</p>
 
-  <p>--disable-sound<br/>In case SDL is not available or sound support is not desired, sound can be disabled using this option.</p>
+  <p>--disable-sound<br/>In case SDL2 is not available or sound support is not desired, sound can be disabled using this option.</p>
 
   <p>--disable-aiff<br/>In case libsndfile1 is is not available or no AIFF support is required, this option will disable AIFF support.</p>
 

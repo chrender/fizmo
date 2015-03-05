@@ -29,7 +29,7 @@
     <ul>
       <li><i>libfizmo</i><br/>This provides the interpreter core. It is a plain-C implementation which requires no external libraries (libxml2 is used by default, but in case babel support is not needed even libxml2 is not required).</li>
       <li><i>libdrilbo</i><br/>Provides support for jpeg, png and infocom's mg1 image reading as well as X11-based output.</li>
-      <li><i>libsndifsdl</i><br/>Supplies a SDL-based sound interface.</li>
+      <li><i>libsndifsdl2</i><br/>Supplies a SDL2-based sound interface.</li>
     </ul>
   </section>
 

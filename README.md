@@ -50,8 +50,8 @@ For developers, interfaces translate the Z-machine specific output — window ma
    This provides the interpreter core. It is a plain-C implementation which requires no external libraries (libxml2 is used by default, but in case babel support is not needed even libxml2 is not required).
  - _libdrilbo_  
    Provides support for jpeg, png and infocom's mg1 image reading as well as X11-based output.
- - _libsndifsdl_  
-   Supplies a SDL-based sound interface.
+ - _libsndifsdl2_  
+   Supplies a SDL2-based sound interface.
 
 
 ---
