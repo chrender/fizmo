@@ -10,7 +10,11 @@
     <logentry>Adaptations for print_table opcode, which fixes output in “Sherlock”.</logentry>
     <logentry>Adapted sound interface to SDL2.</logentry>
     <logentry>Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.</logentry>
+    <logentry>No more strict dependency on libncursesw since libncurses works equally well.</logentry>
+    <logentry>Added forgotten configuration options “with-ncurses-includedir”, “with-ncursesw-libdir” and “with-ncurses-libdir”.</logentry>
     <logentry>Fix in history/remove_chars_from_history.</logentry>
+    <logentry>Fix for missing prompt after interpreter commands.</logentry>
+    <logentry>Many minor fixes to history, autoconf and lib detection.</logentry>
   </change>
 
   <change version="0.7.9">
