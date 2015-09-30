@@ -11,8 +11,9 @@
 
    **Version 0.7.10**
 
- - Fixed score/turns position in statusline for v≤3 games.
  - Adaptations for print_table opcode, which fixes output in “Sherlock”.
+ - Fix for Debian bug #795800: When the ncurses screen is resized when Inform's menu library displays hints or instructions fizmo will no longer exit and complain about an error in the “output_rewind_paragraph” function. Thanks to Lewis Gentry for reporting this problem.
+ - Fixed score/turns position in statusline for v≤3 games.
  - Adapted sound interface to SDL2.
  - Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.
  - No more strict dependency on libncursesw since libncurses works equally well.
