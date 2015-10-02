@@ -7,6 +7,7 @@
  - Fix for Debian bug #795800: When the ncurses screen is resized when Inform's menu library displays hints or instructions fizmo will no longer exit and complain about an error in the “output_rewind_paragraph” function. Thanks to Lewis Gentry for reporting this problem.
  - Fixed score/turns position in statusline for v≤3 games.
  - Adapted sound interface to SDL2.
+ - Fixed possible garbled upper window after erase_window(-1) invocation.
  - Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.
  - No more strict dependency on libncursesw since libncurses works equally well.
  - Added forgotten configuration options “with-ncurses-includedir”, “with-ncursesw-libdir” and “with-ncurses-libdir”.
