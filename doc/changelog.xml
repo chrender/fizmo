@@ -6,10 +6,13 @@
   </change>
 
   <change version="0.7.10">
+    <datetime day-of-week="Fri" month="10" day="2" hour="23"
+      minute="22" second="12" timezone="CEST" year="2015"/>
     <logentry>Adaptations for print_table opcode, which fixes output in “Sherlock”.</logentry>
     <logentry>Fix for Debian bug #795800: When the ncurses screen is resized when Inform's menu library displays hints or instructions fizmo will no longer exit and complain about an error in the “output_rewind_paragraph” function. Thanks to Lewis Gentry for reporting this problem.</logentry>
     <logentry>Fixed score/turns position in statusline for v≤3 games.</logentry>
     <logentry>Adapted sound interface to SDL2.</logentry>
+    <logentry>Fixed possible garbled upper window after erase_window(-1) invocation.</logentry>
     <logentry>Minor fixes for lib detection, will remove some warnings and possible some build issues on linux.</logentry>
     <logentry>No more strict dependency on libncursesw since libncurses works equally well.</logentry>
     <logentry>Added forgotten configuration options “with-ncurses-includedir”, “with-ncursesw-libdir” and “with-ncurses-libdir”.</logentry>
