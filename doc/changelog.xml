@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.7.11">
+    <logentry>Minor improvements for building libglkif with ncurses(w).</logentry>
+  </change>
+
   <change version="0.7.10">
     <datetime day-of-week="Fri" month="10" day="9" hour="22"
       minute="6" second="32" timezone="CEST" year="2015"/>

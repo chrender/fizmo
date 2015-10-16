@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.7.11**
+
+ - Minor improvements for building libglkif with ncurses(w).
+
+---
+
+
    **Version 0.7.10 — October 9, 2015**
 
  - Adaptations for print_table opcode, which fixes output in “Sherlock”.
