@@ -9,7 +9,14 @@
 ---
 
 
-   **Version 0.7.10 — October 2, 2015**
+   **Version 0.7.11**
+
+ - Minor improvements for building libglkif with ncurses(w).
+
+---
+
+
+   **Version 0.7.10 — October 9, 2015**
 
  - Adaptations for print_table opcode, which fixes output in “Sherlock”.
  - Fix for Debian bug #795800: When the ncurses screen is resized when Inform's menu library displays hints or instructions fizmo will no longer exit and complain about an error in the “output_rewind_paragraph” function. Thanks to Lewis Gentry for reporting this problem.
