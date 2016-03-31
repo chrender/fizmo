@@ -1,7 +1,7 @@
 
 
 
-Copyright (c) 2009-2015 Christoph Ender  
+Copyright (c) 2009-2016 Christoph Ender  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -31,10 +31,10 @@ libfizmo includes hyphenation patterns provided by the hyph-utf8 project at [htt
 
 libdrilbo includes code from the pix2gif utility by Mark Howell in ztools, which are available from [http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html](http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html). The copyright status of Mark Howell's work is unknown. Since he released the software for free and since it is also used by multiple other projects it can also be distributed or used freely, to the best of my knowledge.
 
-libpixelof contains the “Source Code Pro” and “Source Sans Pro” fonts made by Adobe. For information about copyright and licensing see the file `LICENSE.txt` in the following directories:
+libpixelif contains the “Fira Sans” and “Fira Mono” fonts made by Erik Spiekermann and Ralph du Carrois. For information about copyright and licensing see the file `SIL Open Font License.txt` in the following directories:       
 
- - libpixelif/fonts/source-code-pro-1_017
- - libpixelif/fonts/source-sans-pro-1_038
+ - libpixelif/fonts/fira-mono
+ - libpixelif/fonts/fira-sans
 
 
 

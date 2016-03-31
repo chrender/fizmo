@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
   <section>
-    <p>Copyright (c) 2009-2015 Christoph Ender<br/>All rights reserved.</p>
+    <p>Copyright (c) 2009-2016 Christoph Ender<br/>All rights reserved.</p>
 
     <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
     <ol>
@@ -28,9 +28,10 @@
 
     <p>libdrilbo includes code from the pix2gif utility by Mark Howell in ztools, which are available from <a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html"></a>. The copyright status of Mark Howell's work is unknown. Since he released the software for free and since it is also used by multiple other projects it can also be distributed or used freely, to the best of my knowledge.</p>
 
-    <p>libpixelof contains the “Source Code Pro” and “Source Sans Pro” fonts made by Adobe. For information about copyright and licensing see the file <tt>LICENSE.txt</tt> in the following directories:<ul>
-        <li>libpixelif/fonts/source-code-pro-1_017</li>
-        <li>libpixelif/fonts/source-sans-pro-1_038</li>
+    <p>libpixelif contains the “Fira Sans” and “Fira Mono” fonts made by Erik Spiekermann and Ralph du Carrois. For information about copyright and licensing see the file <tt>SIL Open Font License.txt</tt> in the following directories:
+      <ul>
+        <li>libpixelif/fonts/fira-mono</li>
+        <li>libpixelif/fonts/fira-sans</li>
       </ul>
     </p>
   </section>
