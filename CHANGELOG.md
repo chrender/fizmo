@@ -3,8 +3,8 @@
 
    **Version 0.8.0**
 
- - Addition of SDL-frontend and libpixelif meta-interface. These allow for pixel-based output instead of text-only output as before. As a result, the frontend provides proportional font display using the freetype library, hopeful on a wide range of systems since SDL is implemented in a cross-platform manner.
- - This release is still in beta stage: For the SDL frontend, there's no support for command-line switches, no sound interface and no support for “fancy” features like hyphenation or frontispiece display (yet).
+ - Addition of SDL2-frontend and libpixelif meta-interface. These allow for pixel-based output instead of monospaced text-only output as before. As a result, the frontend provides proportional font display using the freetype2 library, on a wide range of systems since SDL2 is implemented in a cross-platform manner.
+ - This frontend uses the “Fira Sans” and “Fira Mono” typefaces designed by Erik Spiekermann, Ralph du Carrois, Anja Meiners and Botio Nikoltchev.
 
 ---
 
