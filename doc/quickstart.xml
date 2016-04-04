@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document title="Quickstart">
-  <p>To install all of the frontends, you will need the following:<lu>
+  <p>To install all of the frontends, you will need the following:
+    <ul>
       <li>A C compiler like gcc or clang</li>
       <li>make</li>
       <li>pkg-config</li>
@@ -12,7 +13,7 @@
       <li>libjpeg</li>
       <li>libpng</li>
       <li>freetype2</li>
-    </lu>
+    </ul>
   </p>
 
   <p>If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:<ul>

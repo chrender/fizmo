@@ -6,17 +6,20 @@
 
 
 
-To install all of the frontends, you will need the following:   A C compiler like gcc or clang
-   make
-   pkg-config
-   libxml2
-   ncursesw5
-   sdl2
-   libsndfile1
-   X11
-   libjpeg
-   libpng
-   freetype2
+To install all of the frontends, you will need the following:     
+
+ - A C compiler like gcc or clang
+ - make
+ - pkg-config
+ - libxml2
+ - ncursesw5
+ - sdl2
+ - libsndfile1
+ - X11
+ - libjpeg
+ - libpng
+ - freetype2
+
 
 
 If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:
