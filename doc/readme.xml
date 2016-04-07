@@ -9,9 +9,10 @@
   </section>
 
   <section title="Frontends">
-    <p>Currently three frontends are available:</p>
+    <p>Currently four frontends are available:</p>
     <ul>
-      <li><i>fizmo-ncursesw</i><br/>The default frontend uses ncurses “wide” variant for story output. <a href="http://www.gnu.org/software/ncurses/">Ncurses</a> is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.</li>
+      <li><i>fizmo-sdl2</i><br/>Using the freetype2 engine, this SDL2-based frontend allows for proportional font display and supports antialiasing, subpixel-rendering and HiDPI support. It uses the “Fira Sans” and “Fira Mono” font faces which were made by Erik Spiekermann and Ralph du Carrois.</li>
+      <li><i>fizmo-ncursesw</i><br/>This frontend uses ncurses “wide” variant for story output. <a href="http://www.gnu.org/software/ncurses/">Ncurses</a> is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.</li>
       <li><i>fizmo-console</i><br/>This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.</li>
       <li><i>fizmo-glktermw</i><br/>An example <a href="http://en.wikipedia.org/wiki/Glk_(software)">Glk</a> frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the <a href="http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html">GLK-Implementations</a> at the Interactive Fiction archive.</li>
     </ul>
@@ -20,6 +21,7 @@
   <section title="Interfaces">
     <p>For developers, interfaces translate the Z-machine specific output — window management, output, scrolling and so on — into more display-specific commands, easing implementation considerably.</p>
     <ul>
+      <li><i>libpixelif</i><br/>This interface will convert output into draw-pixel commands, providing support for implementations on any pixel-based display. This interface is used by fizmo-sdl2.</li>
       <li><i>libcellif</i><br/>This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.</li>
       <li><i>libglkif</i><br/>The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's <a href="https://github.com/erkyrath/iosfizmo/">iOS-fizmo</a>.</li>
     </ul>

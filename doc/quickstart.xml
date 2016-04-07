@@ -4,6 +4,8 @@
     <ul>
       <li>A C compiler like gcc or clang</li>
       <li>make</li>
+      <li>automake</li>
+      <li>autoconf</li>
       <li>pkg-config</li>
       <li>libxml2</li>
       <li>ncursesw5</li>
@@ -17,13 +19,13 @@
   </p>
 
   <p>If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:<ul>
-      <li><tt>apt-get install gcc make pkg-config</tt></li>
+      <li><tt>apt-get install gcc make pkg-config autoconf automake</tt></li>
       <li><tt>apt-get install libxml2-dev libncursesw5-dev libsdl2-dev</tt></li>
       <li><tt>apt-get install libsndfile1-dev libjpeg-dev libpng-dev libfreetype6-dev</tt></li>
     </ul>
   </p>
 
-  <p>After that, execute the following commands to compile and install all available frontends – fizmo-console, fizmo-ncursesw and fizmo-sdl:<br/>
-    <tt>./configure --enable-fizmo-sdl ; make install</tt></p>
+  <p>After that, execute the following commands to compile and install all available frontends – fizmo-console, fizmo-ncursesw and fizmo-sdl2:<br/>
+    <tt>./configure ; make install</tt></p>
 </document>
 

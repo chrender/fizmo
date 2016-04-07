@@ -3,7 +3,29 @@
   <p>The following minimum components need to be installed to build fizmo:<ul>
       <li>A C compiler like gcc or clang</li>
       <li>make</li>
+      <li>automake</li>
+      <li>autoconf</li>
       <li>pkg-config</li>
+    </ul>
+  </p>
+
+  <p>To build all of the frontends, you will need the following in addition to the components listed abobe:
+    <ul>
+      <li>libxml2</li>
+      <li>ncursesw5</li>
+      <li>sdl2</li>
+      <li>libsndfile1</li>
+      <li>X11</li>
+      <li>libjpeg</li>
+      <li>libpng</li>
+      <li>freetype2</li>
+    </ul>
+  </p>
+
+  <p>If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:<ul>
+      <li><tt>apt-get install gcc make pkg-config autoconf automake</tt></li>
+      <li><tt>apt-get install libxml2-dev libncursesw5-dev libsdl2-dev</tt></li>
+      <li><tt>apt-get install libsndfile1-dev libjpeg-dev libpng-dev libfreetype6-dev</tt></li>
     </ul>
   </p>
 
@@ -39,31 +61,5 @@
 
   <p>Strictly speaking it would be possible build fizmo without pkg-config by compiling all the necessary modules yourself instead of letting the distribution package do this for you. Since pkg-config should however be universally available, there shouldn't be any need to do this.</p>
 
-  <p>Debian and derivates:<br/><tt>apt-get install gcc make pkg-config</tt></p>
-
-  <p>The following components are required to build the ncursesw-frontend:<ul>
-      <li>libxml2</li>
-      <li>ncursesw5</li>
-    </ul>
-  </p>
-
-  <p>If possible, the following optional components should also be installed:<ul>
-      <li>sdl-audio</li>
-      <li>libsndfile1</li>
-      <li>libjpeg</li>
-      <li>libpng</li>
-      <li>X11</li>
-    </ul>
-  </p>
-
-  <p>Debian and derivates:<br/><tt>apt-get install libxml2-dev libncursesw5-dev libsdl-sound1.2-dev</tt><br/><tt>apt-get install libsndfile1-dev libjpeg-dev libpng-dev</tt></p>
-
-  <p>If you want to build the SDL-based fizmo frontend, you'll need:<ul>
-      <li>The freetype2 libraries</li>
-      <li>SDL version 1.2</li>
-    </ul>
-  </p>
-
-  <p>Debian and derivates:<br/><tt>apt-get install libfreetype6-dev libsdl1.2-dev</tt></p>
 </document>
 
