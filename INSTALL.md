@@ -10,7 +10,30 @@ The following minimum components need to be installed to build fizmo:
 
  - A C compiler like gcc or clang
  - make
+ - automake
+ - autoconf
  - pkg-config
+
+
+
+To build all of the frontends, you will need the following in addition to the components listed abobe:     
+
+ - libxml2
+ - ncursesw5
+ - sdl2
+ - libsndfile1
+ - X11
+ - libjpeg
+ - libpng
+ - freetype2
+
+
+
+If you are on Debian or any derivate like Ubuntu you can execute the following commands to install all of the required components:
+
+ - `apt-get install gcc make pkg-config autoconf automake`
+ - `apt-get install libxml2-dev libncursesw5-dev libsdl2-dev`
+ - `apt-get install libsndfile1-dev libjpeg-dev libpng-dev libfreetype6-dev`
 
 
 
@@ -58,38 +81,4 @@ In case glktermw should be build, the location of the include files must be give
 In case glktermw should be build, the location of the library file must be given using this parameter.
 
 Strictly speaking it would be possible build fizmo without pkg-config by compiling all the necessary modules yourself instead of letting the distribution package do this for you. Since pkg-config should however be universally available, there shouldn't be any need to do this.
-
-Debian and derivates:  
-`apt-get install gcc make pkg-config`
-
-The following components are required to build the ncursesw-frontend:
-
- - libxml2
- - ncursesw5
-
-
-
-If possible, the following optional components should also be installed:
-
- - sdl-audio
- - libsndfile1
- - libjpeg
- - libpng
- - X11
-
-
-
-Debian and derivates:  
-`apt-get install libxml2-dev libncursesw5-dev libsdl-sound1.2-dev`  
-`apt-get install libsndfile1-dev libjpeg-dev libpng-dev`
-
-If you want to build the SDL-based fizmo frontend, you'll need:
-
- - The freetype2 libraries
- - SDL version 1.2
-
-
-
-Debian and derivates:  
-`apt-get install libfreetype6-dev libsdl1.2-dev`
 

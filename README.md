@@ -15,11 +15,13 @@ fizmo represents a generic a Z-Machine interpreter — “fizmo interprets z-mac
 **Frontends**
 
 
-Currently three frontends are available:
+Currently four frontends are available:
 
 
+ - _fizmo-sdl2_  
+   Using the freetype2 engine, this SDL2-based frontend allows for proportional font display and supports antialiasing, subpixel-rendering and HiDPI support. It uses the “Fira Sans” and “Fira Mono” font faces which were made by Erik Spiekermann and Ralph du Carrois.
  - _fizmo-ncursesw_  
-   The default frontend uses ncurses “wide” variant for story output. [Ncurses](http://www.gnu.org/software/ncurses/) is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.
+   This frontend uses ncurses “wide” variant for story output. [Ncurses](http://www.gnu.org/software/ncurses/) is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.
  - _fizmo-console_  
    This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.
  - _fizmo-glktermw_  
@@ -34,6 +36,8 @@ Currently three frontends are available:
 For developers, interfaces translate the Z-machine specific output — window management, output, scrolling and so on — into more display-specific commands, easing implementation considerably.
 
 
+ - _libpixelif_  
+   This interface will convert output into draw-pixel commands, providing support for implementations on any pixel-based display. This interface is used by fizmo-sdl2.
  - _libcellif_  
    This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.
  - _libglkif_  
