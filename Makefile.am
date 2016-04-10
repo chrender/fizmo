@@ -35,7 +35,7 @@
 AUTOMAKE_OPTIONS = -Wno-override
 
 .PHONY: libfizmo libcellif libsndifsdl2 libdrilbo libglkif \
- fizmo-console fizmo-ncursesw fizmo-glktermw
+ fizmo-console fizmo-ncursesw fizmo-glktermw fizmo-remglk
 
 
 # default target
@@ -80,13 +80,21 @@ fizmo-glktermw: libfizmo libglkif
 	cd fizmo-glktermw ; \
 	$(MAKE)
 
+fizmo-remglk: libfizmo libglkif
+	cd fizmo-remglk ; \
+	$(MAKE)
+
 
 # install targets
 
 install-data-local-libsndifsdl2: libsndifsdl2
 	cd libsndifsdl2 ; $(MAKE) install-data-local
 
+install-data-local-libglkif: libglkif
+	cd libglkif ; $(MAKE) install-data-local
+
 install-data-local: libfizmo libcellif libdrilbo \
+ $(OPTIONAL_FIZMO_DATA_LOCAL_INSTALLS) \
  $(OPTIONAL_SOUND_INSTALL_DATA_LOCAL)
 	cd libfizmo ; $(MAKE) install-data-local
 	cd libcellif ; $(MAKE) install-data-local
@@ -99,8 +107,10 @@ install-fizmo-ncursesw: fizmo-ncursesw
 	cd fizmo-ncursesw ; $(MAKE) install ; $(MAKE) install-data-local
 
 install-fizmo-glktermw: fizmo-glktermw
-	cd libglkif ; $(MAKE) install-data-local
 	cd fizmo-glktermw ; $(MAKE) install
+
+install-fizmo-remglk: fizmo-remglk
+	cd fizmo-remglk ; $(MAKE) install
 
 install: install-data-local install-fizmo-console install-fizmo-ncursesw \
  $(OPTIONAL_FIZMO_INSTALLS)
@@ -117,11 +127,16 @@ clean-local: $(OPTIONAL_FIZMO_CLEANS)
 	rm -rf $(DEV_BUILD_PREFIX)
 
 clean-fizmo-glktermw: fizmo-glktermw
-	cd libglkif ; $(MAKE) clean ; $(MAKE) clean-dev
 	cd fizmo-glktermw ; $(MAKE) clean
+
+clean-fizmo-remglk: fizmo-remglk
+	cd fizmo-remglk ; $(MAKE) clean
 
 clean-libsndifsdl2:
 	cd libsndifsdl2 ; $(MAKE) clean ; $(MAKE) clean-dev
+
+clean-libglkif:
+	cd libglkif ; $(MAKE) clean ; $(MAKE) clean-dev
 
 # distclean targets
 
@@ -133,9 +148,14 @@ distclean-local: $(OPTIONAL_FIZMO_DISTCLEANS)
 	cd fizmo-ncursesw ; $(MAKE) distclean
 
 distclean-fizmo-glktermw: fizmo-glktermw
-	cd libglkif ; $(MAKE) distclean
 	cd fizmo-glktermw ; $(MAKE) distclean
+
+distclean-fizmo-remglk: fizmo-remglk
+	cd fizmo-remglk ; $(MAKE) distclean
 
 distclean-libsndifsdl2:
 	cd libsndifsdl2 ; $(MAKE) distclean
+
+distclean-libglkif:
+	cd libglkif ; $(MAKE) distclean
 
