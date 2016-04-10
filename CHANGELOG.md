@@ -3,6 +3,7 @@
 
    **Version 0.7.11**
 
+ - Added “fizmo-remglk” frontend.
  - Minor improvements for building libglkif with ncurses(w).
 
 ---

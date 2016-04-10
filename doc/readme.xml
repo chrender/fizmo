@@ -9,11 +9,12 @@
   </section>
 
   <section title="Frontends">
-    <p>Currently three frontends are available:</p>
+    <p>Currently four frontends are available:</p>
     <ul>
       <li><i>fizmo-ncursesw</i><br/>The default frontend uses ncurses “wide” variant for story output. <a href="http://www.gnu.org/software/ncurses/">Ncurses</a> is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.</li>
       <li><i>fizmo-console</i><br/>This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.</li>
       <li><i>fizmo-glktermw</i><br/>An example <a href="http://en.wikipedia.org/wiki/Glk_(software)">Glk</a> frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the <a href="http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html">GLK-Implementations</a> at the Interactive Fiction archive.</li>
+      <li><i>fizmo-remglk</i><br/>A <a href="http://www.eblong.com/zarf/glk/remglk/docs.html">RemGlk</a>-based fizmo frontend. Requires remglk, which may be downloaded from <a href="http://github.com/erkyrath/remglk/">GitHub</a>.</li>
     </ul>
   </section>
 
@@ -21,7 +22,7 @@
     <p>For developers, interfaces translate the Z-machine specific output — window management, output, scrolling and so on — into more display-specific commands, easing implementation considerably.</p>
     <ul>
       <li><i>libcellif</i><br/>This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.</li>
-      <li><i>libglkif</i><br/>The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's <a href="https://github.com/erkyrath/iosfizmo/">iOS-fizmo</a>.</li>
+      <li><i>libglkif</i><br/>The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's <a href="https://github.com/erkyrath/iosfizmo/">iOS-fizmo</a>, fizmo-glktermw and fizmo-remglk.</li>
     </ul>
   </section>
 
@@ -40,7 +41,7 @@
   <section title="Miscellaneous">
     <p>Please send bug reports (or other requests) to <a href="mailto:fizmo@spellbreaker.org">fizmo@spellbreaker.org</a>.</p>
 
-    <p>Fizmo was written by Christoph Ender in 2005 – 2014.</p>
+    <p>Fizmo was written by Christoph Ender in 2005 – 2016.</p>
 
     <p><i>Please note:</i><br/>Currently fizmo is in beta status, meaning it might do unexpected things such as stop with an error message, crash or cleesh your machine into a frog. There is no warranty of any kind whatsoever and you're entirely on your own when running it.</p>
   </section>

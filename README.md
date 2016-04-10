@@ -15,7 +15,7 @@ fizmo represents a generic a Z-Machine interpreter — “fizmo interprets z-mac
 **Frontends**
 
 
-Currently three frontends are available:
+Currently four frontends are available:
 
 
  - _fizmo-ncursesw_  
@@ -24,6 +24,8 @@ Currently three frontends are available:
    This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.
  - _fizmo-glktermw_  
    An example [Glk](http://en.wikipedia.org/wiki/Glk_(software)) frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the [GLK-Implementations](http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html) at the Interactive Fiction archive.
+ - _fizmo-remglk_  
+   A [RemGlk](http://www.eblong.com/zarf/glk/remglk/docs.html)-based fizmo frontend. Requires remglk, which may be downloaded from [GitHub](http://github.com/erkyrath/remglk/).
 
 
 ---
@@ -37,7 +39,7 @@ For developers, interfaces translate the Z-machine specific output — window ma
  - _libcellif_  
    This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.
  - _libglkif_  
-   The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's [iOS-fizmo](https://github.com/erkyrath/iosfizmo/).
+   The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's [iOS-fizmo](https://github.com/erkyrath/iosfizmo/), fizmo-glktermw and fizmo-remglk.
 
 
 ---
@@ -68,7 +70,7 @@ Please see `INSTALL.txt` on how to bulid the packages.
 
 Please send bug reports (or other requests) to [fizmo@spellbreaker.org](mailto:fizmo@spellbreaker.org).
 
-Fizmo was written by Christoph Ender in 2005 – 2014.
+Fizmo was written by Christoph Ender in 2005 – 2016.
 
 _Please note:_  
 Currently fizmo is in beta status, meaning it might do unexpected things such as stop with an error message, crash or cleesh your machine into a frog. There is no warranty of any kind whatsoever and you're entirely on your own when running it.

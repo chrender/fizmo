@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.7.11">
+    <logentry>Added “fizmo-remglk” frontend.</logentry>
     <logentry>Minor improvements for building libglkif with ncurses(w).</logentry>
   </change>
 
