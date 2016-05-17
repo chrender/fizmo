@@ -95,6 +95,12 @@ AC_ARG_ENABLE([glktermw],
  [],
  [enable_glktermw=no])
 
+AC_ARG_ENABLE([remglk],
+ [AS_HELP_STRING([--enable-remglk],
+ [enable experimental remglk])],
+ [],
+ [enable_remglk=no])
+
 AC_ARG_ENABLE([sdl],
  [AS_HELP_STRING([--disable-sdl],
          [SDL will not be required for building, this will however disable
@@ -110,9 +116,14 @@ m4_include(libcellif/config-flags.m4)
 m4_include(libdrilbo/config-flags.m4)
 m4_include(fizmo-console/config-flags.m4)
 m4_include(fizmo-ncursesw/config-flags.m4)
-AS_IF([test "x$enable_glktermw" == "xyes"], [
+AS_IF([test "x$enable_glktermw" == "xyes" || test "x$enable_remglk" == "xyes"], [
   m4_include(libglkif/config-flags.m4)
+])
+AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(fizmo-glktermw/config-flags.m4)
+])
+AS_IF([test "x$enable_remglk" == "xyes"], [
+  m4_include(fizmo-remglk/config-flags.m4)
 ])
 AS_IF([test "x$enable_sdl" == "xyes"], [
   m4_include(libsndifsdl2/config-flags.m4)
@@ -128,9 +139,14 @@ m4_include(libcellif/config-libs.m4)
 m4_include(libdrilbo/config-libs.m4)
 m4_include(fizmo-console/config-libs.m4)
 m4_include(fizmo-ncursesw/config-libs.m4)
-AS_IF([test "x$enable_glktermw" == "xyes"], [
+AS_IF([test "x$enable_glktermw" == "xyes" || test "x$enable_remglk" == "xyes"], [
   m4_include(libglkif/config-libs.m4)
+])
+AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(fizmo-glktermw/config-libs.m4)
+])
+AS_IF([test "x$enable_remglk" == "xyes"], [
+  m4_include(fizmo-remglk/config-libs.m4)
 ])
 AS_IF([test "$enable_sdl" != "no"], [
   m4_include(libsndifsdl2/config-libs.m4)
@@ -157,6 +173,7 @@ m4_include(fizmo-ncursesw/config-conds.m4)
 m4_include(fizmo-console/config-conds.m4)
 m4_include(libglkif/config-conds.m4)
 m4_include(fizmo-glktermw/config-conds.m4)
+m4_include(fizmo-remglk/config-conds.m4)
 m4_include(libsndifsdl2/config-conds.m4)
 m4_include(libpixelif/config-conds.m4)
 m4_include(fizmo-sdl2/config-conds.m4)
@@ -175,9 +192,14 @@ m4_include(libcellif/config-subst.m4)
 m4_include(libdrilbo/config-subst.m4)
 m4_include(fizmo-console/config-subst.m4)
 m4_include(fizmo-ncursesw/config-subst.m4)
-AS_IF([test "x$enable_glktermw" == "xyes"], [
+AS_IF([test "x$enable_glktermw" == "xyes" || test "x$enable_remglk" == "xyes"], [
   m4_include(libglkif/config-subst.m4)
+])
+AS_IF([test "x$enable_glktermw" == "xyes"], [
   m4_include(fizmo-glktermw/config-subst.m4)
+])
+AS_IF([test "x$enable_remglk" == "xyes"], [
+  m4_include(fizmo-remglk/config-subst.m4)
 ])
 AS_IF([test "$enable_sdl" != "no"], [
   m4_include(libsndifsdl2/config-subst.m4)
@@ -189,11 +211,25 @@ AS_IF([test "$enable_sdl" != "no"], [
 # Define optional build and installation targets if required by the
 # current flags
 
+AS_IF([test "x$enable_glktermw" == "xyes" || test "x$enable_remglk" == "xyes"], [
+  optional_fizmo_builds="$optional_fizmo_builds libglkif"
+  optional_fizmo_data_local_installs="$optional_fizmo_data_local_installs install-data-local-libglkif"
+  optional_fizmo_cleans="$optional_fizmo_cleans clean-libglkif"
+  optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-libglkif"
+])
+
 AS_IF([test "x$enable_glktermw" == "xyes"], [
-  optional_fizmo_builds=fizmo-glktermw
-  optional_fizmo_installs=install-fizmo-glktermw
-  optional_fizmo_cleans=clean-fizmo-glktermw
-  optional_fizmo_dstcleans=distclean-fizmo-glktermw
+  optional_fizmo_builds="$optional_fizmo_builds fizmo-glktermw"
+  optional_fizmo_installs="$optional_fizmo_installs install-fizmo-glktermw"
+  optional_fizmo_cleans="$optional_fizmo_cleans clean-fizmo-glktermw"
+  optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-fizmo-glktermw"
+])
+
+AS_IF([test "x$enable_remglk" == "xyes"], [
+ optional_fizmo_builds="$optional_fizmo_builds fizmo-remglk"
+ optional_fizmo_installs="$optional_fizmo_installs install-fizmo-remglk"
+ optional_fizmo_cleans="$optional_fizmo_cleans clean-fizmo-remglk"
+ optional_fizmo_distcleans="$optional_fizmo_distcleans distclean-fizmo-remglk"
 ])
 
 AS_IF([test "$enable_sdl" != "no"], [
@@ -220,6 +256,7 @@ AC_SUBST([OPTIONAL_SOUND_INSTALL_DATA_LOCAL],$optional_sound_install_data_local)
 
 AC_SUBST([OPTIONAL_FIZMO_BUILDS], $optional_fizmo_builds)
 AC_SUBST([OPTIONAL_FIZMO_INSTALLS], $optional_fizmo_installs)
+AC_SUBST([OPTIONAL_FIZMO_DATA_LOCAL_INSTALLS], $optional_fizmo_data_local_installs)
 AC_SUBST([OPTIONAL_FIZMO_CLEANS], $optional_fizmo_cleans)
 AC_SUBST([OPTIONAL_FIZMO_DISTCLEANS], $optional_fizmo_distcleans)
 
@@ -241,12 +278,24 @@ AC_CONFIG_FILES([
  fizmo-ncursesw/src/fizmo-ncursesw/Makefile
 ])
 
-AS_IF([test "x$enable_glktermw" == "xyes"], [
+AS_IF([test "x$enable_glktermw" == "xyes"] || [test "x$enable_remglk" == "xyes"], [
   AC_CONFIG_FILES([
    libglkif/Makefile
    libglkif/src/glk_interface/Makefile
+  ])
+])
+
+AS_IF([test "x$enable_glktermw" == "xyes"], [
+  AC_CONFIG_FILES([
    fizmo-glktermw/Makefile
    fizmo-glktermw/src/fizmo-glktermw/Makefile
+  ])
+])
+
+AS_IF([test "x$enable_remglk" == "xyes"], [
+  AC_CONFIG_FILES([
+    fizmo-remglk/Makefile
+    fizmo-remglk/src/fizmo-remglk/Makefile
   ])
 ])
 
