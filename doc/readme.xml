@@ -9,12 +9,13 @@
   </section>
 
   <section title="Frontends">
-    <p>Currently four frontends are available:</p>
+    <p>Currently there are five frontends available:</p>
     <ul>
       <li><i>fizmo-sdl2</i><br/>Using the freetype2 engine, this SDL2-based frontend allows for proportional font display and supports antialiasing, subpixel-rendering and HiDPI support. It uses the “Fira Sans” and “Fira Mono” font faces which were made by Erik Spiekermann and Ralph du Carrois.</li>
       <li><i>fizmo-ncursesw</i><br/>This frontend uses ncurses “wide” variant for story output. <a href="http://www.gnu.org/software/ncurses/">Ncurses</a> is commonly used for output on fixed-width text displays. The wide extensions will ensure correct unicode display.</li>
       <li><i>fizmo-console</i><br/>This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.</li>
       <li><i>fizmo-glktermw</i><br/>An example <a href="http://en.wikipedia.org/wiki/Glk_(software)">Glk</a> frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the <a href="http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html">GLK-Implementations</a> at the Interactive Fiction archive.</li>
+      <li><i>fizmo-remglk</i><br/>A <a href="http://www.eblong.com/zarf/glk/remglk/docs.html">RemGlk</a>-based fizmo frontend. Requires remglk, which may be downloaded from <a href="http://github.com/erkyrath/remglk/">GitHub</a>.</li>
     </ul>
   </section>
 
