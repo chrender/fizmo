@@ -15,7 +15,7 @@ fizmo represents a generic a Z-Machine interpreter — “fizmo interprets z-mac
 **Frontends**
 
 
-Currently four frontends are available:
+Currently there are five frontends available:
 
 
  - _fizmo-sdl2_  
@@ -26,6 +26,8 @@ Currently four frontends are available:
    This frontend will simple read and write from the console / terminal. No fance functionality whatsoever, but may be useful for automization or voice output.
  - _fizmo-glktermw_  
    An example [Glk](http://en.wikipedia.org/wiki/Glk_(software)) frontend. Requires glktermw — notice the trailing “w” — which may be downloaded from the [GLK-Implementations](http://www.ifarchive.org/indexes/if-archiveXprogrammingXglkXimplementations.html) at the Interactive Fiction archive.
+ - _fizmo-remglk_  
+   A [RemGlk](http://www.eblong.com/zarf/glk/remglk/docs.html)-based fizmo frontend. Requires remglk, which may be downloaded from [GitHub](http://github.com/erkyrath/remglk/).
 
 
 ---

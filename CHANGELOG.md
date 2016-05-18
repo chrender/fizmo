@@ -6,6 +6,9 @@
  - Addition of SDL2-frontend and libpixelif screen-interface. These allow for pixel-based output instead of monospaced text-only output as before. As a result, the frontend provides proportional font display using the freetype2 library, on a wide range of systems since SDL2 is implemented in a cross-platform manner.
  - This frontend uses the “Fira Sans” and “Fira Mono” typefaces designed by Erik Spiekermann, Ralph du Carrois, Anja Meiners and Botio Nikoltchev.
  - This version makes use of the freetype2 font engine. It supports subpixel rendering and hi-dpi displays.
+ - Added write/read of last paragraph_attribute in libfizmo, along with a fix for segfaults which could occur in case metadata is written to output history when screen interface was not open.
+ - Added missing config options to output of fizmo-ncursesw.
+ - Adaptations for libglkif: Separate glk and glktermw from each other for better integration with remglk.
 
 ---
 
