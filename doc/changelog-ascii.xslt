@@ -160,9 +160,22 @@
 
   <xsl:template match="text()">
     <xsl:call-template name="string-replace-all">
-      <xsl:with-param name="text" select="translate(., '“”', '&quot;&quot;')"/>
-      <xsl:with-param name="replace" select="'–'" />
-      <xsl:with-param name="by" select="'--'" />
+      <xsl:with-param name="text">
+        <xsl:call-template name="string-replace-all">
+          <xsl:with-param name="text">
+            <xsl:call-template name="string-replace-all">
+              <xsl:with-param name="text"
+                select="translate(., '“”', '&quot;&quot;')" />
+              <xsl:with-param name="replace" select="'–'" />
+              <xsl:with-param name="by" select="'--'" />
+            </xsl:call-template>
+          </xsl:with-param>
+          <xsl:with-param name="replace" select="'≥'" />
+          <xsl:with-param name="by" select="'&gt;='" />
+        </xsl:call-template>
+      </xsl:with-param>
+      <xsl:with-param name="replace" select="'≤'" />
+      <xsl:with-param name="by" select="'&lt;='" />
     </xsl:call-template>
   </xsl:template>
 

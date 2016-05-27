@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function xslt {
   if [ "$5" == "true" ]
