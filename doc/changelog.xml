@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
-  <change version="0.7.11">
+  <change version="0.7.11-beta1">
     <logentry>Added “fizmo-remglk” frontend.</logentry>
     <logentry>Minor improvements for building libglkif with ncurses(w).</logentry>
+    <logentry>Development of version 0.7 discontinued, changes merged into 0.8 branch.</logentry>
   </change>
 
   <change version="0.7.10">

@@ -1,10 +1,11 @@
 
 
 
-   **Version 0.7.11**
+   **Version 0.7.11-beta1**
 
  - Added “fizmo-remglk” frontend.
  - Minor improvements for building libglkif with ncurses(w).
+ - Development of version 0.7 discontinued, changes merged into 0.8 branch.
 
 ---
 
