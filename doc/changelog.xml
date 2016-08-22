@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.8.1">
+    <datetime day-of-week="Thu" month="8" day="22" hour="9"
+      minute="25" second="41" timezone="CEST" year="2016"/>
+    <logentry>Fixed build error for parallel make, github issue #2.</logentry>
+  </change>
+
   <change version="0.8.0">
+    <datetime day-of-week="Thu" month="7" day="28" hour="20"
+      minute="30" second="3" timezone="CEST" year="2016"/>
     <logentry>Addition of SDL2-frontend and libpixelif screen-interface. These allow for pixel-based output instead of monospaced text-only output as before. As a result, the frontend provides proportional font display using the freetype2 library, on a wide range of systems since SDL2 is implemented in a cross-platform manner.</logentry>
     <logentry>The SDL2-frontend uses the “Fira Sans” and “Fira Mono” typefaces designed by Erik Spiekermann, Ralph du Carrois, Anja Meiners and Botio Nikoltchev.</logentry>
     <logentry>When enabled in the freetype library, text is displayed using subpixel rendering. There is also support for hi-dpi displays.</logentry>

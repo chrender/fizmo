@@ -1,7 +1,14 @@
 
 
 
-   **Version 0.8.0**
+   **Version 0.8.1 — August 22, 2016**
+
+ - Fixed build error for parallel make, github issue #2.
+
+---
+
+
+   **Version 0.8.0 — July 28, 2016**
 
  - Addition of SDL2-frontend and libpixelif screen-interface. These allow for pixel-based output instead of monospaced text-only output as before. As a result, the frontend provides proportional font display using the freetype2 library, on a wide range of systems since SDL2 is implemented in a cross-platform manner.
  - The SDL2-frontend uses the “Fira Sans” and “Fira Mono” typefaces designed by Erik Spiekermann, Ralph du Carrois, Anja Meiners and Botio Nikoltchev.
