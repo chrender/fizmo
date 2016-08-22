@@ -65,7 +65,7 @@ libglkif: libfizmo
 	cd libglkif ; \
 	$(MAKE) install-dev
 
-libpixelif: libfizmo
+libpixelif: libfizmo libdrilbo
 	cd libpixelif ; \
 	$(MAKE) install-dev
 
