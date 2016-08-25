@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.8.2">
+    <logentry>In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see <a>https://wiki.debian.org/ReproducibleBuilds</a>. Thhanks to Sascha Steinbiss for the patch.</logentry>
+    <logentry>Use tiny-xml-doc-tools for documentation.</logentry>
+  </change>
+
   <change version="0.8.1">
     <datetime day-of-week="Thu" month="8" day="22" hour="9"
       minute="25" second="41" timezone="CEST" year="2016"/>

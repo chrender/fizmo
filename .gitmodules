@@ -31,3 +31,6 @@
 [submodule "fizmo-remglk"]
 	path = fizmo-remglk
 	url = git@github.com:chrender/fizmo-remglk
+[submodule "doc/tiny-xml-doc-tools"]
+	path = doc/tiny-xml-doc-tools
+	url = git@github.com:chrender/tiny-xml-doc-tools

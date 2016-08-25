@@ -1,6 +1,14 @@
 
 
 
+   **Version 0.8.2**
+
+ - In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see https://wiki.debian.org/ReproducibleBuilds. Thhanks to Sascha Steinbiss for the patch.
+ - Use tiny-xml-doc-tools for documentation.
+
+---
+
+
    **Version 0.8.1 — August 22, 2016**
 
  - Fixed build error for parallel make, github issue #2.
