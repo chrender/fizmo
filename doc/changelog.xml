@@ -2,6 +2,7 @@
 <changelog>
   <change version="0.8.2">
     <logentry>In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see <a>https://wiki.debian.org/ReproducibleBuilds</a>. Thanks to Sascha Steinbiss for the patch.</logentry>
+    <logentry>Renamed “libcellif” to “libmonospaceif”.</logentry>
     <logentry>Use tiny-xml-doc-tools for documentation.</logentry>
   </change>
 

@@ -47,7 +47,7 @@
 
 # Since the configuration process must be completed before the build
 # begins, some extra effort has to be taken. As submodules may require
-# other fizmo-libraries to be build -- libcellif for example requires
+# other fizmo-libraries to be build -- libmonospaceif for example requires
 # libfizmo -- it's not possible to use the whole subsystem's configuration,
 # since libfizmo already have to be built so that the configuration can
 # find it. Thus, the following rules apply:
@@ -112,7 +112,7 @@ AC_ARG_ENABLE([sdl],
 # Import submodule-specific options from their respective directories
 
 m4_include(libfizmo/config-flags.m4)
-m4_include(libcellif/config-flags.m4)
+m4_include(libmonospaceif/config-flags.m4)
 m4_include(libdrilbo/config-flags.m4)
 m4_include(fizmo-console/config-flags.m4)
 m4_include(fizmo-ncursesw/config-flags.m4)
@@ -135,7 +135,7 @@ AS_IF([test "x$enable_sdl" == "xyes"], [
 # Check for external, non-fizmo libs:
 
 m4_include(libfizmo/config-libs.m4)
-m4_include(libcellif/config-libs.m4)
+m4_include(libmonospaceif/config-libs.m4)
 m4_include(libdrilbo/config-libs.m4)
 m4_include(fizmo-console/config-libs.m4)
 m4_include(fizmo-ncursesw/config-libs.m4)
@@ -167,7 +167,7 @@ AM_PROG_AR
 AM_CONDITIONAL([ENABLE_TRACING], [test "$enable_tracing" = "yes"])
 AM_CONDITIONAL([ENABLE_SDL], [test "$enable_sdl" != "no"])
 m4_include(libfizmo/config-conds.m4)
-m4_include(libcellif/config-conds.m4)
+m4_include(libmonospaceif/config-conds.m4)
 m4_include(libdrilbo/config-conds.m4)
 m4_include(fizmo-ncursesw/config-conds.m4)
 m4_include(fizmo-console/config-conds.m4)
@@ -188,7 +188,7 @@ build_prefix_libs=$build_prefix/lib/fizmo
 AC_SUBST([DEV_BUILD_PREFIX], $build_prefix)
 AC_SUBST([FIZMO_DIST_VERSION], FIZMO_DIST_VERSION_NUMBER)
 m4_include(libfizmo/config-subst.m4)
-m4_include(libcellif/config-subst.m4)
+m4_include(libmonospaceif/config-subst.m4)
 m4_include(libdrilbo/config-subst.m4)
 m4_include(fizmo-console/config-subst.m4)
 m4_include(fizmo-ncursesw/config-subst.m4)
@@ -268,8 +268,8 @@ AC_CONFIG_FILES([
  libfizmo/Makefile
  libfizmo/src/tools/Makefile
  libfizmo/src/interpreter/Makefile
- libcellif/Makefile
- libcellif/src/cell_interface/Makefile
+ libmonospaceif/Makefile
+ libmonospaceif/src/monospace_interface/Makefile
  libdrilbo/Makefile
  libdrilbo/src/drilbo/Makefile
  fizmo-console/Makefile

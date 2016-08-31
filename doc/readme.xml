@@ -23,7 +23,7 @@
     <p>For developers, interfaces translate the Z-machine specific output — window management, output, scrolling and so on — into more display-specific commands, easing implementation considerably.</p>
     <ul>
       <li><i>libpixelif</i><br/>This interface will convert output into draw-pixel commands, providing support for implementations on any pixel-based display. This interface is used by fizmo-sdl2.</li>
-      <li><i>libcellif</i><br/>This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.</li>
+      <li><i>libmonospaceif</i><br/>This interface will convert output into simple “goto-xy”- and “print”-commands, providing support for implementations on a fixed-width display. This interface is used by fizmo-ncursesw.</li>
       <li><i>libglkif</i><br/>The GLK-interface translates Z-Machine output into GLK-specific instructions. This is used by Andrew Plotkin's <a href="https://github.com/erkyrath/iosfizmo/">iOS-fizmo</a>.</li>
     </ul>
   </section>

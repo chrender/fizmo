@@ -22,7 +22,7 @@ foreground-color = black
 #disable-sound
 save-text-history-paragraphs = 1000
 
-# -- libcellif options
+# -- libmonospaceif options
 left-margin = 1
 right-margin = 1
 #disable-color

@@ -34,7 +34,7 @@
 
 AUTOMAKE_OPTIONS = -Wno-override
 
-.PHONY: libfizmo libcellif libsndifsdl2 libdrilbo libglkif \
+.PHONY: libfizmo libmonospaceif libsndifsdl2 libdrilbo libglkif \
  fizmo-console fizmo-ncursesw fizmo-glktermw fizmo-remglk fizmo-sdl2
 
 
@@ -49,8 +49,8 @@ libfizmo:
 	cd libfizmo ; \
 	$(MAKE) install-dev
 
-libcellif: libfizmo
-	cd libcellif ; \
+libmonospaceif: libfizmo
+	cd libmonospaceif ; \
 	$(MAKE) install-dev
 
 libsndifsdl2: libfizmo
@@ -76,7 +76,7 @@ fizmo-console: libfizmo
 	cd fizmo-console ; \
 	$(MAKE)
 
-fizmo-ncursesw: libfizmo libcellif libdrilbo $(OPTIONAL_SOUND_BUILD)
+fizmo-ncursesw: libfizmo libmonospaceif libdrilbo $(OPTIONAL_SOUND_BUILD)
 	cd fizmo-ncursesw ; \
 	$(MAKE)
 
@@ -101,11 +101,11 @@ install-data-local-libsndifsdl2: libsndifsdl2
 install-data-local-libglkif: libglkif
 	cd libglkif ; $(MAKE) install-data-local
 
-install-data-local: libfizmo libcellif libdrilbo \
+install-data-local: libfizmo libmonospaceif libdrilbo \
  $(OPTIONAL_FIZMO_DATA_LOCAL_INSTALLS) \
  $(OPTIONAL_SOUND_INSTALL_DATA_LOCAL)
 	cd libfizmo ; $(MAKE) install-data-local
-	cd libcellif ; $(MAKE) install-data-local
+	cd libmonospaceif ; $(MAKE) install-data-local
 	cd libdrilbo ; $(MAKE) install-data-local
 
 install-fizmo-console: fizmo-console
@@ -132,7 +132,7 @@ install: install-data-local install-fizmo-console install-fizmo-ncursesw \
 
 clean: $(OPTIONAL_FIZMO_CLEANS)
 	cd libfizmo ; $(MAKE) clean
-	cd libcellif ; $(MAKE) clean
+	cd libmonospaceif ; $(MAKE) clean
 	cd libdrilbo ; $(MAKE) clean
 
 clean-fizmo-glktermw: fizmo-glktermw
@@ -155,7 +155,7 @@ clean-libglkif:
 
 distclean: $(OPTIONAL_FIZMO_DISTCLEANS)
 	cd libfizmo ; $(MAKE) distclean
-	cd libcellif ; $(MAKE) distclean
+	cd libmonospaceif ; $(MAKE) distclean
 	cd libdrilbo ; $(MAKE) distclean
 
 distclean-fizmo-glktermw: fizmo-glktermw
