@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.8.3 — September 9, 2016**
+
+ - Fixed missing documentation and other files from distribution version 0.8.2. No changes to the source code.
+
+---
+
+
    **Version 0.8.2 — August 31, 2016**
 
  - In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see https://wiki.debian.org/ReproducibleBuilds. Thanks to Sascha Steinbiss for the patch.
