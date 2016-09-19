@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.8.4**
+
+ - Fixed a crash which occurred after entering an invalid filename for the /fileinput command and then re-invoking the same command. Thanks to Michael Baltes for reporting the problem.
+
+---
+
+
    **Version 0.8.3 — September 9, 2016**
 
  - Fixed missing documentation and other files from distribution version 0.8.2. No changes to the source code.
