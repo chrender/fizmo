@@ -1,36 +1,36 @@
 [submodule "libfizmo"]
 	path = libfizmo
-	url = git@github.com:chrender/libfizmo
+	url = https://github.com/chrender/libfizmo
 [submodule "libdrilbo"]
 	path = libdrilbo
-	url = git@github.com:chrender/libdrilbo
+	url = https://github.com/chrender/libdrilbo
 [submodule "libglkif"]
 	path = libglkif
-	url = git@github.com:chrender/libglkif
+	url = https://github.com/chrender/libglkif
 [submodule "fizmo-console"]
 	path = fizmo-console
-	url = git@github.com:chrender/fizmo-console
+	url = https://github.com/chrender/fizmo-console
 [submodule "fizmo-ncursesw"]
 	path = fizmo-ncursesw
-	url = git@github.com:chrender/fizmo-ncursesw
+	url = https://github.com/chrender/fizmo-ncursesw
 [submodule "fizmo-glktermw"]
 	path = fizmo-glktermw
-	url = git@github.com:chrender/fizmo-glktermw
+	url = https://github.com/chrender/fizmo-glktermw
 [submodule "libpixelif"]
 	path = libpixelif
-	url = git@github.com:chrender/libpixelif
+	url = https://github.com/chrender/libpixelif
 [submodule "libsndifsdl2"]
 	path = libsndifsdl2
-	url = git@github.com:chrender/libsndifsdl2
+	url = https://github.com/chrender/libsndifsdl2
 [submodule "fizmo-sdl2"]
 	path = fizmo-sdl2
-	url = git@github.com:chrender/fizmo-sdl2
+	url = https://github.com/chrender/fizmo-sdl2
 [submodule "fizmo-remglk"]
 	path = fizmo-remglk
-	url = git@github.com:chrender/fizmo-remglk
+	url = https://github.com/chrender/fizmo-remglk
 [submodule "doc/tiny-xml-doc-tools"]
 	path = doc/tiny-xml-doc-tools
-	url = git@github.com:chrender/tiny-xml-doc-tools
+	url = https://github.com/chrender/tiny-xml-doc-tools
 [submodule "libmonospaceif"]
 	path = libmonospaceif
-	url = git@github.com:chrender/libmonospaceif
+	url = https://github.com/chrender/libmonospaceif
