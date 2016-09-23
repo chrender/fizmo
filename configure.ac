@@ -184,9 +184,11 @@ m4_include(fizmo-sdl2/config-conds.m4)
 build_prefix=`pwd`/build
 build_prefix_cflags=$build_prefix/include/fizmo
 build_prefix_libs=$build_prefix/lib/fizmo
+AM_CONDITIONAL([FIZMO_DIST_BUILD], [test "" = ""])
+AC_SUBST([FIZMO_DIST_BUILD_PREFIX], $build_prefix)
 
-AC_SUBST([DEV_BUILD_PREFIX], $build_prefix)
 AC_SUBST([FIZMO_DIST_VERSION], FIZMO_DIST_VERSION_NUMBER)
+
 m4_include(libfizmo/config-subst.m4)
 m4_include(libmonospaceif/config-subst.m4)
 m4_include(libdrilbo/config-subst.m4)

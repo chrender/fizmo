@@ -2,6 +2,7 @@
 <changelog>
   <change version="0.8.4">
     <logentry>Fixed a crash which occurred after entering an invalid filename for the <tt>/fileinput</tt> command and then re-invoking the same command. Thanks to Michael Baltes for reporting the problem.</logentry>
+    <logentry>Improved build system for separate library and interface builds.</logentry>
   </change>
 
   <change version="0.8.3">
