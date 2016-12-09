@@ -37,6 +37,15 @@ If you are on Debian or any derivate like Ubuntu you can execute the following c
 
 
 
+In case you're on Mac OS X, you can use homebrew to install the build requirements:
+
+ - `brew install sdl2 freetype pkg-config`
+ - `brew install libjpeg autoconf libsndfile automake`
+
+
+
+The source code in the master fizmo “master” branch on github does not contain the `configure` script. If you want to install from github instead from a downloaded fizmo-\*.tar.gz you can either run the `autoreconf -fi` command to create the missing files, or clone the “upstream” branch which contains the release-relevant files.
+
 Installing should be as simple as running the following commands:
 
 ./configure  
