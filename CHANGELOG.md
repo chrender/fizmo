@@ -5,6 +5,7 @@
 
  - Fixed missing evaluation of events on start-up. This fixes a bug that made the interpreter crash when your initial screen size was less than the default size. This fix does now also allow resizing the window during frontispiece display.
  - Fixed a crash which occurred after entering an invalid filename for the /fileinput command and then re-invoking the same command. Thanks to Michael Baltes for reporting the problem.
+ - Fixed missing repeat-paragraph-output in case buffer back was encountered in output history. This fixes the initial missing line of text in “eliza.z5”.
  - Improved build system for separate library and interface builds.
 
 ---
