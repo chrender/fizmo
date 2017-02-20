@@ -21,12 +21,12 @@ This package includes software written by other authors:
 
 libfizmo includes the Mersenne Twister random number generator, available at [http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html). This is available via a BSD license, which is stored in the source file “libfizmo/src/interpreter/mt19937ar.c”.
 
-libfizmo includes hyphenation patterns provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/). For every file's detailed respective copyright information, please refer to the description stored at the top of the corresponding file:       
+libfizmo includes hyphenation patterns provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/):
 
- - “src/locales/en_US/patterns.txt” from hyph-utf8's “hyph-en-us.tex”.
- - “src/locales/de_DE/patterns.txt” from hyph-utf8's “hyph-de-1996.tex”.
- - “src/locales/fr_FR/patterns.txt” from hyph-utf8's “hyph-fr.tex”.
 
+ - British english hyphenation patterns as provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/) under a permissive license.
+ - German hyphenation patterns, provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/), distributed under the terms of the LaTeX Project Public License.
+ - French hyphenation patterns as provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/), distributed under the terms of the MIT License.
 
 
 libdrilbo includes code from the pix2gif utility by Mark Howell in ztools, which are available from [http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html](http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html). The copyright status of Mark Howell's work is unknown. Since he released the software for free and since it is also used by multiple other projects it can also be distributed or used freely, to the best of my knowledge.
