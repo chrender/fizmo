@@ -12,6 +12,7 @@
  - Replaced en_US locale with en_GB due to license issues with the US hyphenation patterns from the “hyph-utf8” package for the time being. Adapted localization aliases so any current configuration should be still working without problems.
  - User input for read_char is now supported in stream 4. Thanks to Michael Baltes for the initial implementation.
  - Improved build system for separate library and interface builds.
+ - Added “-fPIC” flag to compilation of static stand-alone libraries. This will allow them to get later linked to binaries with shared libraries.
 
 ---
 
