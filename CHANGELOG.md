@@ -8,6 +8,7 @@
  - Fix for crashes on startup when loading hyphenation patterns und localiazation data for machines which have chars as unsigned types. Thanks to Lewis Gentry for the patch.
  - Fixed a crash which occurred after entering an invalid filename for the /fileinput command and then re-invoking the same command. Thanks to Michael Baltes for reporting the problem.
  - Fixed possible crash when invoking read_char with a non-zero verification routine address. Thanks to Stephen Gutknecht for reporting the problem.
+ - Fixed missing opening screen and disappearing prompt during timed input in “eliza.z5”. Thanks to Stephen Gutknecht for reporting the problem.
  - Fixed build error which occured when "--disable-x11" was set for drilbo.
  - Fixed missing repeat-paragraph-output in case buffer back was encountered in output history. This fixes the initial missing line of text in “eliza.z5”.
  - Replaced en_US locale with en_GB due to license issues with the US hyphenation patterns from the “hyph-utf8” package for the time being. Adapted localization aliases so any current configuration should be still working without problems.
