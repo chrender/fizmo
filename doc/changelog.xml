@@ -14,7 +14,7 @@
     <logentry>User input for read_char is now supported in stream 4. Thanks to Michael Baltes for the initial implementation.</logentry>
     <logentry>Improved build system for separate library and interface builds.</logentry>
     <logentry>Added “-fPIC” flag to compilation of static stand-alone libraries. This will allow them to get later linked to binaries with shared libraries.</logentry>
-    <logentry>Fix startup error messages, this also fixes silent exists in acse the story file could not be found.</logentry>
+    <logentry>Fix startup error messages, this also fixes silent exists in case the story file could not be found.</logentry>
   </change>
 
   <change version="0.8.3">
