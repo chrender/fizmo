@@ -11,6 +11,7 @@
  - Fixed missing opening screen and disappearing prompt during timed input in “eliza.z5”. Thanks to Stephen Gutknecht for reporting the problem.
  - Fixed build error which occured when "--disable-x11" was set for drilbo.
  - Fixed missing repeat-paragraph-output in case buffer back was encountered in output history. This fixes the initial missing line of text in “eliza.z5”.
+ - Fixed overlong reverse chars. This corrects several ASCII art problems as in Photopia, Nameless and ZChess, as well as in several opening screens. Thanks to Stephen Gutknecht.
  - Replaced en_US locale with en_GB due to license issues with the US hyphenation patterns from the “hyph-utf8” package for the time being. Adapted localization aliases so any current configuration should be still working without problems.
  - User input for read_char is now supported in stream 4. Thanks to Michael Baltes for the initial implementation.
  - Improved build system for separate library and interface builds.
