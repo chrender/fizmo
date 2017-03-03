@@ -17,7 +17,8 @@
  - Improved build system for separate library and interface builds.
  - Fixed an issue libpixelif's truetype-wordwrapper. This corrects the incorrect display of the startup-screens in “AtWork.z5” and “Photopia”. Thanks to Stephen Gutknecht for reporting the problem.
  - Added “-fPIC” flag to compilation of static stand-alone libraries. This will allow them to get later linked to binaries with shared libraries.
- - Fix startup error messages, this also fixes silent exists in case the story file could not be found.
+ - Added detection whether supplied story file for the interpreter is a valid Z-Machine file or a blorb file containing a "ZCOD" chunk and show error message if it's not the case.
+ - Fix startup error messages and missing output of fatal interpreter messages in fizmo-sdl2, this also fixes silent exists in case the story file could not be found.
 
 ---
 
