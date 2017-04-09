@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.8.4">
+    <datetime day-of-week="Sun" month="4" day="9" hour="21"
+      minute="17" second="50" timezone="CEST" year="2017"/>
     <logentry>Fixed missing display of upper screen output on game start, like, for example, the title display of “Alpha“ or “Anchorhead”.</logentry>
     <logentry>Fixed missing evaluation of events on start-up. This fixes a bug that made the interpreter crash when your initial screen size was less than the default size. This fix does now also allow resizing the window during frontispiece display.</logentry>
     <logentry>Fix for crashes on startup when loading hyphenation patterns und localiazation data for machines which have chars as unsigned types. Thanks to Lewis Gentry for the patch.</logentry>

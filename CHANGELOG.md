@@ -1,7 +1,7 @@
 
 
 
-   **Version 0.8.4**
+   **Version 0.8.4 — April 9, 2017**
 
  - Fixed missing display of upper screen output on game start, like, for example, the title display of “Alpha“ or “Anchorhead”.
  - Fixed missing evaluation of events on start-up. This fixes a bug that made the interpreter crash when your initial screen size was less than the default size. This fix does now also allow resizing the window during frontispiece display.
