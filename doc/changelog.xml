@@ -2,6 +2,8 @@
 <changelog>
   <change version="0.8.5">
     <logentry>Fix superfluous libraries and includes during install when using $DESTDIR, addressing github issue #21.</logentry>
+    <logentry>Made screen size functions use 16-bit instead of 8-bit values, allowing version 5+ games to work with screen dimensions > 255.</logentry>
+    <logentry>Fixes for wrong submodule version numbers.</logentry>
   </change>
 
   <change version="0.8.4">
