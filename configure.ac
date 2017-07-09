@@ -69,7 +69,7 @@
 
 
 
-m4_define([FIZMO_DIST_VERSION_NUMBER], [0.8.4])
+m4_define([FIZMO_DIST_VERSION_NUMBER], [0.8.5-b1])
 
 AC_INIT(
  [fizmo],

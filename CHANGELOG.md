@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.8.5**
+
+ - Fix superfluous libraries and includes during install when using $DESTDIR, addressing github issue #21.
+
+---
+
+
    **Version 0.8.4 — April 9, 2017**
 
  - Fixed missing display of upper screen output on game start, like, for example, the title display of “Alpha“ or “Anchorhead”.
