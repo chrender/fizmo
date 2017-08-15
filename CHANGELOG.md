@@ -1,11 +1,13 @@
 
 
 
-   **Version 0.8.5**
+   **Version 0.8.5 — August 15, 2017**
 
  - Fix superfluous libraries and includes during install when using $DESTDIR, addressing github issue #21.
  - Made screen size functions use 16-bit instead of 8-bit values, allowing version 5+ games to work with screen dimensions > 255.
  - In case of screen dimensions > 255, write 255 into the byte-sized header entries $20 and $21.
+ - Added “-ai” or “--autosave-inputfile”, resp. and “-ao” or “--autosave-outputfile”, resp. commandline parameters in fizmo-console. With both set, this allows processing of a single command from stdin for each invocation of fizmo-console.
+ - Renamed copyright files to “license” for github license detection compatibility, see [Github's “Licensing a repository”](https://help.github.com/articles/licensing-a-repository/) for further reference.
  - Fixes for wrong submodule version numbers.
 
 ---
@@ -42,7 +44,7 @@
 
    **Version 0.8.2 — August 31, 2016**
 
- - In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see https://wiki.debian.org/ReproducibleBuilds. Thanks to Sascha Steinbiss for the patch.
+ - In the context of the Debian Reproducible Builds, building libfizmo is now reproducible, see [https://wiki.debian.org/ReproducibleBuilds](). Thanks to Sascha Steinbiss for the patch.
  - Renamed “libcellif” to “libmonospaceif”.
  - Fixed several build files and pkg-configurations for stand-alone module builds.
  - Use tiny-xml-doc-tools for documentation.

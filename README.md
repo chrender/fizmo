@@ -79,3 +79,27 @@ Fizmo was written by Christoph Ender in 2005 – 2016.
 _Please note:_  
 Currently fizmo is in beta status, meaning it might do unexpected things such as stop with an error message, crash or cleesh your machine into a frog. There is no warranty of any kind whatsoever and you're entirely on your own when running it.
 
+---
+
+
+This package includes software written by other authors:
+
+libfizmo includes the Mersenne Twister random number generator, available at [http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html). This is available via a BSD license, which is stored in the source file “libfizmo/src/interpreter/mt19937ar.c”.
+
+libfizmo includes hyphenation patterns provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/):
+
+
+ - British english hyphenation patterns as provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/) under a permissive license.
+ - German hyphenation patterns, provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/), distributed under the terms of the LaTeX Project Public License.
+ - French hyphenation patterns as provided by the hyph-utf8 project at [http://www.ctan.org/tex-archive/language/hyph-utf8/](http://www.ctan.org/tex-archive/language/hyph-utf8/), distributed under the terms of the MIT License.
+
+
+libdrilbo includes code from the pix2gif utility by Mark Howell in ztools, which are available from [http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html](http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html). The copyright status of Mark Howell's work is unknown. Since he released the software for free and since it is also used by multiple other projects it can also be distributed or used freely, to the best of my knowledge.
+
+libpixelif contains the “Fira Sans” and “Fira Mono” fonts made by Erik Spiekermann and Ralph du Carrois. For information about copyright and licensing see the file `SIL Open Font License.txt` in the following directories:       
+
+ - libpixelif/fonts/fira-mono
+ - libpixelif/fonts/fira-sans
+
+
+
