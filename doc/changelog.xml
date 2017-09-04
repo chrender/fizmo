@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.8.5">
-    <datetime day-of-week="Sun" month="8" day="27" hour="20"
-      minute="17" second="32" timezone="CEST" year="2017"/>
     <logentry>Fix superfluous libraries and includes during install when using $DESTDIR, addressing github issue #21.</logentry>
     <logentry>Made screen size functions use 16-bit instead of 8-bit values, allowing version 5+ games to work with screen dimensions > 255.</logentry>
     <logentry>In case of screen dimensions > 255, write 255 into the byte-sized header entries $20 and $21.</logentry>
     <logentry>Fix possible buffer overflow when writing score and turn data into status line for fixed-width display.</logentry>
     <logentry>Added “-ai” or “--autosave-inputfile”, resp. and “-ao” or “--autosave-outputfile”, resp. commandline parameters in fizmo-console. With both set, this allows processing of a single command from stdin for each invocation of fizmo-console.</logentry>
     <logentry>Renamed copyright files to “license” for github license detection compatibility, see <a href="https://help.github.com/articles/licensing-a-repository/">Github's “Licensing a repository”</a> for further reference.</logentry>
+    <logentry>Added missing contributor phrasing to BSD-3 clause. The resulting license now exactly matches the wording used on Github and so also makes the license detection work.</logentry>
     <logentry>Fixes for wrong submodule version numbers.</logentry>
   </change>
 
