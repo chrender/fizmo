@@ -1,15 +1,16 @@
 
 
 
-   **Version 0.8.5**
+   **Version 0.8.5 — September 10, 2017**
 
  - Fix superfluous libraries and includes during install when using $DESTDIR, addressing github issue #21.
  - Made screen size functions use 16-bit instead of 8-bit values, allowing version 5+ games to work with screen dimensions > 255.
  - In case of screen dimensions > 255, write 255 into the byte-sized header entries $20 and $21.
- - Fix possible buffer overflow when writing score and turn data into status line for fixed-width display.
+ - Fix possible buffer overflow when writing score and turn data into status line.
  - Added “-ai” or “--autosave-inputfile”, resp. and “-ao” or “--autosave-outputfile”, resp. commandline parameters in fizmo-console. With both set, this allows processing of a single command from stdin for each invocation of fizmo-console.
  - Renamed copyright files to “license” for github license detection compatibility, see [Github's “Licensing a repository”](https://help.github.com/articles/licensing-a-repository/) for further reference.
  - Added missing contributor phrasing to BSD-3 clause. The resulting license now exactly matches the wording used on Github and so also makes the license detection work.
+ - Many fixes and improvements to library detection and module build procedure.
  - Fixes for wrong submodule version numbers.
 
 ---
