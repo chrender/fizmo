@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.8.6">
+    <datetime day-of-week="Mon" month="2" day="11" hour="17171717171717"
+      minute="34" second="41" timezone="CET" year="2019"/>
+    <logentry>Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.</logentry>
+    <logentry>Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.</logentry>
+  </change>
+
   <change version="0.8.5">
     <datetime day-of-week="Sun" month="9" day="10" hour="2"
       minute="10" second="18" timezone="CEST" year="2017"/>
