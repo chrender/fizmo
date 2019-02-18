@@ -5,6 +5,7 @@
 
  - Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.
  - Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.
+ - Some autoconf improvements and fixes.
 
 ---
 
