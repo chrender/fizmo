@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.8.6">
-    <datetime day-of-week="Tue" month="2" day="19" hour="22"
-      minute="47" second="57" timezone="CET" year="2019"/>
+    <datetime day-of-week="Thu" month="2" day="21" hour="20"
+      minute="16" second="19" timezone="CET" year="2019"/>
     <logentry>Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.</logentry>
     <logentry>Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.</logentry>
     <logentry>Fixed potential compile errors due to relative paths in autoconf parameters.</logentry>
+    <logentry>Replaced Fira Sans with FiraGO.</logentry>
     <logentry>Some autoconf improvements and fixes.</logentry>
   </change>
 
