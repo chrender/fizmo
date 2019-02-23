@@ -1,13 +1,14 @@
 
 
 
-   **Version 0.8.6 — Febuary 21, 2019**
+   **Version 0.8.6 — Febuary 23, 2019**
 
  - Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.
  - Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.
  - Fixed potential compile errors due to relative paths in autoconf parameters.
  - Replaced Fira Sans with FiraGO.
  - Some autoconf improvements and fixes.
+ - Fixed underscores in markdown files.
 
 ---
 
