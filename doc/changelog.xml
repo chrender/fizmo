@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.8.6">
-    <datetime day-of-week="Sat" month="2" day="23" hour="23"
-      minute="17" second="44" timezone="CET" year="2019"/>
+    <datetime day-of-week="Wed" month="4" day="17" hour="9"
+      minute="5" second="38" timezone="CEST" year="2019"/>
     <logentry>Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.</logentry>
+    <logentry>Fix throw opcode, make fizmo work for the Dialog sanity checks. Thanks to angstsmurf and Linus Åkesson.</logentry>
     <logentry>Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.</logentry>
     <logentry>Fixed potential compile errors due to relative paths in autoconf parameters.</logentry>
     <logentry>Replaced Fira Sans with FiraGO.</logentry>
