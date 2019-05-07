@@ -1,10 +1,11 @@
 
 
 
-   **Version 0.8.6 — April 17, 2019**
+   **Version 0.8.6 — May 7, 2019**
 
  - Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.
  - Fix throw opcode, make fizmo work for the Dialog sanity checks. Thanks to angstsmurf and Linus Åkesson.
+ - Fixed number of stack frames evaluation during restore, addressing another issue with catch/throw. Thanks to angstsmurf for reporting this problem.
  - Fixed multi-second delay in SDL2 sound interface before a sound effect would play at all.
  - Fixed potential compile errors due to relative paths in autoconf parameters.
  - Replaced Fira Sans with FiraGO.
