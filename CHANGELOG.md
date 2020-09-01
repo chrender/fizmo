@@ -1,7 +1,7 @@
 
 
 
-   **Version 0.8.6 — May 7, 2019**
+   **Version 0.8.6 — September 1, 2020**
 
  - Fixed crash when playing internal sound effects 1 or 2 in the SDL2 sound interface.
  - Fix throw opcode, make fizmo work for the Dialog sanity checks. Thanks to angstsmurf and Linus Åkesson.
@@ -11,6 +11,7 @@
  - Replaced Fira Sans with FiraGO.
  - Some autoconf improvements and fixes.
  - Fixed underscores in markdown files.
+ - Avoid string overflow when composing module's localization file name, refers to issue #27, thanks to Martin Sandsmark.
 
 ---
 
